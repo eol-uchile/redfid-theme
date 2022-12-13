@@ -87,12 +87,19 @@
 	padding-top: 0;
 	height: auto;
 }
+
+.wrapper-footer{
+	border-top: 1px solid #40b4ba;
+}
+
 .wrapper-footer footer .colophon .nav-colophon li{
 	list-style-type: none;
 }
 .global-header{
-	border:none;
-	box-shadow:none;
+	/* border:none; */
+	/* box-shadow:none; */
+	border-bottom: 1px solid #40b4ba;
+	padding-bottom: 4px;
 }
 .courses-container .courses{
 	padding: 0;
@@ -127,9 +134,12 @@ li.item.nav-courseware-01{
 main.static_pages{
 	margin:32px;
 }
+
 .home > header {
 	background-size: cover;
+	background-color: #fff0;
 	background-position: 50%;
+	box-shadow: none;
 
 	.outer-wrapper {
 		padding-top: 150px;
@@ -148,6 +158,19 @@ main.static_pages{
 			color: #fff;
 		}
 	}
+}
+
+.courses-container {
+
+	max-width: 1024px;
+}
+
+.courses-listing-item {
+	width: initial!important;
+}
+
+.highlighted-courses{
+	margin-inline: 24px;
 }
 
 //LMS cursos

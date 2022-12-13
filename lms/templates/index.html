@@ -11,8 +11,15 @@ from openedx.core.djangolib.markup import HTML, Text
 <main id="main" aria-label="Content" tabindex="-1">
     <section class="home">
       <header>
-          <img width="100%" src="https://static.sumaysigue.uchile.cl/redfid/Assets/img/header_lms_01.png" />
+        <center>
+          <img width="100%" style="max-width: 1024px;" src="https://static.sumaysigue.uchile.cl/redfid/Assets/img/header_lms_02.png" />
+        </center>
       </header>
+      <div class="title">
+        <center>
+          <div style="max-width: 1024px; text-align: left; font-size: x-large; padding: 44px; line-height: 1.24em;" >Bienvenido a los módulos REDFID</div>
+        </center>
+      </div>
       <%include file="${courses_list}" />
     </section>
 </main>
