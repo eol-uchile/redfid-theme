@@ -1,0 +1,4 @@
+.wrapper-footer footer#footer-openedx .wrapper-logo a img, .wrapper-footer footer .wrapper-logo a img {
+    height: 100% !important;
+    width: 100px !important;
+}
