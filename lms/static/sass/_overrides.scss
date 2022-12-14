@@ -1,6 +1,10 @@
+//Variables
+$redfid-green: #40b4ba;
+
+//
 
 .header-bar{
-	background-color: #40b4ba !important; 
+	background-color: $redfid-green !important; 
 	width: 100%;
 	height: 24px;
 }
@@ -89,7 +93,7 @@
 }
 
 .wrapper-footer{
-	border-top: 1px solid #40b4ba;
+	border-top: 1px solid $redfid-green;
 }
 
 .wrapper-footer footer .colophon .nav-colophon li{
@@ -98,7 +102,7 @@
 .global-header{
 	/* border:none; */
 	/* box-shadow:none; */
-	border-bottom: 1px solid #40b4ba;
+	border-bottom: 1px solid $redfid-green;
 	padding-bottom: 4px;
 }
 .courses-container .courses{
@@ -173,9 +177,34 @@ main.static_pages{
 	margin-inline: 24px;
 }
 
+.global-header .nav-links .main .nav-tab a:hover, 
+.global-header .nav-links .main .nav-tab div.info-wrapper section.handouts ol li div.hitarea:hover + h4, 
+div.info-wrapper section.handouts ol li .global-header .nav-links .main .nav-tab div.hitarea:hover + h4, 
+.global-header .nav-links .main .nav-tab div.info-wrapper section.handouts ol li div.hitarea:focus + h4, 
+div.info-wrapper section.handouts ol li .global-header .nav-links .main .nav-tab div.hitarea:focus + h4 
+{
+	border-bottom: $redfid-green;
+}
+
+.global-header .nav-links .main .nav-tab a.active, 
+.global-header .nav-links .main .nav-tab a:hover {
+	border-bottom-color: $redfid-green;
+}
+
+
+
 //LMS cursos
+
+.course-wrapper .course-content .xblock.xblock-student_view-vertical, .course-wrapper .course-content .xblock.xblock-public_view-vertical, .course-wrapper .courseware-results-wrapper .xblock.xblock-student_view-vertical, .course-wrapper .courseware-results-wrapper .xblock.xblock-public_view-vertical {
+	max-width: 800px !important; 
+}
+
 .xblock.xblock-student_view.xblock-student_view-vertical.block-initialized {
-	max-width: 800px !important;
+	max-width: 800px !important; 
+}
+
+.courses-container .courses .course{
+	border-bottom: $redfid-green;
 }
 
 //Recuadro
