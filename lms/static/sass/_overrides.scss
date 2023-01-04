@@ -207,6 +207,12 @@ div.info-wrapper section.handouts ol li .global-header .nav-links .main .nav-tab
 	border-bottom: $redfid-green;
 }
 
+//Hide Problem-Header
+.problem-header{
+    display: none;
+}
+
+
 //Recuadro
 
 .definicion-recuadro {
