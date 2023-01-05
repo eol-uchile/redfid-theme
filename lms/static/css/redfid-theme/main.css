@@ -3,7 +3,29 @@
     width: 100px !important;
 }
 
-.eol-header-container {
+.eol-footer-container {
   margin-right: auto;
   margin-left: auto;
+}
+
+@media (min-width: 992px){
+  .global-header .nav-links .secondary {
+      margin: 20px 40px 0 0 !important;
+  }
+}
+.global-header .nav-links .main .nav-tab a.active, .global-header .nav-links .main .nav-tab a:hover{
+  color: white !important;
+  background-color: #40b4ba !important;
+}
+@media screen and (min-width: 980px){
+  .home .courses-container .courses .courses-listing .courses-listing-item {
+    min-width: 23.23176% !important;
+    max-width: 23.23176% !important;
+  }
+}
+
+@media (min-width: 992px){
+  .global-header .nav-links .main .nav-tab a {
+      margin-left: 5px;
+  }
 }

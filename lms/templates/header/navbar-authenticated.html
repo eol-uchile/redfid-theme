@@ -32,10 +32,10 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
       <a href="https://www.redfid.cl/">Inicio</a>
     </div>
     <div class="mobile-nav-item hidden-mobile nav-item nav-tab">
-      <a href="https://comunidades.redfid.cl/">Comunidad</a>
+      <a href="/">Cursos</a>
     </div>
     <div class="mobile-nav-item hidden-mobile nav-item nav-tab">
-      <a href="/">Cursos</a>
+      <a href="https://comunidades.redfid.cl/auth/saml/index.php?idpentityid=https://auth.redfid.cl/realms/REDFID">Comunidad</a>
     </div>
     % if show_dashboard_tabs:
       <!--div class="mobile-nav-item hidden-mobile nav-item nav-tab">
@@ -69,9 +69,9 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
     % endif
   </div>
   <div class="secondary">
-    <div class="mobile-nav-item hidden-mobile nav-item">
+    <!--div class="mobile-nav-item hidden-mobile nav-item">
       <a class="help-link" href="${help_link}" rel="noopener" target="_blank">${_("Help")}</a>
-    </div>
+    </div-->
     <%include file="user_dropdown.html"/>
   </div>
 </div>
