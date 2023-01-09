@@ -29,3 +29,14 @@
       margin-left: 5px;
   }
 }
+@media screen and (min-width: 980px){
+  .find-courses .courses-container .courses.no-course-discovery .courses-listing .courses-listing-item, .university-profile .courses-container .courses.no-course-discovery .courses-listing .courses-listing-item {
+    min-width: 23.23176% !important;
+    max-width: 23.23176% !important;
+  }
+}
+.header-bar {
+  background-color: #40b4ba !important;
+  width: 100%;
+  height: 24px;
+}
