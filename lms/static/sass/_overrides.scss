@@ -3,6 +3,13 @@ $redfid-green: #40b4ba;
 
 //
 
+/*
+p {
+	text-align:justify;
+	//font-family:"Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif
+}
+*/
+
 .header-bar{
 	background-color: $redfid-green !important; 
 	width: 100%;
@@ -244,4 +251,29 @@ padding: 5px;
 background-color: #fff2cc;
 border-style: solid;
 border-color: #000;
+overflow: inherit;
+}
+
+
+//Barras de Cotejo
+.cotejo-bar{
+	text-align: center;
+	background-color: #f6b26b;
+	border-top-left-radius: 24px;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 24px;
+	border-bottom-left-radius: 0;
+	padding: 12px;
+	display: inline-flex;
+}
+
+ .cotejo-bar-inverted{
+	text-align: center;
+	background-color: #f6b26b;
+	border-top-left-radius: 0;
+	border-top-right-radius: 24px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 24px;
+	padding: 12px;
+	display: inline-flex;
 }
