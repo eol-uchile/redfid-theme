@@ -216,7 +216,10 @@ div.info-wrapper section.handouts ol li .global-header .nav-links .main .nav-tab
 
 //Hide Problem-Header
 .problem-header{
-    display: none;
+display: none !important;
+}
+.problem-progress{
+display: none !important;
 }
 
 
