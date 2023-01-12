@@ -216,10 +216,19 @@ div.info-wrapper section.handouts ol li .global-header .nav-links .main .nav-tab
 
 //Hide Problem-Header
 .problem-header{
-display: none !important;
+	display: none !important;
 }
 .problem-progress{
-display: none !important;
+	display: none !important;
+}
+
+
+//Hide Title and bookmark
+.hd.hd-2.unit-title{
+	display: none !important;
+}
+.bookmark-button-wrapper{
+	display: none !important;
 }
 
 
@@ -268,4 +277,4 @@ overflow: inherit;
     font-size: 18px;
     color: white;
 	text-align: left;
-  }
+}
