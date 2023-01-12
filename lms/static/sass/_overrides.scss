@@ -3,6 +3,13 @@ $redfid-green: #40b4ba;
 
 //
 
+/*
+p {
+	text-align:justify;
+	//font-family:"Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif
+}
+*/
+
 .header-bar{
 	background-color: $redfid-green !important; 
 	width: 100%;
@@ -207,6 +214,15 @@ div.info-wrapper section.handouts ol li .global-header .nav-links .main .nav-tab
 	border-bottom: $redfid-green;
 }
 
+//Hide Problem-Header
+.problem-header{
+display: none !important;
+}
+.problem-progress{
+display: none !important;
+}
+
+
 //Recuadro
 
 .definicion-recuadro {
@@ -238,4 +254,18 @@ padding: 5px;
 background-color: #fff2cc;
 border-style: solid;
 border-color: #000;
+overflow: inherit;
 }
+
+//Barra de cotejo
+.cotejo-bar{
+    background-color: #45a8dd;
+  	display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius: 24px;
+    padding: 16px;
+    font-size: 18px;
+    color: white;
+	text-align: left;
+  }
