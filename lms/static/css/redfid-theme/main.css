@@ -10,7 +10,7 @@
 
 @media (min-width: 992px){
   .global-header .nav-links .secondary {
-      margin: 20px 40px 0 0 !important;
+      margin: 31px 40px 0 0 !important;
   }
 }
 .global-header .nav-links .main .nav-tab a.active, .global-header .nav-links .main .nav-tab a:hover{
