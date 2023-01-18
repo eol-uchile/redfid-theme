@@ -241,6 +241,7 @@ div.info-wrapper section.handouts ol li .global-header .nav-links .main .nav-tab
     margin: auto;
     padding: 30px;
     border-radius: 25px;
+	margin-bottom: 0px;
   }
   
 .course-wrapper .course-content .vert-mod .vert, .course-wrapper .courseware-results-wrapper .vert-mod .vert{
@@ -263,7 +264,7 @@ padding: 5px;
 background-color: #fff2cc;
 border-style: solid;
 border-color: #000;
-overflow: inherit;
+//overflow: inherit;
 }
 
 //Barra de cotejo
@@ -277,4 +278,24 @@ overflow: inherit;
     font-size: 18px;
     color: white;
 	text-align: left;
+}
+
+//Borrando espaciado adicional
+.course-wrapper .course-content .vert-mod .vert{
+	margin-bottom: 0px;
+	padding: 0 0 10px;
+}
+
+.xblock-student_view-html p:last-child {
+    margin-bottom: 0;
+}
+
+.course-wrapper .course-content .vert-mod .vert{
+    margin-bottom: 0px;
+    padding: 0 0 25px;
+}
+
+[data-id*='conditional']{
+    margin:0;
+    padding:0;
 }
