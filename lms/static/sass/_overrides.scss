@@ -299,3 +299,24 @@ border-color: #000;
     margin:0;
     padding:0;
 }
+
+.vof_block .tablagrande [class^=dtrow] {
+    display: table-row;
+    color: #313131; /* antes era #727277 */
+}
+
+.eolcontainer_block {
+    margin: 0px;
+    position: relative;
+    width: var(--max-width);
+}
+
+.eolcontainer_block .Lenguaje-RedFid {
+    min-height: 1px;
+    margin-bottom: 0px;
+}
+
+.eolcontainer_block .Exploremos-RedFid {
+    min-height: 1px;
+    margin-bottom: 0px;
+}
