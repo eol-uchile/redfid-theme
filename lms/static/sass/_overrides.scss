@@ -320,3 +320,29 @@ border-color: #000;
     min-height: 1px;
     margin-bottom: 0px;
 }
+
+.eolcontainer_block .Observacion-RedFid .exptop,
+.eolcontainer_block .Observacion-RedFid .expmid,
+.eolcontainer_block .Caso-RedFid .exptop,
+.eolcontainer_block .Caso-RedFid .expmid {
+    width: calc( var(--max-width));
+    left: 0px;
+}
+
+.xblock-student_view-html p:last-child {
+    margin-bottom: 0;
+}
+
+.course-wrapper .course-content .vert-mod .vert{
+    margin-bottom: 0px;
+    padding: 0 0 25px;
+}
+
+.definicion-recuadro{
+    margin-bottom: 20px;
+}
+
+.iaa-container_block .Reconociendo-RedFid {
+  min-height: 1px;
+  margin-bottom: 0px;
+}
