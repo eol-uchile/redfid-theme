@@ -10,7 +10,7 @@
 
 @media (min-width: 992px){
   .global-header .nav-links .secondary {
-      margin: 31px 40px 0 0 !important;
+      margin: 0 0 0 auto !important;
   }
 }
 .global-header .nav-links .main .nav-tab a.active, .global-header .nav-links .main .nav-tab a:hover{
@@ -38,7 +38,7 @@
 .header-bar {
   background-color: #40b4ba !important;
   width: 100%;
-  height: 24px;
+  height: 17px;
 }
 @media (min-width: 992px){
   .global-header .nav-links .main {
@@ -49,6 +49,221 @@
 
 @media (min-width: 992px){
   .global-header .header-logo .course-header {
-      margin: 31px 0px 0 40px !important;
+      margin: 0 !important;
   }
+}
+
+.main-header {
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 2%;
+}
+
+@media screen and (min-width: 1440px) {
+
+  .redfid-header-desktop {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    height: 70px;
+  }
+
+  .url-link-header {
+    float: left;
+    padding: 0px 10px;
+    width: fit-content;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background: white;
+    font-weight: bold;
+  }
+  
+  .url-link-header:hover {
+    background-color: #40b4ba !important;
+    text-decoration: none;
+    color: white !important;
+  }
+  
+  .url-link-header-selected {
+    background-color: #40b4ba !important;
+    color: white !important;
+  }
+  
+  .url-link-header:hover a {
+    color: white !important;
+    text-decoration: none !important;
+  }
+  
+  .url-link-header>a {
+    /* padding: 30px; */
+    position: relative;
+    margin: 15px;
+    /* color: white; */
+    text-decoration: none !important;
+    color: #40b4ba !important;
+  }
+  
+  .url-link-header-selected>a {
+    color: white !important;
+  }
+  
+  .url-link-header a:focus {
+    outline: none !important;
+  }
+
+}
+
+@media screen and (max-width: 1439px) and (min-width: 1200px) {
+  .redfid-header-desktop {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    height: 70px;
+    justify-content: left;
+  }
+
+  .url-link-header {
+    float: left;
+    padding: 0px 10px;
+    width: fit-content;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background: white;
+    font-weight: bold;
+  }
+  
+  .url-link-header:hover {
+    background-color: #40b4ba !important;
+    text-decoration: none;
+    color: white !important;
+  }
+  
+  .url-link-header-selected {
+    background-color: #40b4ba !important;
+    color: white !important;
+  }
+  
+  .url-link-header:hover a {
+    color: white !important;
+    text-decoration: none !important;
+  }
+  
+  .url-link-header>a {
+    /* padding: 30px; */
+    position: relative;
+    margin: 15px;
+    /* color: white; */
+    text-decoration: none !important;
+    color: #40b4ba !important;
+  }
+  
+  .url-link-header-selected>a {
+    color: white !important;
+  }
+  
+  .url-link-header a:focus {
+    outline: none !important;
+  }
+}
+
+@media screen and (max-width: 1199px) and (min-width: 993px) {
+  .redfid-header-desktop {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    height: 70px;
+    justify-content: left;
+  }
+
+  .url-link-header {
+    float: left;
+    padding: 0px 10px;
+    width: fit-content;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background: white;
+    font-weight: bold;
+  }
+  
+  .url-link-header:hover {
+    background-color: #40b4ba !important;
+    text-decoration: none;
+    color: white !important;
+  }
+  
+  .url-link-header-selected {
+    background-color: #40b4ba !important;
+    color: white !important;
+  }
+  
+  .url-link-header:hover a {
+    color: white !important;
+    text-decoration: none !important;
+  }
+  
+  .url-link-header>a {
+    /* padding: 30px; */
+    position: relative;
+    margin: 15px;
+    /* color: white; */
+    text-decoration: none !important;
+    color: #40b4ba !important;
+  }
+  
+  .url-link-header-selected>a {
+    color: white !important;
+  }
+  
+  .url-link-header a:focus {
+    outline: none !important;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .redfid-header-desktop {
+    display: none;
+  }
+}
+
+.side-container {
+  display: none !important;
+}
+
+
+.content-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a .logo {
+  height: 48px;
+}
+
+.global-header {
+  border: 0 !important;
+  border-bottom: 1px solid #ededed !important;
+  box-shadow: none !important;
+}
+
+.global-header .header-logo {
+  margin-bottom: 0;
+}
+
+.sign-in-btn {
+  background-color: #40b4ba !important;
+}
+
+.sign-in-btn:hover {
+  background-color: #fff !important;
+  color: #40b4ba !important;
+  border-color: #40b4ba !important;
 }
