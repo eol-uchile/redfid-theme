@@ -12,6 +12,9 @@ from django.utils.translation import ugettext as _
 from six import text_type
 
 from openedx.core.djangoapps.user_authn.utils import should_redirect_to_logistration_mircrofrontend
+
+# App that handles subdomain specific branding
+from lms.djangoapps.branding import api as branding_api
 %>
 
 <%
@@ -22,34 +25,48 @@ from openedx.core.djangoapps.user_authn.utils import should_redirect_to_logistra
   allow_public_account_creation = static.get_value('ALLOW_PUBLIC_ACCOUNT_CREATION', settings.FEATURES.get('ALLOW_PUBLIC_ACCOUNT_CREATION'))
   should_redirect_to_logistration_mfe = should_redirect_to_logistration_mircrofrontend()
 %>
-<nav class="nav-links" aria-label=${_("Supplemental Links")}>
-  <div class="main">
-    <div class="mobile-nav-item hidden-mobile nav-item nav-tab">
-      <a href="https://www.redfid.cl/">Inicio</a>
-    </div>
-    <div class="mobile-nav-item hidden-mobile nav-item nav-tab">
-      <a href="/">Aprendizaje profesional</a>
-    </div>
-    <div class="mobile-nav-item hidden-mobile nav-item nav-tab">
-      <a href="https://comunidades.redfid.cl/">Comunidades</a>
-    </div>
-    <div class="mobile-nav-item hidden-mobile nav-item nav-tab">
-      <a href="/">Recursos</a>
-    </div>
-  </div>
-  <div class="secondary">
-    <div>
-      % if allows_login:
-        % if should_redirect_to_logistration_mfe:
-          <div class="mobile-nav-item hidden-mobile nav-item">
-              <a class="sign-in-btn btn" href="${settings.LOGISTRATION_MICROFRONTEND_URL}/login${login_query()}">${_("Sign in")}</a>
-          </div>
-        % else:
-          <div class="mobile-nav-item hidden-mobile nav-item">
-              <a class="sign-in-btn btn" href="/login${login_query()}">${_("Sign in")}</a>
-          </div>
-        % endif
+
+<div class="nav-links">
+  <div class="redfid-header-desktop">
+    <h1 class="header-logo">
+      % if enterprise_customer_link:
+        <a href="${settings.ENTERPRISE_LEARNER_PORTAL_BASE_URL}/${enterprise_customer_link.get('slug')}">
+          <img class="logo" src="${enterprise_customer_link.get('logo')}" alt="${_('{name} Dashboard').format(name=enterprise_customer_link.get('name'))}"/>
+        </a>
+      % else:
+        <a href="https://cursos.redfid.cl/">
+          <%block name="navigation_logo">
+            <img  class="logo" src="${branding_api.get_logo_url(is_secure)}" alt="${_("{platform_name} Home Page").format(platform_name=static.get_platform_name())}"/>
+          </%block>
+        </a>
       % endif
+    </h1>
+    <div class="mobile-nav-item url-link-header">
+        <a target="_self" href="https://www.redfid.cl/">Inicio</a>
     </div>
-  </div>
-</nav>
+    <div class="mobile-nav-item url-link-header url-link-header-selected">
+        <a target="_self" href="https://cursos.redfid.cl/">Aprendizaje profesional</a>
+    </div>
+    <div class="mobile-nav-item url-link-header">
+        <a href="https://comunidades.redfid.cl/">Comunidades</a>
+    </div>
+    <div class="mobile-nav-item url-link-header">
+        <a href="/">Recursos</a>
+    </div>
+    <div class="secondary">
+      <div>
+        % if allows_login:
+          % if should_redirect_to_logistration_mfe:
+            <div class="mobile-nav-item hidden-mobile nav-item">
+                <a class="sign-in-btn btn" href="${settings.LOGISTRATION_MICROFRONTEND_URL}/login${login_query()}">${_("Sign in")}</a>
+            </div>
+          % else:
+            <div class="mobile-nav-item hidden-mobile nav-item">
+                <a class="sign-in-btn btn" href="/login${login_query()}">${_("Sign in")}</a>
+            </div>
+          % endif
+        % endif
+      </div>
+    </div>
+</div>
+

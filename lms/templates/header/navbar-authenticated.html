@@ -8,6 +8,9 @@
 from django.urls import reverse
 from django.utils.translation import ugettext as _
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
+
+# App that handles subdomain specific branding
+from lms.djangoapps.branding import api as branding_api
 %>
 
 <%
@@ -26,25 +29,37 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
     help_link = doc_link
 %>
 
+
+
 <div class="nav-links">
-  <div class="main">
-    <div class="mobile-nav-item hidden-mobile nav-item nav-tab">
-      <a href="https://www.redfid.cl/">Inicio</a>
+  <div class="redfid-header-desktop">
+    <h1 class="header-logo">
+      % if enterprise_customer_link:
+        <a href="${settings.ENTERPRISE_LEARNER_PORTAL_BASE_URL}/${enterprise_customer_link.get('slug')}">
+          <img class="logo" src="${enterprise_customer_link.get('logo')}" alt="${_('{name} Dashboard').format(name=enterprise_customer_link.get('name'))}"/>
+        </a>
+      % else:
+        <a href="https://cursos.redfid.cl/">
+          <%block name="navigation_logo">
+            <img  class="logo" src="${branding_api.get_logo_url(is_secure)}" alt="${_("{platform_name} Home Page").format(platform_name=static.get_platform_name())}"/>
+          </%block>
+        </a>
+      % endif
+    </h1>
+    <div class="mobile-nav-item url-link-header">
+        <a target="_self" href="https://www.redfid.cl/">Inicio</a>
     </div>
-    <div class="mobile-nav-item hidden-mobile nav-item nav-tab">
-      <a href="/">Aprendizaje profesional</a>
+    <div class="mobile-nav-item url-link-header url-link-header-selected">
+        <a target="_self" href="https://cursos.redfid.cl/">Aprendizaje profesional</a>
     </div>
-    <div class="mobile-nav-item hidden-mobile nav-item nav-tab">
-      <a href="https://comunidades.redfid.cl/">Comunidades</a>
+    <div class="mobile-nav-item url-link-header">
+        <a href="https://comunidades.redfid.cl/">Comunidades</a>
     </div>
-    <div class="mobile-nav-item hidden-mobile nav-item nav-tab">
-      <a href="/">Recursos</a>
+    <div class="mobile-nav-item url-link-header">
+        <a href="/">Recursos</a>
     </div>
-  </div>
-  <div class="secondary">
-    <div class="mobile-nav-item hidden-mobile nav-item">
-      <a class="help-link" href="/courses" rel="noopener">Explorar Cursos</a>
+    <div class="secondary">
+      <%include file="user_dropdown.html"/>
     </div>
-    <%include file="user_dropdown.html"/>
   </div>
 </div>

@@ -13,7 +13,7 @@ p {
 .header-bar{
 	background-color: $redfid-green !important; 
 	width: 100%;
-	height: 24px;
+	height: 17px;
 }
 
 @media (max-width: 991px){
@@ -38,10 +38,10 @@ p {
 		display:none;
 	}
 	.global-header .header-logo a{
-		margin: 15px 0 0 25px;
+		margin: 0 !important;
 	}
 	.global-header .header-logo a .logo{
-		height: 90px !important;
+		height: 48px !important;
 	}
 	.global-header .header-logo .course-header{
 		margin: 50px 0px 0 40px;
@@ -124,7 +124,7 @@ div.login-register div.toggle-form{
 	display:none !important;
 }
 .header-global h1.logo img {
-	height: 90px !important;
+	height: 48px !important;
 }
 .header-global{
 	height: 126px !important;
