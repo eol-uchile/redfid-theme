@@ -42,27 +42,27 @@ from lms.djangoapps.branding import api as branding_api
       % endif
     </h1>
     <div class="mobile-nav-item url-link-header">
-        <a target="_self" href="https://www.redfid.cl/">Inicio</a>
+        <a target="_self" href="https://www.redfid.cl/wp-login.php">Inicio</a>
     </div>
     <div class="mobile-nav-item url-link-header url-link-header-selected">
-        <a target="_self" href="https://cursos.redfid.cl/">Aprendizaje profesional</a>
+        <a target="_self" href="/">Aprendizaje profesional</a>
     </div>
     <div class="mobile-nav-item url-link-header">
-        <a href="https://comunidades.redfid.cl/">Comunidades</a>
+        <a href="https://comunidades.redfid.cl/auth/saml/index.php?idpentityid=https://auth.redfid.cl/realms/REDFID">Comunidades</a>
     </div>
     <div class="mobile-nav-item url-link-header">
-        <a href="/">Recursos</a>
+        <a href="#">Recursos</a>
     </div>
     <div class="secondary">
       <div>
         % if allows_login:
           % if should_redirect_to_logistration_mfe:
             <div class="mobile-nav-item hidden-mobile nav-item">
-                <a class="sign-in-btn btn" href="${settings.LOGISTRATION_MICROFRONTEND_URL}/login${login_query()}">${_("Sign in")}</a>
+                <a class="sign-in-btn btn" href="https://cursos.redfid.cl/auth/login/tpa-saml/?auth_entry=login&next=%2F&idp=default">${_("Sign in")}</a>
             </div>
           % else:
             <div class="mobile-nav-item hidden-mobile nav-item">
-                <a class="sign-in-btn btn" href="/login${login_query()}">${_("Sign in")}</a>
+                <a class="sign-in-btn btn" href="https://cursos.redfid.cl/auth/login/tpa-saml/?auth_entry=login&next=%2F&idp=default">${_("Sign in")}</a>
             </div>
           % endif
         % endif
