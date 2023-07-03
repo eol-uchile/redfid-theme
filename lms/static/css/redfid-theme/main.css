@@ -268,13 +268,23 @@ a .logo {
   border-color: #40b4ba !important;
 }
 
+.landing-title {
+  font-size: 2rem;
+  max-width: 1400px;
+  padding: 0 2%;
+  text-align: left;
+  font-weight: bolder;
+  margin: 42px auto;
+  color: #333;
+}
+
 .landing-subtitle {
   font-size: 2rem;
   max-width: 1400px;
   padding: 0 2%;
   text-align: left;
   font-weight: bolder;
-  margin: 40px auto;
+  margin: 36px auto;
   color: #40b4ba;
 }
 
@@ -283,9 +293,15 @@ a .logo {
   text-align: justify;
   padding: 0 2%;
   max-width: 1400px;
+  line-height: 1.5;
 }
 
 .courses-listing-item {
   max-width: 1400px !important;
   margin-right: 0 !important;
+}
+
+.audiovisual-container {
+  display: flex;
+  justify-content: space-evenly;
 }
