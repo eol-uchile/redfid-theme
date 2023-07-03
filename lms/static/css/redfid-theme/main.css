@@ -267,3 +267,25 @@ a .logo {
   color: #40b4ba !important;
   border-color: #40b4ba !important;
 }
+
+.landing-subtitle {
+  font-size: 2rem;
+  max-width: 1400px;
+  padding: 0 2%;
+  text-align: left;
+  font-weight: bolder;
+  margin: 40px auto;
+  color: #40b4ba;
+}
+
+.landing-description {
+  margin: 40px auto;
+  text-align: justify;
+  padding: 0 2%;
+  max-width: 1400px;
+}
+
+.courses-listing-item {
+  max-width: 1400px !important;
+  margin-right: 0 !important;
+}
