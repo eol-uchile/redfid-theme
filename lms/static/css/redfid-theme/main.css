@@ -58,3 +58,35 @@
   left: 0 !important;
   right: 0 !important;
 }
+
+.landing-title {
+  font-size: 2rem;
+  max-width: 1400px;
+  padding: 0 2%;
+  text-align: left;
+  color: #333;
+  font-weight: bolder;
+  margin: 40px auto;
+}
+
+.landing-subtitle {
+  font-size: 2rem;
+  max-width: 1400px;
+  padding: 0 2%;
+  text-align: left;
+  font-weight: bolder;
+  margin: 40px auto;
+  color: #40b4ba;
+}
+
+.landing-description {
+  margin: 40px auto;
+  text-align: justify;
+  padding: 0 2%;
+  max-width: 1400px;
+}
+
+.courses-listing-item {
+  max-width: 1400px !important;
+  margin-right: 0 !important;
+}
