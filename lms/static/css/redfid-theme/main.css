@@ -267,3 +267,204 @@ a .logo {
   color: #40b4ba !important;
   border-color: #40b4ba !important;
 }
+
+@media screen and (min-width: 992px){
+
+  .landing-title {
+    font-size: 2rem;
+    max-width: 1400px;
+    padding: 0 2%;
+    text-align: left;
+    font-weight: bolder;
+    margin: 42px auto;
+    color: #333;
+  }
+
+  .landing-subtitle {
+    font-size: 2rem;
+    max-width: 1400px;
+    padding: 0 2%;
+    text-align: left;
+    font-weight: bolder;
+    margin: 36px auto;
+    color: #40b4ba;
+  }
+
+  .landing-description {
+    margin: 40px auto;
+    text-align: justify;
+    padding: 0 2%;
+    max-width: 1400px;
+    line-height: 1.5;
+  }
+
+  .audiovisual-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+  }
+
+  .audiovisual-image {
+    width: 45%;
+  }
+
+  .audiovisual-image a {
+    width: 100%;
+  }
+
+  .landing-course-container {
+    display: flex;
+    width: 100%;
+  }
+
+  .landing-course-image-container {
+    width: 60%;
+  }
+
+  .landing-course-image-container img {
+    width: 100%;
+  }
+
+  .landing-course-data-container {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .landing-course-title {
+    font-weight: bold;
+    font-size: 1.1em;
+    padding-left: 30px;
+    padding-right: 30px;
+    line-height: 1.2;
+    padding-top: 10px;
+    text-align: justify;
+  }
+
+  .landing-course-description {
+    text-align: justify;
+    padding: 0 30px;
+    font-size: 0.9em;
+    flex: 1;
+    line-height: 1.4;
+  }
+
+  .landing-course-button {
+    color: white !important;
+    background-color: #eb947e;
+    border-radius: 0;
+    padding: 5px 30px;
+    margin: 3% 10%;
+    text-align: center;
+  }
+
+  .landing-course-datetime {
+    text-align: center;
+    padding: 0 30px;
+    font-size: 0.9em;
+  }
+
+}
+
+@media screen and (max-width: 991px){
+
+  .landing-title {
+    font-size: 1.3rem;
+    max-width: 1400px;
+    padding: 0 2%;
+    text-align: left;
+    font-weight: bolder;
+    color: #333;
+  }
+
+  .landing-subtitle {
+    font-size: 1.5rem;
+    max-width: 1400px;
+    padding: 0 2%;
+    text-align: left;
+    font-weight: bolder;
+    margin: 20px auto;
+    color: #40b4ba;
+  }
+
+  .landing-description {
+    text-align: justify;
+    padding: 0 2%;
+    max-width: 1400px;
+    line-height: 1.5;
+    font-size: 0.8em;
+  }
+
+  .audiovisual-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+    flex-direction: column;
+  }
+
+  .audiovisual-image {
+    width: 96%;
+    margin: 2%;
+  }
+
+  .audiovisual-image a {
+    width: 100%;
+  }
+
+  .landing-course-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .landing-course-image-container {
+    width: 96%;
+    margin: 2%;
+  }
+
+  .landing-course-image-container img {
+    width: 100%;
+  }
+
+  .landing-course-data-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .landing-course-title {
+    font-weight: bold;
+    font-size: 0.8em;
+    padding-left: 30px;
+    padding-right: 30px;
+    line-height: 1.2;
+    padding-top: 10px;
+    text-align: justify;
+  }
+
+  .landing-course-description {
+    text-align: justify;
+    padding: 0 3px;
+    font-size: 0.7em;
+    flex: 1;
+    line-height: 1.4;
+  }
+
+  .landing-course-button {
+    color: white !important;
+    background-color: #eb947e;
+    border-radius: 0;
+    padding: 5px 30px;
+    margin: 3% 10%;
+    text-align: center;
+  }
+
+  .landing-course-datetime {
+    text-align: center;
+    padding: 0 30px;
+    font-size: 0.7em;
+  }
+
+}
