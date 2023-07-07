@@ -367,6 +367,20 @@ a .logo {
     font-size: 0.9em;
   }
 
+  .header-courses {
+    font-size: 2rem !important;
+    max-width: 1400px !important;
+    text-align: left !important;
+    font-weight: bolder !important;
+    margin: 36px auto !important;
+    color: #40b4ba !important;
+  }
+
+  .find-courses {
+    max-width: 1400px !important;
+    margin: auto !important;
+  }
+
 }
 
 @media screen and (max-width: 991px){
