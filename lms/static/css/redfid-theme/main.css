@@ -302,6 +302,8 @@ a .logo {
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 30px;
+    max-width: 1400px;
+    margin: 36px auto;
   }
 
   .audiovisual-image {
