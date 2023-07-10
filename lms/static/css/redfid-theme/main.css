@@ -32,9 +32,16 @@
 @media screen and (min-width: 980px){
   .find-courses .courses-container .courses.no-course-discovery .courses-listing .courses-listing-item, .university-profile .courses-container .courses.no-course-discovery .courses-listing .courses-listing-item {
     min-width: 23.23176% !important;
-    max-width: 23.23176% !important;
+    margin-right: 0 !important;
   }
 }
+
+@media screen and (max-width: 979px){
+  .find-courses .courses-container .courses.no-course-discovery .courses-listing .courses-listing-item, .university-profile .courses-container .courses.no-course-discovery .courses-listing .courses-listing-item {
+    max-height: fit-content !important;
+  }
+}
+
 .header-bar {
   background-color: #40b4ba !important;
   width: 100%;
@@ -363,7 +370,7 @@ a .logo {
 
   .landing-course-datetime {
     text-align: center;
-    padding: 0 30px;
+    padding: 10px 30px 20px 30px;
     font-size: 0.9em;
   }
 
@@ -462,7 +469,7 @@ a .logo {
 
   .landing-course-description {
     text-align: justify;
-    padding: 0 3px;
+    padding: 0 30px;
     font-size: 0.7em;
     flex: 1;
     line-height: 1.4;
@@ -479,7 +486,7 @@ a .logo {
 
   .landing-course-datetime {
     text-align: center;
-    padding: 0 30px;
+    padding: 10px 30px 20px 30px;
     font-size: 0.7em;
   }
 
