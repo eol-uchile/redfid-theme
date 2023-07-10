@@ -145,7 +145,7 @@ from common.djangoapps.student.models import CourseEnrollment
 <main id="main" aria-label="Content" tabindex="-1">
     <div class="dashboard" id="dashboard-main">
       <div class="main-container">
-        <div class="my-courses" id="my-courses">
+        <div class="my-courses" id="my-courses" style="max-width: 1400px; margin: auto;">
           % if display_dashboard_courses:
           <%include file="learner_dashboard/_dashboard_navigation_courses.html"/>
           % endif
@@ -261,7 +261,17 @@ from common.djangoapps.student.models import CourseEnrollment
             </div>
           % endif
         </div>
+        <h1 class="landing-subtitle">Material audiovisual</h1>
+        <div class="audiovisual-container">
+          <div class="audiovisual-image">
+            <a href="#"><img src="https://www.redfid.cl/wp-content/uploads/2023/07/TW.png" style="width: 100%"></a>
+          </div>
+          <div class="audiovisual-image">
+            <a href="#"><img src="https://www.redfid.cl/wp-content/uploads/2023/07/CP.png" style="width: 100%"></a>
+          </div>
+        </div>
       </div>
+
       <div class="side-container" role="complementary" aria-label="messages">
         %if display_sidebar_account_activation_message:
           <div class="sidebar-notification">

@@ -302,6 +302,8 @@ a .logo {
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 30px;
+    max-width: 1400px;
+    margin: 36px auto;
   }
 
   .audiovisual-image {
@@ -363,6 +365,20 @@ a .logo {
     text-align: center;
     padding: 0 30px;
     font-size: 0.9em;
+  }
+
+  .header-courses {
+    font-size: 2rem !important;
+    max-width: 1400px !important;
+    text-align: left !important;
+    font-weight: bolder !important;
+    margin: 36px auto !important;
+    color: #40b4ba !important;
+  }
+
+  .find-courses {
+    max-width: 1400px !important;
+    margin: auto !important;
   }
 
 }
