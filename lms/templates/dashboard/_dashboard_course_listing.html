@@ -69,7 +69,7 @@ from lms.djangoapps.experiments.utils import UPSELL_TRACKING_FLAG
   <% course_target = reverse(course_home_url_name(course_overview.id), args=[six.text_type(course_overview.id)]) %>
   <section class="details" aria-labelledby="details-heading-${enrollment.course_id}">
       <h2 class="hd hd-2 sr" id="details-heading-${enrollment.course_id}">${_('Course details')}</h2>
-    <div class="wrapper-course-image" aria-hidden="true" style="width:30%; max-width: 300px;">
+    <div class="wrapper-course-image" aria-hidden="true">
       % if show_courseware_link and not is_unfulfilled_entitlement:
         % if not is_course_expired:
             <a href="${course_target}" data-course-key="${enrollment.course_id}" class="cover course-target-link" tabindex="-1">
@@ -95,7 +95,7 @@ from lms.djangoapps.experiments.utils import UPSELL_TRACKING_FLAG
         </span>
       % endif
     </div>
-      <div class="wrapper-course-details">
+      <div class="wrapper-course-details" style="justify-content: space-between !important; flex-direction: column !important;">
         <h3 class="course-title" id="course-title-${enrollment.course_id}">
           % if show_courseware_link and not is_unfulfilled_entitlement:
             % if not is_course_expired:
@@ -107,7 +107,10 @@ from lms.djangoapps.experiments.utils import UPSELL_TRACKING_FLAG
             <span>${course_overview.display_name_with_default}</span>
           % endif
         </h3>
-        <div class="course-info">
+        <div class="course-description-dashboard">
+          Este curso tiene como finalidad comprender la indagación de la propia práctica docente como una estrategia que posibilita la mejora de la enseñanza en los procesos de formación docente inicial en matemática.
+        </div>
+        <div class="course-info" style="flex-basis: 100% !important; margin-top: auto !important; margin-bottom: 10px !important; align-self: flex-end !important; margin-right: 15% !important;">
           <%
             enrollment_date = course_overview.self_paced and enrollment and enrollment.created
             if course_overview.start_date_is_still_default:
@@ -179,12 +182,12 @@ from lms.djangoapps.experiments.utils import UPSELL_TRACKING_FLAG
                 </div>
             % endif
         </div>
-        <div class="wrapper-course-actions">
+        <div class="wrapper-course-actions" style="margin-right: 20px !important; margin-top: auto !important; align-self: flex-end !important;">
           <div class="course-actions">
             % if (show_courseware_link or is_unfulfilled_entitlement) and not is_course_expired:
               % if course_overview.has_ended():
                 % if not is_unfulfilled_entitlement:
-                  <a href="${course_target}" class="enter-course archived course-target-link" data-course-key="${enrollment.course_id}">${_('View Archived Course')}<span class="sr">&nbsp;${course_overview.display_name_with_default}</span></a>
+                  <a href="${course_target}" class="enter-course archived course-target-link" data-course-key="${enrollment.course_id}" style="float: none !important; color: white !important; background-color: #eb947e !important; border: none !important; font-weight: bold !important;">${_('View Archived Course')}<span class="sr">&nbsp;${course_overview.display_name_with_default}</span></a>
                 % endif
 
               % else:

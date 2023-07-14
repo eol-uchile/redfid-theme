@@ -277,6 +277,12 @@ a .logo {
 
 @media screen and (min-width: 992px){
 
+  .courses-container {
+    max-width: 1400px !important;
+    padding: 0 2% !important;
+    margin: 36px auto !important;
+  }
+
   .landing-title {
     font-size: 2rem;
     max-width: 1400px;
@@ -390,6 +396,13 @@ a .logo {
     margin: auto !important;
   }
 
+  .dashboard .main-container .my-courses .course .details .wrapper-course-image {
+    float: left !important;
+    margin-right: 2.35765% !important;
+    overflow: hidden !important;
+    width: 60% !important;
+  }
+
 }
 
 @media screen and (max-width: 991px){
@@ -493,9 +506,10 @@ a .logo {
   }
 
 }
-
-.courses-container {
-  max-width: 1400px !important;
-  padding: 0 2% !important;
-  margin: 36px auto !important;
+.course-description-dashboard {
+  margin: 20px 30px 20px 0px;
+  text-align: justify;
+  color: #666;
+  line-height: 1.2;
+  height: 150px;
 }
