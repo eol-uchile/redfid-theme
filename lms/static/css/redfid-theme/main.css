@@ -403,6 +403,12 @@ a .logo {
     width: 60% !important;
   }
 
+  .footer-bar {
+    height: 40px;
+    background-color: #eb947e;
+    margin-bottom: 20px;
+  }
+
 }
 
 @media screen and (max-width: 991px){
@@ -503,6 +509,12 @@ a .logo {
     text-align: center;
     padding: 10px 30px 20px 30px;
     font-size: 0.7em;
+  }
+
+  .footer-bar {
+    height: 20px;
+    background-color: #eb947e;
+    margin-bottom: 20px;
   }
 
 }
