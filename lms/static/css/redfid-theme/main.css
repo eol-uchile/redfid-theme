@@ -477,6 +477,7 @@ a .logo {
   }
 
   .landing-description {
+    margin: 20px auto;
     text-align: justify;
     max-width: 1400px;
     line-height: 1.5;
