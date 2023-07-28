@@ -108,7 +108,7 @@ from lms.djangoapps.experiments.utils import UPSELL_TRACKING_FLAG
           % endif
         </h3>
         <div class="course-description-dashboard">
-          ${course_overview.short_description if course.short_description is not None else "Este curso online no cuenta con una descripción."}
+          ${course_overview.short_description if course_overview.short_description is not None else "Este curso online no cuenta con una descripción."}
         </div>
         <div class="course-info" style="flex-basis: 100% !important; margin-top: auto !important; margin-bottom: 10px !important; align-self: flex-end !important; margin-right: 15% !important;">
           <%

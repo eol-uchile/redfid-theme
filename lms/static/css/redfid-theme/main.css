@@ -416,9 +416,22 @@ a .logo {
     margin-bottom: 20px;
   }
 
+  .course-info .container {
+    max-width: 1400px;
+  }
+
 }
 
 @media screen and (max-width: 991px){
+
+  .intro-inner-wrapper .table .intro {
+    width: 100%;
+  }
+
+  .intro-inner-wrapper .table .media {
+    display: none !important;
+  }
+
 
   .landing-title {
     font-size: 1.3rem;
@@ -531,4 +544,30 @@ a .logo {
   color: #666;
   line-height: 1.2;
   height: 150px;
+}
+
+.course-header {
+  margin: auto;
+  max-width: 1400px;
+}
+
+.course-profile {
+  margin: auto;
+  max-width: 1400px;
+}
+
+.redfid-enroll-button {
+  background-color: #eb947e !important;
+  background-image: none !important;
+  box-shadow: inset 0 0 0 0 !important;
+  text-shadow: 0 0 !important;
+  font-weight: bolder !important;
+}
+
+.redfid-enroll-button strong {
+  background-color: #eb947e !important;
+  background-image: none !important;
+  box-shadow: inset 0 0 0 0 !important;
+  text-shadow: 0 0 !important;
+  font-weight: bolder !important;
 }
