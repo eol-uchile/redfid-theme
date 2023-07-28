@@ -632,3 +632,31 @@ a .logo {
 .home {
   padding: 20px 20px 20px 40px !important;
 }
+
+.sign-in-button-outside {
+  color: white !important;
+  background-color: #40b4ba !important;
+  padding: 10px 40px;
+  border-radius: 5px;
+  font-weight: bolder !important;
+  text-decoration: none !important;
+}
+
+.sign-in-description-outside {
+  max-width: 1400px;
+  margin: auto;
+  color: #646464;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.register-button-outside {
+  max-width: 1400px !important;
+  text-align: center;
+  margin: 20px auto;
+  display: block !important;
+}
+
+.register-button-outside:hover {
+  text-decoration: none !important;
+}
