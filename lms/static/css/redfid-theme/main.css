@@ -20,7 +20,10 @@
 @media screen and (min-width: 980px){
   .home .courses-container .courses .courses-listing .courses-listing-item {
     min-width: 23.23176% !important;
-    max-width: 23.23176% !important;
+    width: 100% !important;
+    max-width: 1400px !important;
+    margin-right: 0 !important;
+    max-height: none !important;
   }
 }
 
@@ -33,6 +36,10 @@
   .find-courses .courses-container .courses.no-course-discovery .courses-listing .courses-listing-item, .university-profile .courses-container .courses.no-course-discovery .courses-listing .courses-listing-item {
     min-width: 23.23176% !important;
     margin-right: 0 !important;
+    width: 100% !important;
+    max-width: 1400px !important;
+    margin-right: 0 !important;
+    max-height: none !important;
   }
 }
 

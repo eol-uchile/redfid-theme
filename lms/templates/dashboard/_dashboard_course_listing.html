@@ -69,7 +69,7 @@ from lms.djangoapps.experiments.utils import UPSELL_TRACKING_FLAG
   <% course_target = reverse(course_home_url_name(course_overview.id), args=[six.text_type(course_overview.id)]) %>
   <section class="details" aria-labelledby="details-heading-${enrollment.course_id}">
       <h2 class="hd hd-2 sr" id="details-heading-${enrollment.course_id}">${_('Course details')}</h2>
-    <div class="wrapper-course-image" aria-hidden="true">
+      <div class="wrapper-course-image" aria-hidden="true" style="max-height: none !important">
       % if show_courseware_link and not is_unfulfilled_entitlement:
         % if not is_course_expired:
             <a href="${course_target}" data-course-key="${enrollment.course_id}" class="cover course-target-link" tabindex="-1">
@@ -108,7 +108,7 @@ from lms.djangoapps.experiments.utils import UPSELL_TRACKING_FLAG
           % endif
         </h3>
         <div class="course-description-dashboard">
-          Este curso tiene como finalidad comprender la indagación de la propia práctica docente como una estrategia que posibilita la mejora de la enseñanza en los procesos de formación docente inicial en matemática.
+          ${course_overview.short_description if course.short_description is not None else "Este curso online no cuenta con una descripción."}
         </div>
         <div class="course-info" style="flex-basis: 100% !important; margin-top: auto !important; margin-bottom: 10px !important; align-self: flex-end !important; margin-right: 15% !important;">
           <%
