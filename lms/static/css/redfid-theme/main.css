@@ -1,6 +1,7 @@
-.wrapper-footer footer#footer-openedx .wrapper-logo a img, .wrapper-footer footer .wrapper-logo a img {
-    height: 100% !important;
-    width: 100px !important;
+.wrapper-footer footer#footer-openedx .wrapper-logo a img,
+.wrapper-footer footer .wrapper-logo a img {
+  height: 100% !important;
+  width: 100px !important;
 }
 
 .eol-footer-container {
@@ -8,16 +9,19 @@
   margin-left: auto;
 }
 
-@media (min-width: 992px){
+@media (min-width: 992px) {
   .global-header .nav-links .secondary {
-      margin: 0 0 0 auto !important;
+    margin: 0 0 0 auto !important;
   }
 }
-.global-header .nav-links .main .nav-tab a.active, .global-header .nav-links .main .nav-tab a:hover{
+
+.global-header .nav-links .main .nav-tab a.active,
+.global-header .nav-links .main .nav-tab a:hover {
   color: white !important;
   background-color: #40b4ba !important;
 }
-@media screen and (min-width: 980px){
+
+@media screen and (min-width: 980px) {
   .home .courses-container .courses .courses-listing .courses-listing-item {
     min-width: 23.23176% !important;
     width: 100% !important;
@@ -27,13 +31,16 @@
   }
 }
 
-@media (min-width: 992px){
+@media (min-width: 992px) {
   .global-header .nav-links .main .nav-tab a {
-      margin-left: 5px;
+    margin-left: 5px;
   }
 }
-@media screen and (min-width: 980px){
-  .find-courses .courses-container .courses.no-course-discovery .courses-listing .courses-listing-item, .university-profile .courses-container .courses.no-course-discovery .courses-listing .courses-listing-item {
+
+@media screen and (min-width: 980px) {
+
+  .find-courses .courses-container .courses.no-course-discovery .courses-listing .courses-listing-item,
+  .university-profile .courses-container .courses.no-course-discovery .courses-listing .courses-listing-item {
     min-width: 23.23176% !important;
     margin-right: 0 !important;
     width: 100% !important;
@@ -43,8 +50,10 @@
   }
 }
 
-@media screen and (max-width: 979px){
-  .find-courses .courses-container .courses.no-course-discovery .courses-listing .courses-listing-item, .university-profile .courses-container .courses.no-course-discovery .courses-listing .courses-listing-item {
+@media screen and (max-width: 979px) {
+
+  .find-courses .courses-container .courses.no-course-discovery .courses-listing .courses-listing-item,
+  .university-profile .courses-container .courses.no-course-discovery .courses-listing .courses-listing-item {
     max-height: fit-content !important;
   }
 }
@@ -54,16 +63,17 @@
   width: 100%;
   height: 17px;
 }
-@media (min-width: 992px){
+
+@media (min-width: 992px) {
   .global-header .nav-links .main {
-      float: left;
-      margin: 31px 0 0 20px !important;
+    float: left;
+    margin: 31px 0 0 20px !important;
   }
 }
 
-@media (min-width: 992px){
+@media (min-width: 992px) {
   .global-header .header-logo .course-header {
-      margin: 0 !important;
+    margin: 0 !important;
   }
 }
 
@@ -94,23 +104,23 @@
     background: white;
     font-weight: bold;
   }
-  
+
   .url-link-header:hover {
     background-color: #40b4ba !important;
     text-decoration: none;
     color: white !important;
   }
-  
+
   .url-link-header-selected {
     background-color: #40b4ba !important;
     color: white !important;
   }
-  
+
   .url-link-header:hover a {
     color: white !important;
     text-decoration: none !important;
   }
-  
+
   .url-link-header>a {
     /* padding: 30px; */
     position: relative;
@@ -119,11 +129,11 @@
     text-decoration: none !important;
     color: #40b4ba !important;
   }
-  
+
   .url-link-header-selected>a {
     color: white !important;
   }
-  
+
   .url-link-header a:focus {
     outline: none !important;
   }
@@ -151,23 +161,23 @@
     background: white;
     font-weight: bold;
   }
-  
+
   .url-link-header:hover {
     background-color: #40b4ba !important;
     text-decoration: none;
     color: white !important;
   }
-  
+
   .url-link-header-selected {
     background-color: #40b4ba !important;
     color: white !important;
   }
-  
+
   .url-link-header:hover a {
     color: white !important;
     text-decoration: none !important;
   }
-  
+
   .url-link-header>a {
     /* padding: 30px; */
     position: relative;
@@ -176,11 +186,11 @@
     text-decoration: none !important;
     color: #40b4ba !important;
   }
-  
+
   .url-link-header-selected>a {
     color: white !important;
   }
-  
+
   .url-link-header a:focus {
     outline: none !important;
   }
@@ -207,23 +217,23 @@
     background: white;
     font-weight: bold;
   }
-  
+
   .url-link-header:hover {
     background-color: #40b4ba !important;
     text-decoration: none;
     color: white !important;
   }
-  
+
   .url-link-header-selected {
     background-color: #40b4ba !important;
     color: white !important;
   }
-  
+
   .url-link-header:hover a {
     color: white !important;
     text-decoration: none !important;
   }
-  
+
   .url-link-header>a {
     /* padding: 30px; */
     position: relative;
@@ -232,11 +242,11 @@
     text-decoration: none !important;
     color: #40b4ba !important;
   }
-  
+
   .url-link-header-selected>a {
     color: white !important;
   }
-  
+
   .url-link-header a:focus {
     outline: none !important;
   }
@@ -282,28 +292,29 @@ a .logo {
   border-color: #40b4ba !important;
 }
 
-@media screen and (min-width: 992px){
+@media screen and (min-width: 992px) {
 
   .courses-container {
     max-width: 1400px !important;
-    padding: 0 2% !important;
     margin: 36px auto !important;
+  }
+
+  .global-header .header-logo a .logo {
+    height: 60px !important;
   }
 
   .landing-title {
     font-size: 2rem;
     max-width: 1400px;
-    padding: 0 2%;
     text-align: left;
     font-weight: bolder;
-    margin: 42px auto;
-    color: #333;
+    color: #646464;
+    margin: auto;
   }
 
   .landing-subtitle {
     font-size: 2rem;
     max-width: 1400px;
-    padding: 0 2%;
     text-align: left;
     font-weight: bolder;
     margin: 36px auto;
@@ -313,9 +324,9 @@ a .logo {
   .landing-description {
     margin: 40px auto;
     text-align: justify;
-    padding: 0 2%;
     max-width: 1400px;
     line-height: 1.5;
+    color: #646464;
   }
 
   .audiovisual-container {
@@ -324,7 +335,6 @@ a .logo {
     margin-bottom: 30px;
     max-width: 1400px;
     margin: 36px auto;
-    padding: 0 2%;
   }
 
   .audiovisual-image {
@@ -362,6 +372,7 @@ a .logo {
     padding-right: 30px;
     line-height: 1.2;
     padding-top: 10px;
+    color: #40b4ba;
     text-align: justify;
   }
 
@@ -370,6 +381,7 @@ a .logo {
     padding: 0 30px;
     font-size: 0.9em;
     flex: 1;
+    color: #646464;
     line-height: 1.4;
   }
 
@@ -384,9 +396,9 @@ a .logo {
   }
 
   .landing-course-datetime {
-    text-align: center;
     padding: 10px 30px 20px 30px;
     font-size: 0.9em;
+    color: #646464;
   }
 
   .header-courses {
@@ -394,7 +406,7 @@ a .logo {
     max-width: 1400px !important;
     text-align: left !important;
     font-weight: bolder !important;
-    margin: 36px auto !important;
+    margin: 0 auto 36px auto !important;
     color: #40b4ba !important;
   }
 
@@ -422,30 +434,42 @@ a .logo {
 
 }
 
-@media screen and (max-width: 991px){
+@media screen and (max-width: 991px) {
 
   .intro-inner-wrapper .table .intro {
     width: 100%;
+  }
+
+  .wrapper-course-image {
+    display: none !important;
   }
 
   .intro-inner-wrapper .table .media {
     display: none !important;
   }
 
+  .header-courses {
+    font-size: 1.5rem !important;
+    max-width: 1400px !important;
+    text-align: left !important;
+    font-weight: bolder !important;
+    margin: 36px auto !important;
+    color: #40b4ba !important;
+  }
+
 
   .landing-title {
     font-size: 1.3rem;
     max-width: 1400px;
-    padding: 0 2%;
     text-align: left;
     font-weight: bolder;
-    color: #333;
+    color: #646464;
+    margin: auto;
   }
 
   .landing-subtitle {
     font-size: 1.5rem;
     max-width: 1400px;
-    padding: 0 2%;
     text-align: left;
     font-weight: bolder;
     margin: 20px auto;
@@ -454,10 +478,10 @@ a .logo {
 
   .landing-description {
     text-align: justify;
-    padding: 0 2%;
     max-width: 1400px;
     line-height: 1.5;
     font-size: 0.8em;
+    color: #646464;
   }
 
   .audiovisual-container {
@@ -468,8 +492,8 @@ a .logo {
   }
 
   .audiovisual-image {
-    width: 96%;
-    margin: 2%;
+    width: 100%;
+    margin: 2% 0;
   }
 
   .audiovisual-image a {
@@ -500,11 +524,12 @@ a .logo {
 
   .landing-course-title {
     font-weight: bold;
-    font-size: 0.8em;
+    font-size: 1em;
     padding-left: 30px;
     padding-right: 30px;
     line-height: 1.2;
     padding-top: 10px;
+    color: #40b4ba;
     text-align: center;
   }
 
@@ -514,6 +539,7 @@ a .logo {
     font-size: 0.7em;
     flex: 1;
     line-height: 1.4;
+    color: #646464;
   }
 
   .landing-course-button {
@@ -522,13 +548,14 @@ a .logo {
     border-radius: 0;
     padding: 10px 30px;
     margin: 3% 10%;
+    font-weight: bolder !important;
     text-align: center;
   }
 
   .landing-course-datetime {
-    text-align: center;
     padding: 10px 30px 20px 30px;
     font-size: 0.7em;
+    color: #646464;
   }
 
   .footer-bar {
@@ -538,12 +565,12 @@ a .logo {
   }
 
 }
+
 .course-description-dashboard {
   margin: 20px 30px 20px 0px;
   text-align: justify;
   color: #666;
   line-height: 1.2;
-  height: 150px;
 }
 
 .course-header {
@@ -570,4 +597,37 @@ a .logo {
   box-shadow: inset 0 0 0 0 !important;
   text-shadow: 0 0 !important;
   font-weight: bolder !important;
+}
+
+.course-target-link.enter-course {
+  float: none !important;
+  color: white !important;
+  background-color: #eb947e !important;
+  font-weight: bolder !important;
+  border: none !important;
+  border-radius: 0 !important;
+  width: 85%;
+}
+
+.wrapper-action-more button {
+  float: none !important;
+  width: 15% !important;
+  margin: auto !important;
+  font-size: xx-large !important;
+  padding: 5px 0 0 20px !important;
+  border: 0 !important;
+  color: #40b4ba !important;
+}
+
+.wrapper-course-actions {
+  width: 100% !important;
+}
+
+.course-target-link {
+  color: #40b4ba !important;
+  font-weight: bolder !important;
+}
+
+.home {
+  padding: 20px 20px 20px 40px !important;
 }
