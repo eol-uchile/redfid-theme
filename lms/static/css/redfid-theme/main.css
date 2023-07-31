@@ -55,6 +55,7 @@
   .find-courses .courses-container .courses.no-course-discovery .courses-listing .courses-listing-item,
   .university-profile .courses-container .courses.no-course-discovery .courses-listing .courses-listing-item {
     max-height: fit-content !important;
+    width: 100% !important;
   }
 }
 
