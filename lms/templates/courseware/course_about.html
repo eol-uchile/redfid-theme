@@ -76,7 +76,7 @@ from six import string_types
         <div class="main-cta">
         %if user.is_authenticated and registered:
           %if show_courseware_link:
-            <a href="${course_target}">
+            <a class="redfid-enroll-button" href="${course_target}">
           %endif
 
           <span class="register disabled">${_("You are enrolled in this course")}</span>
@@ -114,7 +114,7 @@ from six import string_types
             else:
               href_class = "register"
           %>
-          <a href="${reg_href}" class="${href_class}">
+          <a href="${reg_href}" class="redfid-enroll-button ${href_class}">
             ${_("Enroll Now")}
           </a>
           <div id="register_error"></div>
