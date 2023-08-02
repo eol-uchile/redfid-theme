@@ -266,11 +266,11 @@ from common.djangoapps.student.models import CourseEnrollment
         </div>
         <h1 class="landing-subtitle">Material audiovisual</h1>
         <div class="audiovisual-container">
-          <div class="audiovisual-image">
-            <a href="#"><img src="https://www.redfid.cl/wp-content/uploads/2023/07/TW.png" style="width: 100%"></a>
+          <div id="talleres-image" class="audiovisual-image">
+            <img src="https://www.redfid.cl/wp-content/uploads/2023/07/TW.png" style="width: 100%">
           </div>
-          <div class="audiovisual-image">
-            <a href="#"><img src="https://www.redfid.cl/wp-content/uploads/2023/07/CP.png" style="width: 100%"></a>
+          <div id="capsulas-image" class="audiovisual-image">
+            <img src="https://www.redfid.cl/wp-content/uploads/2023/07/CP.png" style="width: 100%">
           </div>
         </div>
       </div>
@@ -324,6 +324,9 @@ from common.djangoapps.student.models import CourseEnrollment
           </div>
         % endif
       </div>
+    </div>
+    <div id="talleres-webinars-capsulas-main">
+        <button id="back-to-dashboard">Volver</button>
     </div>
 </main>
 

@@ -340,10 +340,7 @@ a .logo {
 
   .audiovisual-image {
     width: 48%;
-  }
-
-  .audiovisual-image a {
-    width: 100%;
+    cursor: pointer;
   }
 
   .landing-course-container {
@@ -496,10 +493,7 @@ a .logo {
   .audiovisual-image {
     width: 100%;
     margin: 2% 0;
-  }
-
-  .audiovisual-image a {
-    width: 100%;
+    cursor: pointer;
   }
 
   .landing-course-container {
@@ -661,3 +655,4 @@ a .logo {
 .register-button-outside:hover {
   text-decoration: none !important;
 }
+
