@@ -146,9 +146,10 @@ from common.djangoapps.student.models import CourseEnrollment
 <main id="main" aria-label="Content" tabindex="-1">
     <div class="dashboard" id="dashboard-main">
       <div class="main-container">
-        <h1 class="landing-title">RedFID | Aprendizaje Profesional</h1>
+        <h1 class="landing-title">Aprendizaje Profesional</h1>
         <p class="landing-description">En este espacio tendrás la posibilidad de fortalecer tu aprendizaje profesional realizando cursos online y accediendo a distintos recursos, como talleres, webinars y cápsulas.</p>
         <div class="my-courses" id="my-courses" style="max-width: 1400px; margin: auto;">
+          <hr>
           % if display_dashboard_courses:
           <%include file="learner_dashboard/_dashboard_navigation_courses.html"/>
           % endif
@@ -236,7 +237,7 @@ from common.djangoapps.student.models import CourseEnrollment
                   <p class="custom-message">${empty_dashboard_message | n, decode.utf8}</p>
                 %endif
                 % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
-                  <a class="btn btn-primary" href="${marketing_link('COURSES')}">
+                  <a class="btn btn-primary" href="${marketing_link('COURSES')}" style="border: none !important; background-color: #eb947e !important;">
                     ${_("Explore courses")}
                   </a>
                 %endif
@@ -266,11 +267,11 @@ from common.djangoapps.student.models import CourseEnrollment
         </div>
         <h1 class="landing-subtitle">Material audiovisual</h1>
         <div class="audiovisual-container">
-          <div class="audiovisual-image">
-            <a href="#"><img src="https://www.redfid.cl/wp-content/uploads/2023/07/TW.png" style="width: 100%"></a>
+          <div id="talleres-image" class="audiovisual-image">
+            <img src="https://www.redfid.cl/wp-content/uploads/2023/07/TW.png" style="width: 100%">
           </div>
-          <div class="audiovisual-image">
-            <a href="#"><img src="https://www.redfid.cl/wp-content/uploads/2023/07/CP.png" style="width: 100%"></a>
+          <div id="capsulas-image" class="audiovisual-image">
+            <img src="https://www.redfid.cl/wp-content/uploads/2023/07/CP.png" style="width: 100%">
           </div>
         </div>
       </div>
@@ -324,6 +325,8 @@ from common.djangoapps.student.models import CourseEnrollment
           </div>
         % endif
       </div>
+    </div>
+    <div id="twc-main">
     </div>
 </main>
 
