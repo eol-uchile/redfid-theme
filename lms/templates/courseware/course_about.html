@@ -41,11 +41,11 @@ from six import string_types
         }
       } else if (xhr.status == 403) {
         $('#register_error').text(
-            (xhr.responseText ? xhr.responseText : "${_("An error has occurred. Please ensure that you are logged in to enroll.") | n, js_escaped_string}")
+            (xhr.responseText ? xhr.responseText : "Por favor inicie sesión para inscribirse en el curso.")
         ).css("display", "block");
       } else {
         $('#register_error').text(
-            (xhr.responseText ? xhr.responseText : "${_("An error occurred. Please try again later.") | n, js_escaped_string}")
+            (xhr.responseText ? xhr.responseText : "Ha ocurrido un error.")
         ).css("display", "block");
       }
     });
