@@ -42,7 +42,7 @@ from six import string_types
       } else if (xhr.status == 403) {
         $('#register_error').text(
             (xhr.responseText ? xhr.responseText : "Por favor inicie sesión para inscribirse en el curso.")
-        ).css("display", "block");
+        ).css("display", "block").css("background", "#40b4ba").css("border", "1px #40b4ba").css("font-weight", "bold");
       } else {
         $('#register_error').text(
             (xhr.responseText ? xhr.responseText : "Ha ocurrido un error.")

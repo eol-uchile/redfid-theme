@@ -655,6 +655,12 @@ a .logo {
   line-height: 1.2;
 }
 
+#register_error {
+  background:#40b4ba !important;
+  border:1px #40b4ba !important;
+  font-weight: bold !important;
+}
+
 .register-button-outside {
   max-width: 1400px !important;
   text-align: center;
