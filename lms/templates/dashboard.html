@@ -39,7 +39,8 @@ from common.djangoapps.student.models import CourseEnrollment
 </%block>
 
 <%block name="js_extra">
-  <script src="${static.url('js/talleres_capsulas_webinars.js')}"></script>
+  <script src="${static.url('js/talleres_y_webinars.js')}"></script>
+  <script src="${static.url('js/capsulas.js')}"></script>
   <script src="${static.url('js/commerce/credit.js')}"></script>
   <%static:js group='dashboard'/>
   <script type="text/javascript">
@@ -327,6 +328,8 @@ from common.djangoapps.student.models import CourseEnrollment
       </div>
     </div>
     <div id="twc-main">
+    </div>
+    <div id="capsulas-main">
     </div>
 </main>
 

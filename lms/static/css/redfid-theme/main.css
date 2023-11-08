@@ -685,6 +685,13 @@ a .logo {
 }
 
 @media screen and (min-width: 992px) {
+
+  #capsulas-main {
+    max-width: 1400px;
+    margin: auto;
+    padding: 20px;
+  }
+
   #twc-main {
     max-width: 1400px;
     margin: auto;
@@ -863,6 +870,13 @@ a .logo {
 }
 
 @media screen and (max-width: 991.98px) {
+
+  #capsulas-main {
+    max-width: 1400px;
+    margin: auto;
+    padding: 20px;
+  }
+
   #twc-main {
     max-width: 1400px;
     margin: auto;

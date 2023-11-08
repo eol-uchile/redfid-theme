@@ -1,18 +1,18 @@
 $(document).ready(function() {
     let display = getUrlParameter("display");
-    if (display === "1" || display === "2") {
+    if (display === "1") {
         let displayId = getUrlParameter("displayId");
         if (displayId == null || isNaN(parseInt(displayId))) {
-            showTalleresWebinarsCapsulas(display, 0);
+            showTalleresWebinars(display, 0);
         } else {
-            showTalleresWebinarsCapsulas(display, parseInt(displayId));
+            showTalleresWebinars(display, parseInt(displayId));
         }
     } else {
-        hideTalleresWebinarsCapsulas();
+        hideTalleresWebinars();
     }
 });
 
-function showTalleresWebinarsCapsulas(display, displayId) {
+function showTalleresWebinars(display, displayId) {
     $("#dashboard-main").hide();
     if (display === "1"){
         $.getJSON('https://static.redfid.cl/talleres/talleres.json', function(data){
@@ -24,30 +24,14 @@ function showTalleresWebinarsCapsulas(display, displayId) {
         }).fail(function(jqXHR, textStatus, errorThrown) {
             fillTalleres({"active": null, "default": null, "summarizedItems": []})
         });
-    } else {
-        $.getJSON('https://static.redfid.cl/capsulas/capsulas.json', function(data){
-            items = getAndClassifyItems(data, displayId);
-            if (displayId === 0 && items["defaultItem"] != null) {
-                setUrlParameter('displayId', items["defaultItem"]["id"]);
-            }
-            fillCapsulas(items);
-        }).fail(function(jqXHR, textStatus, errorThrown) {
-            fillTalleres({"active": null, "default": null, "summarizedItems": []})
-        });
     }
 }
 
-function hideTalleresWebinarsCapsulas() {
+function hideTalleresWebinars() {
     $("#twc-main").hide();
     $("#talleres-image").on("click", function(){
         var currentUrl = new URL(window.location.href);
         currentUrl.searchParams.set('display', "1");
-        currentUrl.searchParams.set('displayId', "0");
-        window.location.href = currentUrl.toString(); 
-    });
-    $("#capsulas-image").on("click", function(){
-        var currentUrl = new URL(window.location.href);
-        currentUrl.searchParams.set('display', "2");
         currentUrl.searchParams.set('displayId', "0");
         window.location.href = currentUrl.toString(); 
     });
@@ -125,82 +109,6 @@ function fillTalleres(items){
         } else {
             $(".twc-summary").append(`
                 <p class="twc-summary-empty-message">¡Próximamente más talleres y webinars!</p>
-            `);
-        }
-        $(".twc-container").show();
-        $(".twc-error-container").hide();
-    }
-}
-
-function fillCapsulas(items){
-    $("#twc-main").html(`
-    <a class="back-to-landing-button" href="/dashboard">
-        <i class="fa fa-arrow-left" aria-hidden="true"></i>
-        Volver a Aprendizaje Profesional
-    </a>
-    <h1 class="landing-title">Cápsulas</h1>
-    <p class="landing-description">Aquí podrás acceder a cápsulas con contenido pedagógico que puede resultar útil para tu formación docente.</p>
-    <hr>
-    <div class="twc-container">
-        <div class="twc-content">
-            <div class="twc-content-error-container" style="display: none;">
-                <p>La cápsula seleccionada no existe.</p>
-            </div>
-            <h1 class="twc-content-title"></h1>
-            <div class="twc-content-video-container"></div>
-            <div class="twc-content-subtitle-container"></div>
-            <p class="twc-content-description"></p>
-        </div>
-        <hr class="twc-mobile-separator">
-        <div class="twc-summary">
-        </div>
-    </div>
-    <div class="twc-error-container" style="display: none;">
-        <p>No hay cápsulas disponibles.</p>
-    </div>
-    `);
-    if (items.active == null && items.summarizedItems.length === 0){
-        $(".twc-container").hide();
-        $(".twc-error-container").show();
-    } else {
-        if (items.active == null){
-            $(".twc-content-error-container").show();
-        } else {
-            $(".twc-content-title").text(items.active.title);
-            var videoEmbed = `<iframe src="${convertToEmbedUrl(items.active.video_url)}" frameborder="0" allowfullscreen></iframe>`;
-            $(".twc-content-video-container").append(videoEmbed);
-            $(".twc-content-subtitle-container").append(`
-                <div class="twc-content-tag" style="background-color: #A5D6D9">${items.active.tag}</div>
-                <div class="twc-content-date">${items.active.date}</div>
-            `);
-            $(".twc-content-description").text(items.active.description);
-        }
-        if (items.summarizedItems.length !== 0) {
-            var first = true;
-            items.summarizedItems.sort((a, b) => b.priority - a.priority);
-            for(let item of items.summarizedItems) {
-                if (!first) {
-                    $(".twc-summary").append("<hr>")
-                }
-                first = false;
-                $(".twc-summary").append(`
-                    <h1 class="twc-summary-title">${item.title}</h1>
-                    <div class="twc-summary-image-container">
-                        <img src="${convertToThumbnailUrl(item.video_url)}" alt="${item.title}">
-                    </div>
-                    <div class="twc-summary-subtitle-container">
-                        <div class="twc-summary-tag" style="background-color: #A5D6D9">${item.tag}</div>
-                        <div class="twc-summary-date">${item.date}</div>
-                    </div>
-                    <p class="twc-summary-description">${item.description}</p>
-                    <div class="twc-summary-button-container">
-                        <a class="twc-summary-button" href="/dashboard?display=2&displayId=${item.id}" target="_self">Ver cápsula</a>
-                    </div>
-                `);
-            }
-        } else {
-            $(".twc-summary").append(`
-                <p class="twc-summary-empty-message">¡Próximamente más cápsulas!</p>
             `);
         }
         $(".twc-container").show();
