@@ -39,16 +39,13 @@ from lms.djangoapps.branding import api as branding_api
           <img class="logo" src="${enterprise_customer_link.get('logo')}" alt="${_('{name} Dashboard').format(name=enterprise_customer_link.get('name'))}"/>
         </a>
       % else:
-        <a href="/">
+        <a href="https://www.redfid.cl">
           <%block name="navigation_logo">
             <img  class="logo" src="${branding_api.get_logo_url(is_secure)}" alt="${_("{platform_name} Home Page").format(platform_name=static.get_platform_name())}"/>
           </%block>
         </a>
       % endif
     </h1>
-    <div class="mobile-nav-item url-link-header">
-        <a target="_self" href="https://www.redfid.cl/">Inicio</a>
-    </div>
     <div class="mobile-nav-item url-link-header url-link-header-selected">
         <a target="_self" href="/">Aprendizaje Profesional</a>
     </div>
@@ -56,7 +53,7 @@ from lms.djangoapps.branding import api as branding_api
         <a href="https://comunidades.redfid.cl/">Comunidades</a>
     </div>
     <div class="mobile-nav-item url-link-header">
-        <a href="#">Recursos</a>
+        <a href="https://recursos.redfid.cl/">Recursos</a>
     </div>
     <div class="secondary">
       <%include file="user_dropdown.html"/>
