@@ -727,6 +727,8 @@ a .logo {
 .back-to-landing-button {
   font-family: 'Avenir Regular' !important;
   font-size: 0.65rem !important;
+  display: block !important;
+  color: #40b4ba !important;
 }
 
 @media screen and (min-width: 992px) {
@@ -1208,9 +1210,8 @@ footer div.my-auto {
 
 .twc-create-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  max-width: 70%;
   margin: auto;
   font-family: 'Avenir Regular' !important;
 }
@@ -1221,4 +1222,33 @@ footer div.my-auto {
 
 .twc-create-capsula-input-container p {
   margin-bottom: 10px !important;
+}
+
+#twc-download-template {
+  padding: 20px 30px;
+  background-color: #eb947e;
+  color: white !important;
+  font-weight: bold !important;
+  font-family: 'Avenir Heavy' !important;
+  border-radius: 3px;
+  font-size: 1.3em !important;
+  text-decoration: none !important;
+}
+
+
+.twc-download-template-container {
+  text-align: center;
+  margin: 50px 0 !important;
+}
+
+.twc-download-instructions-container {
+  text-align: center !important;
+}
+
+.download-capsula-instructions {
+  color: #40b4ba !important;
+}
+
+.twc-mailto {
+  color: #40b4ba !important;
 }

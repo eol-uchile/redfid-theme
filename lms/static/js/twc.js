@@ -98,8 +98,8 @@ function fillCreateCapsula() {
     <hr>
     <div class="twc-create-container">
         <div class="twc-create-capsula-input-container">
-            <p>Tipo de cápsula:</p>
-            <select>
+            <p>Categoría de cápsula:</p>
+            <select id="twc-select-category">
                 <option value="waiting" disabled selected>Por favor seleccione una opción...</option>
                 <option value="rep">Estudio propio</option>
                 <option value="reo">Estudio realizado por otro</option>
@@ -110,14 +110,77 @@ function fillCreateCapsula() {
         </div>
         <div class="twc-create-capsula-input-container">
             <p>Institución asociada</p>
-            <select>
+            <select id="twc-select-institution">
                 <option value="waiting" disabled selected>Por favor seleccione una opción...</option>
-                <option value="uch">Universidad de Chile</option>
                 <option value="puc">Pontificia Universidad Católica de Chile</option>
+                <option value="pucv">Pontificia Universidad Católica de Valparaíso</option>
+                <option value="unach">Universidad Adventista de Chile</option>
+                <option value="uah">Universidad Alberto Hurtado</option>
+                <option value="unap">Universidad Arturo Prat</option>
+                <option value="uab">Universidad Autónoma de Barcelona</option>
+                <option value="ubo">Universidad Bernardo O'Higgins</option>
+                <option value="ucen">Universidad Central</option>
+                <option value="ucn">Universidad Católica del Norte</option>
+                <option value="ucsc">Universidad Católica de la Santísima Concepción</option>
+                <option value="uct">Universidad Católica de Temuco</option>
+                <option value="uda">Universidad de Atacama</option>
+                <option value="uch">Universidad de Chile</option>
+                <option value="udec">Universidad de Concepción</option>
+                <option value="umag">Universidad de Magallanes</option>
+                <option value="uoh">Universidad de O'Higgins</option>
+                <option value="usach">Universidad de Santiago de Chile</option>
+                <option value="utalca">Universidad de Talca</option>
+                <option value="uta">Universidad de Tarapacá</option>
+                <option value="ubb">Universidad del Biobío</option>
+                <option value="udd">Universidad del Desarrollo</option>
+                <option value="ufro">Universidad de la Frontera</option>
+                <option value="userena">Universidad de La Serena</option>
+                <option value="udla">Universidad de las Américas</option>
+                <option value="ula">Universidad de Los Lagos</option>
+                <option value="uft">Universidad Finnis Terrae</option>
+                <option value="umayor">Universidad Mayor</option>
+                <option value="umce">Universidad Metropolitana de Ciencias de la Educación</option>
+                <option value="uss">Universidad San Sebastián</option>
+                <option value="ust">Universidad Santo Tomas</option>
             </select>
         </div>
     </div>
+    <div class="twc-download-template-container">
+        <a id="twc-download-template" target="_self">
+            Descargar plantilla
+        </a>
+    </div>
+    <div class="twc-download-instructions-container">
+        <a class="download-capsula-instructions" href="https://static.redfid.cl/capsulas/CapsulasRedFID.pdf" download="">
+            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+            Instrucciones para grabación
+        </a>
+    </div>
+    <hr>
+    <p class="landing-description">
+        Una vez que la cápsula se encuentre lista, por favor envíela adjunta a <a class="twc-mailto" href="mailto:capsulas@redfid.cl">capsulas@redfid.cl</a> para que sea revisada. 
+        Tras ser aceptada por la administración, se le notificará por correo y se publicará la cápsula.
+    </p>
     `);
+    const categorySelect = document.querySelector('#twc-select-category');
+    const institutionSelect = document.querySelector('#twc-select-institution');
+    const downloadLink = document.querySelector('#twc-download-template');
+
+    function updateDownloadLink() {
+        const categoryValue = categorySelect.value;
+        const institutionValue = institutionSelect.value;
+        if (categoryValue !== 'waiting' && institutionValue !== 'waiting') {
+            downloadLink.disabled = false;
+            const institutionPart = institutionValue === 'other' ? 'any' : institutionValue;
+            downloadLink.href = `https://static.redfid.cl/capsulas/templates/${categoryValue.toUpperCase()}_${institutionPart.toUpperCase()}.ptox`;
+            downloadLink.setAttribute('download', '');
+        } else {
+            downloadLink.disabled = true;
+        }
+    }
+
+    categorySelect.addEventListener('change', updateDownloadLink);
+    institutionSelect.addEventListener('change', updateDownloadLink);
 
 }
 
