@@ -344,7 +344,7 @@ a .logo {
     text-align: left;
     font-weight: bolder;
     color: #646464;
-    margin: 0;
+    margin: auto;
   }
 
   .landing-subtitle {
@@ -503,7 +503,7 @@ a .logo {
     text-align: left;
     font-weight: bolder;
     color: #646464;
-    margin: 0;
+    margin: auto;
   }
 
   .landing-subtitle {
@@ -1200,4 +1200,25 @@ footer div.my-auto {
   border-radius: 3px;
   font-size: 1.3em !important;
   text-decoration: none !important;
+}
+
+#capsulas-title {
+  margin: 0 !important;
+}
+
+.twc-create-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 70%;
+  margin: auto;
+  font-family: 'Avenir Regular' !important;
+}
+
+.twc-create-container select {
+  font-family: 'Avenir Regular' !important;
+}
+
+.twc-create-capsula-input-container p {
+  margin-bottom: 10px !important;
 }

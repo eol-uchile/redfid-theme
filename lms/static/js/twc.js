@@ -86,11 +86,36 @@ function fillCreateCapsula() {
         <i class="fa fa-arrow-left" aria-hidden="true"></i>
         Volver a Aprendizaje Profesional
     </a>
+    <a class="back-to-landing-button" href="/dashboard?display=2">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        Volver a Cápsulas
+    </a>
     <h1 class="landing-title">Crear cápsula</h1>
-    <p class="landing-description">...</p>
+    <p class="landing-description">
+    Si deseas aportar con una cápsula a la comunidad RedFID, por favor seleccione una categoría y la institución asociada. Se le proporcionará una plantilla de 
+    PowerPoint, sobre la cual podrá armar su cápsula, y un documento con instrucciones para realizar la grabación.
+    </p>
     <hr>
-    <div class="twc-container">
-
+    <div class="twc-create-container">
+        <div class="twc-create-capsula-input-container">
+            <p>Tipo de cápsula:</p>
+            <select>
+                <option value="waiting" disabled selected>Por favor seleccione una opción...</option>
+                <option value="rep">Estudio propio</option>
+                <option value="reo">Estudio realizado por otro</option>
+                <option value="rhii">Habilidades para la innovación e investigación</option>
+                <option value="reac">Elementos a considerar para enseñar algo</option>
+                <option value="rap">Actividad pedagógica</option>
+            </select>
+        </div>
+        <div class="twc-create-capsula-input-container">
+            <p>Institución asociada</p>
+            <select>
+                <option value="waiting" disabled selected>Por favor seleccione una opción...</option>
+                <option value="uch">Universidad de Chile</option>
+                <option value="puc">Pontificia Universidad Católica de Chile</option>
+            </select>
+        </div>
     </div>
     `);
 
@@ -180,7 +205,7 @@ function fillCapsulas(items){
         Volver a Aprendizaje Profesional
     </a>
     <div class="twc-title-container">
-        <h1 class="landing-title">Cápsulas</h1>
+        <h1 id="capsulas-title" class="landing-title">Cápsulas</h1>
         <a class="create-capsula-button" href="/dashboard?display=3" target="_self">Crear cápsula</a>
     </div>
     <p class="landing-description">Aquí podrás acceder a cápsulas con contenido pedagógico que puede resultar útil para tu formación docente.</p>
