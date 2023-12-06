@@ -91,6 +91,7 @@ function fillTalleres(items){
                 <p>El taller o webinar seleccionado no existe.</p>
             </div>
             <h1 class="twc-content-title"></h1>
+            <div class="twc-content-date"></div>
             <div class="twc-content-video-container"></div>
             <div class="twc-content-subtitle-container"></div>
             <p class="twc-content-description"></p>
@@ -112,11 +113,11 @@ function fillTalleres(items){
             $(".twc-content-error-container").show();
         } else {
             $(".twc-content-title").text(items.active.title);
+            $(".twc-content-date").text(items.active.date);
             var videoEmbed = `<iframe src="${convertToEmbedUrl(items.active.video_url)}" frameborder="0" allowfullscreen></iframe>`;
             $(".twc-content-video-container").append(videoEmbed);
             $(".twc-content-subtitle-container").append(`
                 <div class="twc-content-tag" style="background-color: ${items.active.kind === "taller" ? "#A5D6D9" : "#eb947e6e"};">${items.active.kind}</div>
-                <div class="twc-content-date">${items.active.date}</div>
             `);
             $(".twc-content-description").text(items.active.description);
             $(".twc-content-exposes").text(items.active.exposes);
@@ -131,12 +132,12 @@ function fillTalleres(items){
                 first = false;
                 $(".twc-summary").append(`
                     <h1 class="twc-summary-title">${item.title}</h1>
+                    <div class="twc-summary-date">${item.date}</div>
                     <div class="twc-summary-image-container">
                         <a href="/dashboard?display=1&displayId=${item.id}" target="_self"><img src="${convertToThumbnailUrl(item.video_url)}" alt="${item.title}"></a>
                     </div>
                     <div class="twc-summary-subtitle-container">
                         <div class="twc-summary-tag" style="background-color: ${item.kind === "taller" ? "#A5D6D9" : "#eb947e6e"};">${item.kind}</div>
-                        <div class="twc-summary-date">${item.date}</div>
                     </div>
                     <p class="twc-summary-description">${item.description}</p>
                     <p class="twc-summary-exposes">${item.exposes}</p>
@@ -158,7 +159,10 @@ function fillCapsulas(items){
         <i class="fa fa-arrow-left" aria-hidden="true"></i>
         Volver a Aprendizaje Profesional
     </a>
-    <h1 class="landing-title">Cápsulas</h1>
+    <div class="twc-title-container">
+        <h1 class="landing-title">Cápsulas</h1>
+        <a class="create-capsula-button" href="/dashboard?display=3" target="_self">Crear cápsula</a>
+    </div>
     <p class="landing-description">Aquí podrás acceder a cápsulas con contenido pedagógico que puede resultar útil para tu formación docente.</p>
     <hr>
     <div class="twc-container">
@@ -167,6 +171,7 @@ function fillCapsulas(items){
                 <p>La cápsula seleccionada no existe.</p>
             </div>
             <h1 class="twc-content-title"></h1>
+            <div class="twc-content-date"></div>
             <div class="twc-content-video-container"></div>
             <div class="twc-content-subtitle-container"></div>
             <p class="twc-content-description"></p>
@@ -187,11 +192,11 @@ function fillCapsulas(items){
             $(".twc-content-error-container").show();
         } else {
             $(".twc-content-title").text(items.active.title);
+            $(".twc-content-title").text(items.active.date);
             var videoEmbed = `<iframe src="${convertToEmbedUrl(items.active.video_url)}" frameborder="0" allowfullscreen></iframe>`;
             $(".twc-content-video-container").append(videoEmbed);
             $(".twc-content-subtitle-container").append(`
             <div class="twc-content-tag" style="background-color: ${CAPSULAS[items.active.kind]["color"]};">${CAPSULAS[items.active.kind]["name"]}</div>
-                <div class="twc-content-date">${items.active.date}</div>
             `);
             $(".twc-content-description").text(items.active.description);
         }
@@ -210,7 +215,7 @@ function fillCapsulas(items){
                         <a href="/dashboard?display=2&displayId=${item.id}" target="_self"><img src="${convertToThumbnailUrl(item.video_url)}" alt="${item.title}"></a>
                     </div>
                     <div class="twc-summary-subtitle-container">
-                        <div class="twc-summary-tag" style="background-color: #A5D6D9">${item.tag}</div>
+                        <div class="twc-summary-tag" style="background-color: ${CAPSULAS[item.kind]["color"]};">${CAPSULAS[item.kind]["name"]}</div>
                     </div>
                     <p class="twc-summary-description">${item.description}</p>
                 `);

@@ -344,7 +344,7 @@ a .logo {
     text-align: left;
     font-weight: bolder;
     color: #646464;
-    margin: auto;
+    margin: 0;
   }
 
   .landing-subtitle {
@@ -503,7 +503,7 @@ a .logo {
     text-align: left;
     font-weight: bolder;
     color: #646464;
-    margin: auto;
+    margin: 0;
   }
 
   .landing-subtitle {
@@ -813,7 +813,8 @@ a .logo {
     padding: 10px 20px;
     border-radius: 3px;
     display: inline-block;
-    
+    width: fit-content;
+    color: white;
   }
   
   .twc-content-tag::first-letter {
@@ -864,13 +865,12 @@ a .logo {
   
   .twc-summary-tag {
     font-family: 'Avenir Regular';
-    margin-right: 20px;
-    margin-top: 10px;
     padding: 10px 20px;
     border-radius: 3px;
     font-size: 12px;
     width: fit-content;
     display: inline-block;
+    color: white;
   }
   
   .twc-summary-tag::first-letter {
@@ -1013,6 +1013,8 @@ a .logo {
     padding: 10px 20px;
     border-radius: 3px;
     display: inline-block;
+    width: fit-content;
+    color: white;
   }
   
   .twc-content-tag::first-letter {
@@ -1048,13 +1050,12 @@ a .logo {
   
   .twc-summary-tag {
     font-family: 'Avenir Regular';
-    margin-right: 20px;
-    margin-top: 10px;
     padding: 10px 20px;
     border-radius: 3px;
     font-size: 12px;
     width: fit-content;
     display: inline-block;
+    color: white;
   }
   
   .twc-summary-tag::first-letter {
@@ -1186,4 +1187,21 @@ footer div.my-auto {
 .global-header {
   box-shadow: 0px 6px 4px -4px #cccccc !important;
   padding-bottom: 0 !important;
+}
+
+.twc-title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.create-capsula-button {
+  padding: 20px 30px;
+  background-color: #eb947e;
+  color: white;
+  font-weight: bold;
+  font-family: 'Avenir Heavy';
+  border-radius: 3px;
+  font-size: 1.3em;
+  text-decoration: none;
 }
