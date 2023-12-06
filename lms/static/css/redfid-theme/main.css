@@ -92,6 +92,11 @@
     margin: 0 !important;
   }
 
+  .global-header .header-logo a .logo {
+    height: 60px !important;
+    width: auto !important;
+  }
+
   .main-header {
     max-width: 1400px;
     margin: auto;
@@ -128,6 +133,7 @@
     color: black;
     background: white;
     font-weight: bold;
+    font-size: 0.9em;
   }
 
   .url-link-header:hover {
@@ -185,6 +191,7 @@
     color: black;
     background: white;
     font-weight: bold;
+    font-size: 0.9em;
   }
 
   .url-link-header:hover {
@@ -206,7 +213,7 @@
   .url-link-header>a {
     /* padding: 30px; */
     position: relative;
-    margin: 15px;
+    padding: 15px;
     /* color: white; */
     text-decoration: none !important;
     color: #40b4ba !important;
@@ -241,6 +248,7 @@
     color: black;
     background: white;
     font-weight: bold;
+    font-size: 0.9em;
   }
 
   .url-link-header:hover {
@@ -783,6 +791,7 @@ a .logo {
     font-weight: bolder !important;
     color: #40b4ba;
     font-size: 1.6rem !important;
+    margin-bottom: 0 !important;
   }
   
   .twc-content-description {
@@ -795,17 +804,16 @@ a .logo {
   }
   
   .twc-content-subtitle-container {
-    display: flex;
-    overflow: auto;
-    align-items: center;
+    text-align: right;
   }
   
   .twc-content-tag {
     font-family: 'Avenir Regular';
-    margin-right: 20px;
     margin-top: 10px;
     padding: 10px 20px;
     border-radius: 3px;
+    display: inline-block;
+    
   }
   
   .twc-content-tag::first-letter {
@@ -814,19 +822,15 @@ a .logo {
   
   .twc-content-date {
     font-family: 'Avenir Regular';
-    margin-top: 10px;
-    margin-left: auto;
-    padding-left: 5px;
-    padding-right: 5px;
+    margin: 10px 0;
     font-weight: bold;
     border-radius: 3px;
     color: #646464;
+    text-align: right;
   }
   
   .twc-summary-subtitle-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    text-align: right;
   }
   
   .twc-summary-empty-message {
@@ -854,7 +858,7 @@ a .logo {
     text-align: justify;
     font-weight: bolder !important;
     color: #40b4ba;
-    font-size: 1.0rem !important;
+    font-size: 20px !important;
     margin-bottom: 0 !important;
   }
   
@@ -864,6 +868,9 @@ a .logo {
     margin-top: 10px;
     padding: 10px 20px;
     border-radius: 3px;
+    font-size: 12px;
+    width: fit-content;
+    display: inline-block;
   }
   
   .twc-summary-tag::first-letter {
@@ -872,13 +879,11 @@ a .logo {
   
   .twc-summary-date {
     font-family: 'Avenir Regular';
-    margin-top: 10px;
-    margin-left: auto;
-    padding-left: 5px;
-    padding-right: 5px;
     font-weight: bold;
     border-radius: 3px;
     color: #646464;
+    text-align: right;
+    font-size: 12px;
   }
   
   .twc-summary-image-container {
@@ -891,11 +896,12 @@ a .logo {
   }
   
   .twc-summary-description {
-    margin: 10px auto;
+    margin: 10px auto 25px auto;
     text-align: justify;
     max-width: 1400px;
     line-height: 1.5;
     color: #646464;
+    font-size: 14px;
   }
   
   .twc-summary-button-container {
@@ -942,9 +948,8 @@ a .logo {
   }
   
   .twc-summary {
-    width: 80%;
+    width: 100%;
     margin: auto;
-    padding: 10px;
   }
   
   .twc-error-container {
@@ -986,6 +991,7 @@ a .logo {
     font-weight: bolder !important;
     color: #40b4ba;
     font-size: 1.6rem !important;
+    margin-bottom: 0 !important;
   }
   
   .twc-content-description {
@@ -998,17 +1004,15 @@ a .logo {
   }
   
   .twc-content-subtitle-container {
-    display: flex;
-    overflow: auto;
-    align-items: center;
+    text-align: right;
   }
   
   .twc-content-tag {
     font-family: 'Avenir Regular';
-    margin-right: 20px;
     margin-top: 10px;
     padding: 10px 20px;
     border-radius: 3px;
+    display: inline-block;
   }
   
   .twc-content-tag::first-letter {
@@ -1017,19 +1021,15 @@ a .logo {
   
   .twc-content-date {
     font-family: 'Avenir Regular';
-    margin-top: 10px;
-    margin-left: auto;
-    padding-left: 5px;
-    padding-right: 5px;
+    margin: 10px 0;
     font-weight: bold;
     border-radius: 3px;
     color: #646464;
+    text-align: right;
   }
   
   .twc-summary-subtitle-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    text-align: right;
   }
   
   .twc-summary-empty-message {
@@ -1042,7 +1042,7 @@ a .logo {
     text-align: justify;
     font-weight: bolder !important;
     color: #40b4ba;
-    font-size: 1.0rem !important;
+    font-size: 20px !important;
     margin-bottom: 0 !important;
   }
   
@@ -1052,6 +1052,9 @@ a .logo {
     margin-top: 10px;
     padding: 10px 20px;
     border-radius: 3px;
+    font-size: 12px;
+    width: fit-content;
+    display: inline-block;
   }
   
   .twc-summary-tag::first-letter {
@@ -1067,13 +1070,11 @@ a .logo {
   
   .twc-summary-date {
     font-family: 'Avenir Regular';
-    margin-top: 10px;
-    margin-left: auto;
-    padding-left: 5px;
-    padding-right: 5px;
     font-weight: bold;
     border-radius: 3px;
     color: #646464;
+    text-align: right;
+    font-size: 12px;
   }
   
   .twc-summary-image-container {
@@ -1086,11 +1087,12 @@ a .logo {
   }
   
   .twc-summary-description {
-    margin: 10px auto;
+    margin: 10px auto 25px auto;
     text-align: justify;
     max-width: 1400px;
     line-height: 1.5;
     color: #646464;
+    font-size: 14px;
   }
   
   .twc-summary-button-container {
@@ -1115,6 +1117,8 @@ a .logo {
 .footer-text {
   color: #646464;
   font-size: 0.9em !important;
+  margin: 8px auto !important;
+  width: 80% !important;
 }
 
 a.footer-text {
@@ -1173,4 +1177,13 @@ footer div.my-auto {
 
 .redfid-enroll-button {
   font-family: 'Avenir Heavy' !important;
+}
+
+#dashboard-main .main-container {
+  padding: 10px 20px !important;
+}
+
+.global-header {
+  box-shadow: 0px 6px 4px -4px #cccccc !important;
+  padding-bottom: 0 !important;
 }

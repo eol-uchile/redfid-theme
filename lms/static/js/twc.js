@@ -12,6 +12,29 @@ $(document).ready(function() {
     }
 });
 
+CAPSULAS = {
+    "rep": {
+        "color": "#e36a5b",
+        "name": "Estudio propio"
+    },
+    "reo": {
+        "color": "#7783dc",
+        "name": "Estudio realizado por otro"
+    },
+    "rhii": {
+        "color": "#83cce5",
+        "name": "Habilidad de innovación o investigación"
+    },
+    "reac": {
+        "color": "#b282dc",
+        "name": "Elementos a considerar para enseñar algo"
+    },
+    "rap": {
+        "color": "#e1d883",
+        "name": "Actividad pedagógica"
+    }
+}
+
 function showTalleresWebinarsCapsulas(display, displayId) {
     $("#dashboard-main").hide();
     if (display === "1"){
@@ -109,7 +132,7 @@ function fillTalleres(items){
                 $(".twc-summary").append(`
                     <h1 class="twc-summary-title">${item.title}</h1>
                     <div class="twc-summary-image-container">
-                        <img src="${convertToThumbnailUrl(item.video_url)}" alt="${item.title}">
+                        <a href="/dashboard?display=1&displayId=${item.id}" target="_self"><img src="${convertToThumbnailUrl(item.video_url)}" alt="${item.title}"></a>
                     </div>
                     <div class="twc-summary-subtitle-container">
                         <div class="twc-summary-tag" style="background-color: ${item.kind === "taller" ? "#A5D6D9" : "#eb947e6e"};">${item.kind}</div>
@@ -117,9 +140,6 @@ function fillTalleres(items){
                     </div>
                     <p class="twc-summary-description">${item.description}</p>
                     <p class="twc-summary-exposes">${item.exposes}</p>
-                    <div class="twc-summary-button-container">
-                        <a class="twc-summary-button" href="/dashboard?display=1&displayId=${item.id}" target="_self">Ver ${item.kind}</a>
-                    </div>
                 `);
             }
         } else {
@@ -170,7 +190,7 @@ function fillCapsulas(items){
             var videoEmbed = `<iframe src="${convertToEmbedUrl(items.active.video_url)}" frameborder="0" allowfullscreen></iframe>`;
             $(".twc-content-video-container").append(videoEmbed);
             $(".twc-content-subtitle-container").append(`
-                <div class="twc-content-tag" style="background-color: #A5D6D9">${items.active.tag}</div>
+            <div class="twc-content-tag" style="background-color: ${CAPSULAS[items.active.kind]["color"]};">${CAPSULAS[items.active.kind]["name"]}</div>
                 <div class="twc-content-date">${items.active.date}</div>
             `);
             $(".twc-content-description").text(items.active.description);
@@ -185,17 +205,14 @@ function fillCapsulas(items){
                 first = false;
                 $(".twc-summary").append(`
                     <h1 class="twc-summary-title">${item.title}</h1>
+                    <div class="twc-summary-date">${item.date}</div>
                     <div class="twc-summary-image-container">
-                        <img src="${convertToThumbnailUrl(item.video_url)}" alt="${item.title}">
+                        <a href="/dashboard?display=2&displayId=${item.id}" target="_self"><img src="${convertToThumbnailUrl(item.video_url)}" alt="${item.title}"></a>
                     </div>
                     <div class="twc-summary-subtitle-container">
                         <div class="twc-summary-tag" style="background-color: #A5D6D9">${item.tag}</div>
-                        <div class="twc-summary-date">${item.date}</div>
                     </div>
                     <p class="twc-summary-description">${item.description}</p>
-                    <div class="twc-summary-button-container">
-                        <a class="twc-summary-button" href="/dashboard?display=2&displayId=${item.id}" target="_self">Ver cápsula</a>
-                    </div>
                 `);
             }
         } else {
