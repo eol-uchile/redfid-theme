@@ -1,6 +1,6 @@
 $(document).ready(function() {
     let display = getUrlParameter("display");
-    if (display === "1" || display === "2") {
+    if (display === "1" || display === "2" || display === "3") {
         let displayId = getUrlParameter("displayId");
         if (displayId == null || isNaN(parseInt(displayId))) {
             showTalleresWebinarsCapsulas(display, 0);
@@ -45,9 +45,9 @@ function showTalleresWebinarsCapsulas(display, displayId) {
             }
             fillTalleres(items);
         }).fail(function(jqXHR, textStatus, errorThrown) {
-            fillTalleres({"active": null, "default": null, "summarizedItems": []})
+            fillTalleres({"active": null, "default": null, "summarizedItems": []});
         });
-    } else {
+    } else if (display === "2") {
         $.getJSON('https://static.redfid.cl/capsulas/capsulas.json', function(data){
             items = getAndClassifyItems(data, displayId);
             if (displayId === 0 && items["defaultItem"] != null) {
@@ -55,8 +55,12 @@ function showTalleresWebinarsCapsulas(display, displayId) {
             }
             fillCapsulas(items);
         }).fail(function(jqXHR, textStatus, errorThrown) {
-            fillTalleres({"active": null, "default": null, "summarizedItems": []})
+            fillCapsulas({"active": null, "default": null, "summarizedItems": []});
         });
+    } else if (display === "3") {
+        fillCreateCapsula()
+    } else {
+        window.location.href = "/dashboard";
     }
 }
 
@@ -74,6 +78,22 @@ function hideTalleresWebinarsCapsulas() {
         currentUrl.searchParams.set('displayId', "0");
         window.location.href = currentUrl.toString(); 
     });
+}
+
+function fillCreateCapsula() {
+    $("#twc-main").html(`
+    <a class="back-to-landing-button" href="/dashboard">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        Volver a Aprendizaje Profesional
+    </a>
+    <h1 class="landing-title">Crear cápsula</h1>
+    <p class="landing-description">...</p>
+    <hr>
+    <div class="twc-container">
+
+    </div>
+    `);
+
 }
 
 function fillTalleres(items){
@@ -192,7 +212,7 @@ function fillCapsulas(items){
             $(".twc-content-error-container").show();
         } else {
             $(".twc-content-title").text(items.active.title);
-            $(".twc-content-title").text(items.active.date);
+            $(".twc-content-date").text(items.active.date);
             var videoEmbed = `<iframe src="${convertToEmbedUrl(items.active.video_url)}" frameborder="0" allowfullscreen></iframe>`;
             $(".twc-content-video-container").append(videoEmbed);
             $(".twc-content-subtitle-container").append(`
