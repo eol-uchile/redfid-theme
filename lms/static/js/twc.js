@@ -7,6 +7,8 @@ $(document).ready(function() {
         } else {
             showTalleresWebinarsCapsulas(display, parseInt(displayId));
         }
+    } else if (display === "100") {
+        showVideoCurso(displayId);
     } else {
         hideTalleresWebinarsCapsulas();
     }
@@ -32,6 +34,32 @@ CAPSULAS = {
     "rap": {
         "color": "#e1d883",
         "name": "Actividad pedagógica"
+    }
+}
+
+function showVideoCurso(displayId) {
+    $("#dashboard-main").hide();
+    const ipd = [
+        "redfid+MODULO1REDFID+2022",
+        "redfid+REDFID_IPD_ELEAR_SLF_02+2023_2"
+    ];
+    if (ipd.includes(displayId)) {
+        $("#twc-main").html(`
+            <a class="back-to-landing-button" href="/dashboard">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                Volver a Aprendizaje Profesional
+            </a>
+            <h1 class="landing-title">Indagación de la Práctica Docente</h1>
+            <p class="landing-description">En este curso...</p>
+            <div class="ipd-video-iframe">
+                <iframe src="https://www.youtube.com/embed/0LftVNmm5us" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            </div>
+            <div>
+                <a class="ipd-video-register" href="/courses/course-v1:${ipd[ipd.length-1]}/about" target="_self">¡Quiero inscribirme!</a>
+            </div>
+        `);
+    } else {
+        window.location.href = "/dashboard";
     }
 }
 
@@ -112,6 +140,7 @@ function fillCreateCapsula() {
             <p>Institución asociada</p>
             <select id="twc-select-institution">
                 <option value="waiting" disabled selected>Por favor seleccione una opción...</option>
+                <option value="other">Otra/Mútliples</option>
                 <option value="puc">Pontificia Universidad Católica de Chile</option>
                 <option value="pucv">Pontificia Universidad Católica de Valparaíso</option>
                 <option value="unach">Universidad Adventista de Chile</option>
