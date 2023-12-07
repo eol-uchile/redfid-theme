@@ -1,7 +1,7 @@
 $(document).ready(function() {
     let display = getUrlParameter("display");
+    let displayId = getUrlParameter("displayId");
     if (display === "1" || display === "2" || display === "3") {
-        let displayId = getUrlParameter("displayId");
         if (displayId == null || isNaN(parseInt(displayId))) {
             showTalleresWebinarsCapsulas(display, 0);
         } else {
