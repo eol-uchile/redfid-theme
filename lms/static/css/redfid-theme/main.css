@@ -1270,7 +1270,7 @@ footer div.my-auto {
 
 .ipd-video-register-link-container {
   text-align: center;
-  margin-top: 20px;
+  margin: 50px;
 }
 
 .ipd-video-register-link-container a {
@@ -1288,6 +1288,20 @@ footer div.my-auto {
 }
 
 .multiple-institutions-warning-container p {
+  font-family: 'Avenir Regular' !important;
+  color: white !important;
+  text-align: center !important;
+}
+
+.download-link-warning-container {
+  margin: 25px 0;
+  background-color: #e57373;
+  padding: 20px;
+  border-radius: 3px;
+  display: none;
+}
+
+.download-link-warning-container p {
   font-family: 'Avenir Regular' !important;
   color: white !important;
   text-align: center !important;

@@ -59,7 +59,7 @@ function showVideoCurso(displayId) {
             <div class="ipd-video-iframe">
                 <iframe src="https://www.youtube.com/embed/0LftVNmm5us" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
             </div>
-            <div>
+            <div class="ipd-video-register-link-container">
                 <a class="ipd-video-register" href="/courses/course-v1:${ipd[ipd.length-1]}/about" target="_self">¡Quiero inscribirme!</a>
             </div>
         `);
@@ -193,6 +193,9 @@ function fillCreateCapsula() {
     <div class="multiple-institutions-warning-container">
         <p>Ha seleccionado como institución asociada 'Otra/Múltiples'. Deberá incluir manualmente los logotipos de las instituciones en la diapositiva de portada de la cápsula.</p>
     </div>
+    <div class="download-link-warning-container">
+        <p>Por favor, seleccione una categoría y una institución antes de descargar la plantilla.</p>
+    </div>
     <hr>
     <p class="landing-description">
         Una vez que la cápsula se encuentre lista, por favor envíela adjunta a <a class="twc-mailto" href="mailto:capsulas@redfid.cl">capsulas@redfid.cl</a> para que sea revisada. 
@@ -202,11 +205,13 @@ function fillCreateCapsula() {
     const categorySelect = document.querySelector('#twc-select-category');
     const institutionSelect = document.querySelector('#twc-select-institution');
     const downloadLink = document.querySelector('#twc-download-template');
+    const downloadLinkWarningContainer = document.querySelector('.download-link-warning-container');
 
     function updateDownloadLink() {
         const categoryValue = categorySelect.value;
         const institutionValue = institutionSelect.value;
         const warningContainer = document.querySelector('.multiple-institutions-warning-container');
+        downloadLinkWarningContainer.style.display = 'none';
         if (institutionValue === 'other') {
             warningContainer.style.display = 'block';
         } else {
@@ -222,9 +227,15 @@ function fillCreateCapsula() {
         }
     }
 
+    downloadLink.addEventListener('click', function(event) {
+        if (!downloadLink.getAttribute('href')) {
+            event.preventDefault(); // Prevent default action if href is not valid
+            downloadLinkWarningContainer.style.display = 'block';
+        }
+    });
+
     categorySelect.addEventListener('change', updateDownloadLink);
     institutionSelect.addEventListener('change', updateDownloadLink);
-
 }
 
 function fillTalleres(items){
