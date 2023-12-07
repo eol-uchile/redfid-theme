@@ -11,8 +11,10 @@ $(document).ready(function() {
         } else if (display === "100") {
             showVideoCurso(displayId);
         } else {
-            window.location.href = "/dashboard";
+            hideTalleresWebinarsCapsulas();
         }
+    } else {
+        hideTalleresWebinarsCapsulas();
     }
 });
 
@@ -72,6 +74,9 @@ function showVideoCurso(displayId) {
                 Volver a Aprendizaje Profesional
             </a>
             <h1 class="landing-title">Este curso no posee vídeo promocional.</h1>
+            <div class="ipd-video-register-link-container">
+                <a class="ipd-video-register" href="/courses/course-v1:${displayId}/about" target="_self">¡Quiero inscribirme!</a>
+            </div>
         `);
     }
 }
@@ -103,6 +108,22 @@ function showTalleresWebinarsCapsulas(display, displayId) {
     } else {
         window.location.href = "/dashboard";
     }
+}
+
+function hideTalleresWebinarsCapsulas() {
+    $("#twc-main").hide();
+    $("#talleres-image").on("click", function(){
+        var currentUrl = new URL(window.location.href);
+        currentUrl.searchParams.set('display', "1");
+        currentUrl.searchParams.set('displayId', "0");
+        window.location.href = currentUrl.toString(); 
+    });
+    $("#capsulas-image").on("click", function(){
+        var currentUrl = new URL(window.location.href);
+        currentUrl.searchParams.set('display', "2");
+        currentUrl.searchParams.set('displayId', "0");
+        window.location.href = currentUrl.toString(); 
+    });
 }
 
 function fillCreateCapsula() {

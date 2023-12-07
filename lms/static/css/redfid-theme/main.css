@@ -640,6 +640,7 @@ a .logo {
   box-shadow: inset 0 0 0 0 !important;
   text-shadow: 0 0 !important;
   font-weight: bolder !important;
+  border-color: #646464 !important;
 }
 
 .course-target-link.enter-course {
@@ -1176,6 +1177,7 @@ footer div.my-auto {
 
 .course-profile .heading-group h1 {
   font-family: 'Avenir Heavy' !important;
+  color: #646464 !important;
 }
 
 .redfid-enroll-button {
@@ -1309,4 +1311,17 @@ footer div.my-auto {
   font-family: 'Avenir Regular' !important;
   color: white !important;
   text-align: center !important;
+}
+
+.course-profile {
+  border-bottom: none !important;
+}
+
+.course-profile .intro-inner-wrapper {
+  border: none !important;
+}
+
+.course-info .container .details {
+  font-family: 'Avenir Regular' !important;
+  text-align: justify !important;
 }

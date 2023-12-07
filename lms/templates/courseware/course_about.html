@@ -15,6 +15,11 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
 from six import string_types
 %>
 
+<%
+  course_identifier = course_target.split("/")[2]
+  course_url_video = course_identifier.split(":")[1]
+%>
+
 <%inherit file="../main.html" />
 <%block name="headextra">
   ## OG (Open Graph) title and description added below to give social media info to display
@@ -142,6 +147,13 @@ from six import string_types
   </%block>
 
   <div class="container">
+    <div class="">
+      % if user.is_authenticated and registered:
+        <a href="/dashboard?display=100&displayId=${course_url_video}" target="_self">Ver vídeo promocional</a>
+      % else:
+        <a href="/?display=100&displayId=${course_url_video}" target="_self">Ver vídeo promocional</a>
+      % endif
+    </div>
 
     <%block name="course_about_details">
     <div class="details">
