@@ -13,8 +13,6 @@ $(document).ready(function() {
         } else {
             window.location.href = "/dashboard";
         }
-    } else {
-        window.location.href = "/dashboard";
     }
 });
 
