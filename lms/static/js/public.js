@@ -1,15 +1,17 @@
 $(document).ready(function() {
     let display = getUrlParameter("display");
     let displayId = getUrlParameter("displayId");
-    if (display === "100") {
-        showVideoCurso(displayId);
-    } else {
-        window.location.href = "/";
+    if (display != null){
+        if (display === "100") {
+            showVideoCurso(displayId);
+        } else {
+            window.location.href = "/";
+        }
     }
 });
 
 function showVideoCurso(displayId) {
-    $("#dashboard-main").hide();
+    $("section.home").hide();
     const ipd = [
         "redfid+MODULO1REDFID+2022",
         "redfid+REDFID_IPD_ELEAR_SLF_02+2023_2"
@@ -35,7 +37,13 @@ function showVideoCurso(displayId) {
             </div>
         `);
     } else {
-        window.location.href = "/";
+        $("#twc-main").html(`
+            <a class="back-to-landing-button" href="/">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                Volver a Aprendizaje Profesional
+            </a>
+            <h1 class="landing-title">Este curso no posee vídeo promocional.</h1>
+        `);
     }
 }
 

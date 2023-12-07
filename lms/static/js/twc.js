@@ -1,16 +1,20 @@
 $(document).ready(function() {
     let display = getUrlParameter("display");
     let displayId = getUrlParameter("displayId");
-    if (display === "1" || display === "2" || display === "3") {
-        if (displayId == null || isNaN(parseInt(displayId))) {
-            showTalleresWebinarsCapsulas(display, 0);
+    if (display != null) {
+        if (display === "1" || display === "2" || display === "3") {
+            if (displayId == null || isNaN(parseInt(displayId))) {
+                showTalleresWebinarsCapsulas(display, 0);
+            } else {
+                showTalleresWebinarsCapsulas(display, parseInt(displayId));
+            }
+        } else if (display === "100") {
+            showVideoCurso(displayId);
         } else {
-            showTalleresWebinarsCapsulas(display, parseInt(displayId));
+            window.location.href = "/dashboard";
         }
-    } else if (display === "100") {
-        showVideoCurso(displayId);
     } else {
-        hideTalleresWebinarsCapsulas();
+        window.location.href = "/dashboard";
     }
 });
 
@@ -64,7 +68,13 @@ function showVideoCurso(displayId) {
             </div>
         `);
     } else {
-        window.location.href = "/dashboard";
+        $("#twc-main").html(`
+            <a class="back-to-landing-button" href="/dashboard">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                Volver a Aprendizaje Profesional
+            </a>
+            <h1 class="landing-title">Este curso no posee vídeo promocional.</h1>
+        `);
     }
 }
 
@@ -95,22 +105,6 @@ function showTalleresWebinarsCapsulas(display, displayId) {
     } else {
         window.location.href = "/dashboard";
     }
-}
-
-function hideTalleresWebinarsCapsulas() {
-    $("#twc-main").hide();
-    $("#talleres-image").on("click", function(){
-        var currentUrl = new URL(window.location.href);
-        currentUrl.searchParams.set('display', "1");
-        currentUrl.searchParams.set('displayId', "0");
-        window.location.href = currentUrl.toString(); 
-    });
-    $("#capsulas-image").on("click", function(){
-        var currentUrl = new URL(window.location.href);
-        currentUrl.searchParams.set('display', "2");
-        currentUrl.searchParams.set('displayId', "0");
-        window.location.href = currentUrl.toString(); 
-    });
 }
 
 function fillCreateCapsula() {
