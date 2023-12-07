@@ -1267,3 +1267,28 @@ footer div.my-auto {
   width: 100%; 
   height: 100%;
 }
+
+.ipd-video-register-link-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.ipd-video-register-link-container a {
+  color: #40b4ba !important;
+  font-size: 1.5em !important;
+  font-family: 'Avenir Regular' !important;
+}
+
+.multiple-institutions-warning-container {
+  margin: 25px 0;
+  background-color: #e57373;
+  padding: 20px;
+  border-radius: 3px;
+  display: none;
+}
+
+.multiple-institutions-warning-container p {
+  font-family: 'Avenir Regular' !important;
+  color: white !important;
+  text-align: center !important;
+}

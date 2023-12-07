@@ -50,7 +50,12 @@ function showVideoCurso(displayId) {
                 Volver a Aprendizaje Profesional
             </a>
             <h1 class="landing-title">Indagación de la Práctica Docente</h1>
-            <p class="landing-description">En este curso...</p>
+            <p class="landing-description">
+                Este curso tiene como finalidad comprender la indagación de la propia práctica docente como una estrategia que posibilita la mejora de la enseñanza en los procesos de formación docente inicial en matemática. Los participantes analizarán situaciones de su propia experiencia docente que les han resultado problemáticas o que quisieran mejorar, a fin de reconocer en ellas oportunidades para un aprendizaje profesional situado y sostenido.
+            </p>
+            <p class="landing-description">
+                El curso está organizado en tres talleres. En primer lugar, se define y caracteriza lo que constituye un problema de la propia práctica docente situado en el contexto de la formación inicial docente. En segundo lugar, se describe las características asociadas a un proceso de la indagación de la propia práctica. Por último, en tercer lugar, se aplican los conceptos aprendidos en la delimitación de un problema de la propia práctica docente factible de indagar.
+            </p>
             <div class="ipd-video-iframe">
                 <iframe src="https://www.youtube.com/embed/0LftVNmm5us" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
             </div>
@@ -162,9 +167,9 @@ function fillCreateCapsula() {
                 <option value="uta">Universidad de Tarapacá</option>
                 <option value="ubb">Universidad del Biobío</option>
                 <option value="udd">Universidad del Desarrollo</option>
-                <option value="ufro">Universidad de la Frontera</option>
+                <option value="ufro">Universidad de La Frontera</option>
                 <option value="userena">Universidad de La Serena</option>
-                <option value="udla">Universidad de las Américas</option>
+                <option value="udla">Universidad de Las Américas</option>
                 <option value="ula">Universidad de Los Lagos</option>
                 <option value="uft">Universidad Finnis Terrae</option>
                 <option value="umayor">Universidad Mayor</option>
@@ -185,6 +190,9 @@ function fillCreateCapsula() {
             Instrucciones para grabación
         </a>
     </div>
+    <div class="multiple-institutions-warning-container">
+        <p>Ha seleccionado como institución asociada 'Otra/Múltiples'. Deberá incluir manualmente los logotipos de las instituciones en la diapositiva de portada de la cápsula.</p>
+    </div>
     <hr>
     <p class="landing-description">
         Una vez que la cápsula se encuentre lista, por favor envíela adjunta a <a class="twc-mailto" href="mailto:capsulas@redfid.cl">capsulas@redfid.cl</a> para que sea revisada. 
@@ -198,6 +206,12 @@ function fillCreateCapsula() {
     function updateDownloadLink() {
         const categoryValue = categorySelect.value;
         const institutionValue = institutionSelect.value;
+        const warningContainer = document.querySelector('.multiple-institutions-warning-container');
+        if (institutionValue === 'other') {
+            warningContainer.style.display = 'block';
+        } else {
+            warningContainer.style.display = 'none';
+        }
         if (categoryValue !== 'waiting' && institutionValue !== 'waiting') {
             downloadLink.disabled = false;
             const institutionPart = institutionValue === 'other' ? 'any' : institutionValue;
