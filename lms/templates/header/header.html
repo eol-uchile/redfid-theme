@@ -42,29 +42,62 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
   </script>
 % endif
 
-<header class="global-header ${'slim' if course else ''}">
+<header>
     <div class="header-bar"></div>
-    % if use_cookie_banner:
-        ${static.renderReact(
-            component="CookiePolicyBanner",
-            id="frontend-component-cookie-policy-banner",
-            props={}
-        )}
-    % endif
-    <div class="main-header">
-        <div class="hamburger-menu" role="button" aria-label=${_("Options Menu")} aria-expanded="false" aria-controls="mobile-menu" tabindex="0">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
+    <div class="header-container">
+        <div class="header-navigation-container">
+            <a class="header-navigation-logo" href="https://www.redfid.cl" target="_self">
+                <img class="header-logo" src="{{ url_for('static', filename='img/redfid_logo.png') }}">
+            </a>
+            <a class="header-navigation-link-active" href="https://cursos.redfid.cl" target="_self">
+                <p class="header-navigation-link-label">Aprendizaje Profesional</p>
+            </a>
+            <a class="header-navigation-link" href="https://comunidades.redfid.cl" target="_self">
+                <p class="header-navigation-link-label">Comunidades</p>
+            </a>
+            <a class="header-navigation-link" href="https://recursos.redfid.cl" target="_self">
+                <p class="header-navigation-link-label">Recursos</p>
+            </a>
         </div>
+        <div class="header-login-container">
+            % if user.is_authenticated:
+            <a class="register-button" href="/logout" target="_self">Cerrar sesión</a>
+            <a class="login-button" href="https://auth.redfid.cl/realms/REDFID/account/" target="_self"><i class="fa fa-user"></i> ${user.username}</a>
+            % else:
+            <a class="register-button" href="https://www.redfid.cl/formulario-de-registro" target="_self">Regístrate</a>
+            <a class="login-button" href="/login" target="_self"><i class="fa fa-user"></i> Iniciar sesión</a>
+            % endif
+        </div>
+        <div class="header-trigger" onclick="toggleMenu()">&#9776;</div>
+    </div>
+    <div class="header-navigation-container-mobile">
+        <a class="header-navigation-link-mobile-active" href="https://cursos.redfid.cl" target="_self">
+            Aprendizaje Profesional
+        </a>
+        <a class="header-navigation-link-mobile" href="https://comunidades.redfid.cl" target="_self">
+            Comunidades
+        </a>
+        <a class="header-navigation-link-mobile" href="https://recursos.redfid.cl" target="_self">
+            Recursos
+        </a>
         % if user.is_authenticated:
-            <%include file="navbar-authenticated.html" args="online_help_token=online_help_token"/>
+        <a class="header-navigation-link-mobile" href="https://auth.redfid.cl/realms/REDFID/account/" target="_self">
+            Cuenta (${user.username})
+        </a>
+        <a class="header-navigation-link-mobile" href="/logout
+        " target="_self">
+            Cerrar sesión
+        </a>
         % else:
-            <%include file="navbar-not-authenticated.html" args="online_help_token=online_help_token"/>
+        <a class="header-navigation-link-mobile" href="https://www.redfid.cl/formulario-de-registro" target="_self">
+            Regístrate
+        </a>
+        <a class="header-navigation-link-mobile" href="/login
+        " target="_self">
+            Iniciar sesión
+        </a>
         % endif
     </div>
-    <div class="mobile-menu hidden" aria-label=${_("More Options")} role="menu" id="mobile-menu"></div>
 </header>
 
 % if course:
