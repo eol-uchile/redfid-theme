@@ -85,7 +85,8 @@ function showTalleresWebinarsCapsulas(display, displayId) {
     $("#dashboard-main").hide();
     if (display === "1"){
         $.getJSON('https://static.redfid.cl/talleres/talleres.json', function(data){
-            items = getAndClassifyItems(data, displayId);
+            let filter = getUrlParameter("displayId");    
+            items = getAndClassifyItems(data, displayId, filter);
             if (displayId === 0 && items["defaultItem"] != null) {
                 setUrlParameter('displayId', items["defaultItem"]["id"]);
             }
@@ -95,7 +96,8 @@ function showTalleresWebinarsCapsulas(display, displayId) {
         });
     } else if (display === "2") {
         $.getJSON('https://static.redfid.cl/capsulas/capsulas.json', function(data){
-            items = getAndClassifyItems(data, displayId);
+            let filter = getUrlParameter("displayId");    
+            items = getAndClassifyItems(data, displayId, filter);
             if (displayId === 0 && items["defaultItem"] != null) {
                 setUrlParameter('displayId', items["defaultItem"]["id"]);
             }
@@ -435,7 +437,7 @@ function cleanURLParameters(){
     }
 }
 
-function getAndClassifyItems(data, displayId){
+function getAndClassifyItems(data, displayId, filter){
     activeItem = null;
     defaultItem = null;
     summarizedItems = [];
@@ -459,6 +461,10 @@ function getAndClassifyItems(data, displayId){
             return item.id !== activeItem.id;
         });
     }
+    let tallereswebinars_filters = ["taller", "webinar"];
+    let capsulas_filters = ["rep", "reo"]; 
+    //if(displayId === 1 && )
+    // SEGUIR AQUI
     return {"active": activeItem, "summarizedItems": summarizedItems, "defaultItem": defaultItem}
 }
 
