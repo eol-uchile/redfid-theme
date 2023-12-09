@@ -1350,29 +1350,29 @@ header {
 }
 
 .header-navigation-link {
-  text-decoration: none;
-  font-weight: bold;
-  background-color: white;
+  text-decoration: none !important;
+  font-weight: bold !important;
+  background-color: white !important;
   color: #40b4ba !important;
   padding: 0 30px;
-  margin-bottom: 6px;
 }
 
 .header-navigation-link:hover {
-  text-decoration: none;
-  font-weight: bold;
-  color: white;
+  text-decoration: none !important;
+  color: white !important;
   background-color: #40b4ba !important;
-  padding: 0 30px;
 }
 
 .header-navigation-link-active {
-  text-decoration: none;
-  font-weight: bold;
+  text-decoration: none !important;
+  font-weight: bold !important;
   background-color: #40b4ba !important;
-  color: white;
+  color: white !important;
   padding: 0 30px;
-  margin-bottom: 6px;
+}
+
+.header-navigation-link-label {
+  padding-top: 13px !important;
 }
 
 .header-logo {
