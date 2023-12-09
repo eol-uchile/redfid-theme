@@ -1333,7 +1333,7 @@ header {
 
 .header-bar {
   height: 17px;
-  background-color: var(--redfid-celeste);
+  background-color: #40b4ba !important;
 }
 
 .header-container {
@@ -1353,7 +1353,7 @@ header {
   text-decoration: none;
   font-weight: bold;
   background-color: white;
-  color: var(--redfid-celeste);
+  color: #40b4ba !important;
   padding: 0 30px;
   margin-bottom: 6px;
 }
@@ -1362,14 +1362,14 @@ header {
   text-decoration: none;
   font-weight: bold;
   color: white;
-  background-color: var(--redfid-celeste);
+  background-color: #40b4ba !important;
   padding: 0 30px;
 }
 
 .header-navigation-link-active {
   text-decoration: none;
   font-weight: bold;
-  background-color: var(--redfid-celeste);
+  background-color: #40b4ba !important;
   color: white;
   padding: 0 30px;
   margin-bottom: 6px;
@@ -1388,7 +1388,7 @@ header {
 }
 
 .login-button {
-  background-color: var(--redfid-celeste);
+  background-color: #40b4ba !important;
   color: white;
   border: none;
   padding: 8px 15px;
@@ -1400,7 +1400,7 @@ header {
 }
 
 .register-button {
-  color: var(--redfid-celeste);
+  color: #40b4ba !important;
   font-weight: bold;
   text-decoration: none;
 }
@@ -1463,12 +1463,12 @@ header {
       display: inline-block;
       font-weight: bold;
       background-color: white;
-      color: var(--redfid-celeste);
+      color: #40b4ba !important;
       padding: 8px 15px;
   }
 
   .header-navigation-link-mobile:hover {
-      background-color: var(--redfid-celeste);
+      background-color: #40b4ba !important;
       color: white;
   }
 
@@ -1476,7 +1476,7 @@ header {
       width: 100%;
       display: inline-block;
       font-weight: bold;
-      background-color: var(--redfid-celeste);
+      background-color: #40b4ba !important;
       color: white;
       padding: 8px 15px;
   }
