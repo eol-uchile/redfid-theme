@@ -1371,10 +1371,6 @@ header {
   padding: 0 30px;
 }
 
-.header-navigation-link-label {
-  padding-top: 13px !important;
-}
-
 .header-logo {
   height: 60px;
   width: auto;
@@ -1390,18 +1386,18 @@ header {
 .login-button {
   background-color: #40b4ba !important;
   color: white !important;
-  border: none;
-  padding: 8px 15px;
-  font-weight: bold;
-  font-size: 1em;
-  margin: 0 20px;
+  border: none !important;
+  padding: 8px 15px !important;
+  font-weight: bold !important;
+  font-size: 1em !important;
+  margin: 0 20px !important;
   text-decoration: none !important;
-  border-radius: 5px;
+  border-radius: 5px !important;
 }
 
 .register-button {
   color: #40b4ba !important;
-  font-weight: bold;
+  font-weight: bold !important;
   text-decoration: none !important;
 }
 
