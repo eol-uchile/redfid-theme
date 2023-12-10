@@ -66,7 +66,7 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
             <a class="login-button" href="https://auth.redfid.cl/realms/REDFID/account/" target="_self"><i class="fa fa-user"></i> ${user.username}</a>
             % else:
             <a class="register-button" href="https://www.redfid.cl/formulario-de-registro" target="_self">Regístrate</a>
-            <a class="login-button" href="/login" target="_self"><i class="fa fa-user"></i> Iniciar sesión</a>
+            <a class="login-button" href="/auth/login/tpa-saml/?auth_entry=login&next=%2F&idp=default" target="_self"><i class="fa fa-user"></i> Iniciar sesión</a>
             % endif
         </div>
         <div class="header-trigger" onclick="toggleMenu()">&#9776;</div>
@@ -92,8 +92,7 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
         <a class="header-navigation-link-mobile" href="https://www.redfid.cl/formulario-de-registro" target="_self">
             Regístrate
         </a>
-        <a class="header-navigation-link-mobile" href="/login
-        " target="_self">
+        <a class="header-navigation-link-mobile" href="/auth/login/tpa-saml/?auth_entry=login&next=%2F&idp=default" target="_self">
             Iniciar sesión
         </a>
         % endif
