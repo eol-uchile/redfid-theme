@@ -1,6 +1,6 @@
 function toggleMenu() {
     var navContainer = document.querySelector('.header-navigation-container-mobile');
-    var content = document.querySelector('main');
+    var content = document.querySelector('#content');
 
     if (navContainer.style.display === 'none' || navContainer.style.display === '') {
         navContainer.style.display = 'block';
