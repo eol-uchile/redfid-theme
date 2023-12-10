@@ -1484,3 +1484,12 @@ header#header {
 .header-trigger {
   color: #40b4ba !important;
 }
+
+
+
+
+
+.twc-summary-element {
+  display: flex;
+  align-items: center;
+}

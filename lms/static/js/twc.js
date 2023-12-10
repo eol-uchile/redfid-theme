@@ -308,16 +308,22 @@ function fillTalleres(items){
                 }
                 first = false;
                 $(".twc-summary").append(`
-                    <h1 class="twc-summary-title">${item.title}</h1>
-                    <div class="twc-summary-date">${item.date}</div>
-                    <div class="twc-summary-image-container">
-                        <a href="/dashboard?display=1&displayId=${item.id}" target="_self"><img src="${convertToThumbnailUrl(item.video_url)}" alt="${item.title}"></a>
+                    <div class="twc-summary-element">
+                        <div class="twc-summary-element-left">
+                            <div class="twc-summary-image-container">
+                                <a href="/dashboard?display=1&displayId=${item.id}" target="_self"><img src="${convertToThumbnailUrl(item.video_url)}" alt="${item.title}"></a>
+                            </div>
+                            <div class="twc-summary-subtitle-container">
+                                <div class="twc-summary-tag" style="background-color: ${item.kind === "taller" ? "#A5D6D9" : "#eb947e6e"};">${item.kind}</div>
+                            </div>
+                        </div>
+                        <div class="twc-summary-element-right">
+                            <h1 class="twc-summary-title">${item.title}</h1>
+                            <div class="twc-summary-date">${item.date}</div>
+                            <p class="twc-summary-description">${item.description}</p>
+                            <p class="twc-summary-exposes">${item.exposes}</p>
+                        </div>
                     </div>
-                    <div class="twc-summary-subtitle-container">
-                        <div class="twc-summary-tag" style="background-color: ${item.kind === "taller" ? "#A5D6D9" : "#eb947e6e"};">${item.kind}</div>
-                    </div>
-                    <p class="twc-summary-description">${item.description}</p>
-                    <p class="twc-summary-exposes">${item.exposes}</p>
                 `);
             }
         } else {
