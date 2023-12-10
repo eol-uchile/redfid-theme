@@ -750,7 +750,7 @@ a .logo {
   }
   
   .twc-summary {
-    width: 30%;
+    width: 35%;
     max-height: 800px;
     overflow: auto;
     padding: 10px;
@@ -803,6 +803,15 @@ a .logo {
   .twc-content-subtitle-container {
     text-align: right;
   }
+
+  .twc-summary-element-right {
+    width: 70% !important;
+    padding: 0 20px !important;
+  }
+  
+  .twc-summary-element-left {
+    width: 30% !important;
+  }
   
   .twc-content-tag {
     font-family: 'Avenir Regular';
@@ -828,7 +837,7 @@ a .logo {
   }
   
   .twc-summary-subtitle-container {
-    text-align: right;
+    text-align: center;
   }
   
   .twc-summary-empty-message {
@@ -845,10 +854,10 @@ a .logo {
 
   .twc-summary-exposes {
     font-family: 'Avenir Regular';
-    font-family: 'Avenir Regular';
     text-align: center;
     font-weight: bolder;
     color: #646464;
+    font-size: 12px;
   }
   
   .twc-summary-title {
@@ -856,7 +865,7 @@ a .logo {
     text-align: justify;
     font-weight: bolder !important;
     color: #40b4ba;
-    font-size: 20px !important;
+    font-size: 14px !important;
     margin-bottom: 0 !important;
   }
   
@@ -881,6 +890,7 @@ a .logo {
     color: #646464;
     text-align: right;
     font-size: 12px;
+    margin-top: 8px;
   }
   
   .twc-summary-image-container {
@@ -898,7 +908,7 @@ a .logo {
     max-width: 1400px;
     line-height: 1.5;
     color: #646464;
-    font-size: 14px;
+    font-size: 12px;
   }
   
   .twc-summary-button-container {
@@ -980,6 +990,15 @@ a .logo {
     width: 100%;
     height: 100%;
   }
+
+  .twc-summary-element-right {
+    width: 75% !important;
+    padding: 0 20px !important;
+  }
+  
+  .twc-summary-element-left {
+    width: 25% !important;
+  }
   
   .twc-content-title {
     font-family: 'Avenir Heavy';
@@ -1020,7 +1039,7 @@ a .logo {
   
   .twc-content-date {
     font-family: 'Avenir Regular';
-    margin: 10px 0;
+    margin: 20px 0;
     font-weight: bold;
     border-radius: 3px;
     color: #646464;
@@ -1028,7 +1047,7 @@ a .logo {
   }
   
   .twc-summary-subtitle-container {
-    text-align: right;
+    text-align: center;
   }
   
   .twc-summary-empty-message {
@@ -1041,7 +1060,7 @@ a .logo {
     text-align: justify;
     font-weight: bolder !important;
     color: #40b4ba;
-    font-size: 20px !important;
+    font-size: 16px !important;
     margin-bottom: 0 !important;
   }
   
@@ -1064,6 +1083,7 @@ a .logo {
     text-align: center;
     font-weight: bolder;
     color: #646464;
+    font-size: 12px;
   }
   
   .twc-summary-date {
@@ -1073,6 +1093,7 @@ a .logo {
     color: #646464;
     text-align: right;
     font-size: 12px;
+    margin-top: 10px;
   }
   
   .twc-summary-image-container {
@@ -1484,10 +1505,6 @@ header#header {
 .header-trigger {
   color: #40b4ba !important;
 }
-
-
-
-
 
 .twc-summary-element {
   display: flex;

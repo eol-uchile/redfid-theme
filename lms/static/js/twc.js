@@ -294,7 +294,7 @@ function fillTalleres(items){
             var videoEmbed = `<iframe src="${convertToEmbedUrl(items.active.video_url)}" frameborder="0" allowfullscreen></iframe>`;
             $(".twc-content-video-container").append(videoEmbed);
             $(".twc-content-subtitle-container").append(`
-                <div class="twc-content-tag" style="background-color: ${items.active.kind === "taller" ? "#A5D6D9" : "#eb947e6e"};">${items.active.kind}</div>
+                <div class="twc-content-tag" style="background-color: ${items.active.kind === "taller" ? "#40b4ba" : "#eb947e"};">${items.active.kind}</div>
             `);
             $(".twc-content-description").text(items.active.description);
             $(".twc-content-exposes").text(items.active.exposes);
@@ -314,11 +314,11 @@ function fillTalleres(items){
                                 <a href="/dashboard?display=1&displayId=${item.id}" target="_self"><img src="${convertToThumbnailUrl(item.video_url)}" alt="${item.title}"></a>
                             </div>
                             <div class="twc-summary-subtitle-container">
-                                <div class="twc-summary-tag" style="background-color: ${item.kind === "taller" ? "#A5D6D9" : "#eb947e6e"};">${item.kind}</div>
+                                <div class="twc-summary-tag" style="background-color: ${item.kind === "taller" ? "#40b4ba" : "#eb947e"};">${item.kind}</div>
                             </div>
                         </div>
                         <div class="twc-summary-element-right">
-                            <h1 class="twc-summary-title">${item.title}</h1>
+                            <a href="/dashboard?display=1&displayId=${item.id}" target="_self"><h1 class="twc-summary-title">${item.title}</h1></a>
                             <div class="twc-summary-date">${item.date}</div>
                             <p class="twc-summary-description">${item.description}</p>
                             <p class="twc-summary-exposes">${item.exposes}</p>
