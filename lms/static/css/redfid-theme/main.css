@@ -871,7 +871,7 @@ a .logo {
   
   .twc-summary-tag {
     font-family: 'Avenir Regular';
-    padding: 10px 20px;
+    padding: 5px 15px;
     border-radius: 3px;
     font-size: 12px;
     display: inline-block;
@@ -1062,6 +1062,7 @@ a .logo {
     color: #40b4ba;
     font-size: 16px !important;
     margin-bottom: 0 !important;
+    text-decoration: none !important;
   }
   
   .twc-summary-tag {
@@ -1509,4 +1510,8 @@ header#header {
 .twc-summary-element {
   display: flex;
   align-items: center;
+}
+
+.twc-summary-element-right a {
+  text-decoration: none !important;
 }
