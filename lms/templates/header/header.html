@@ -62,7 +62,7 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
         </div>
         <div class="header-login-container">
             % if user.is_authenticated:
-            <a class="register-button" href="/logout" target="_self">Cerrar sesión</a>
+            <a class="register-button" href="${reverse('redfid_logout:logout_get')}" target="_self">Cerrar sesión</a>
             <a class="login-button" href="https://auth.redfid.cl/realms/REDFID/account/" target="_self"><i class="fa fa-user"></i> ${user.username}</a>
             % else:
             <a class="register-button" href="https://www.redfid.cl/formulario-de-registro" target="_self">Regístrate</a>
@@ -85,8 +85,7 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
         <a class="header-navigation-link-mobile" href="https://auth.redfid.cl/realms/REDFID/account/" target="_self">
             Cuenta (${user.username})
         </a>
-        <a class="header-navigation-link-mobile" href="/logout
-        " target="_self">
+        <a class="header-navigation-link-mobile" href="${reverse('redfid_logout:logout_get')}" target="_self">
             Cerrar sesión
         </a>
         % else:
