@@ -43,7 +43,7 @@ function showVideoCurso(displayId) {
                 Volver a Aprendizaje Profesional
             </a>
             <h1 class="landing-title">Este curso no posee vídeo promocional.</h1>
-            <div>
+            <div class="ipd-video-register-link-container">
                 <a class="ipd-video-register" href="https://www.redfid.cl/formulario-de-registro" target="_self">¡Quiero inscribirme!</a>
             </div>
         `);

@@ -382,6 +382,7 @@ function fillCapsulas(items){
             <div class="twc-content-tag" style="background-color: ${CAPSULAS[items.active.kind]["color"]};">${CAPSULAS[items.active.kind]["name"]}</div>
             `);
             $(".twc-content-description").text(items.active.description);
+            $(".twc-content-exposes").text(items.active.exposes);
         }
         if (items.summarizedItems.length !== 0) {
             var first = true;

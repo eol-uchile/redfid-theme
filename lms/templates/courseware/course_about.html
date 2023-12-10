@@ -71,6 +71,10 @@ from six import string_types
       <div class="table">
       <section class="intro">
         <div class="heading-group">
+          <a class="back-to-landing-button" href="/courses">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            Volver a Cursos disponibles
+          </a>
           <h1>
             ${course.display_name_with_default}
           </h1>
@@ -148,7 +152,7 @@ from six import string_types
 
   <div class="container">
     <div class="ipd-video-register-link-container">
-      % if user.is_authenticated and registered:
+      % if user.is_authenticated:
         <a href="/dashboard?display=100&displayId=${course_url_video}" target="_self">Ver vídeo promocional</a>
       % else:
         <a href="/?display=100&displayId=${course_url_video}" target="_self">Ver vídeo promocional</a>
