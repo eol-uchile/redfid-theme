@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'Avenir Heavy';
+  src: url('https://static.redfid.cl/fonts/Avenir-Heavy.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Avenir Regular';
+  src: url('https://static.redfid.cl/fonts/Avenir-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .wrapper-footer footer#footer-openedx .wrapper-logo a img,
 .wrapper-footer footer .wrapper-logo a img {
   height: 100% !important;
@@ -5,6 +19,7 @@
 }
 
 .eol-footer-container {
+  font-family: 'Avenir Regular';
   margin-right: auto;
   margin-left: auto;
 }
@@ -59,12 +74,6 @@
   }
 }
 
-.header-bar {
-  background-color: #40b4ba !important;
-  width: 100%;
-  height: 17px;
-}
-
 @media (min-width: 992px) {
   .global-header .nav-links .main {
     float: left;
@@ -75,6 +84,11 @@
 @media (min-width: 992px) {
   .global-header .header-logo .course-header {
     margin: 0 !important;
+  }
+
+  .global-header .header-logo a .logo {
+    height: 60px !important;
+    width: auto !important;
   }
 
   .main-header {
@@ -113,6 +127,7 @@
     color: black;
     background: white;
     font-weight: bold;
+    font-size: 0.9em;
   }
 
   .url-link-header:hover {
@@ -170,6 +185,7 @@
     color: black;
     background: white;
     font-weight: bold;
+    font-size: 0.9em;
   }
 
   .url-link-header:hover {
@@ -191,7 +207,7 @@
   .url-link-header>a {
     /* padding: 30px; */
     position: relative;
-    margin: 15px;
+    padding: 15px;
     /* color: white; */
     text-decoration: none !important;
     color: #40b4ba !important;
@@ -226,6 +242,7 @@
     color: black;
     background: white;
     font-weight: bold;
+    font-size: 0.9em;
   }
 
   .url-link-header:hover {
@@ -315,6 +332,7 @@ a .logo {
   }
 
   .landing-title {
+    font-family: 'Avenir Heavy';
     font-size: 2rem;
     max-width: 1400px;
     text-align: left;
@@ -324,6 +342,7 @@ a .logo {
   }
 
   .landing-subtitle {
+    font-family: 'Avenir Heavy';
     font-size: 2rem;
     max-width: 1400px;
     text-align: left;
@@ -333,6 +352,7 @@ a .logo {
   }
 
   .landing-description {
+    font-family: 'Avenir Regular';
     margin: 20px auto;
     text-align: justify;
     max-width: 1400px;
@@ -374,6 +394,7 @@ a .logo {
   }
 
   .landing-course-title {
+    font-family: 'Avenir Heavy' !important;
     font-weight: bold;
     font-size: 1.4em;
     padding-left: 30px;
@@ -385,6 +406,7 @@ a .logo {
   }
 
   .landing-course-description {
+    font-family: 'Avenir Regular' !important;
     text-align: justify;
     padding: 0 30px;
     font-size: 0.9em;
@@ -394,6 +416,7 @@ a .logo {
   }
 
   .landing-course-button {
+    font-family: 'Avenir Heavy' !important;
     color: white !important;
     background-color: #eb947e;
     border-radius: 0;
@@ -404,6 +427,7 @@ a .logo {
   }
 
   .landing-course-datetime {
+    font-family: 'Avenir Regular' !important;
     padding: 10px 30px 20px 30px;
     font-size: 0.9em;
     color: #646464;
@@ -467,7 +491,8 @@ a .logo {
 
 
   .landing-title {
-    font-size: 1.3rem;
+    font-family: 'Avenir Heavy';
+    font-size: 1.7rem;
     max-width: 1400px;
     text-align: left;
     font-weight: bolder;
@@ -476,6 +501,7 @@ a .logo {
   }
 
   .landing-subtitle {
+    font-family: 'Avenir Heavy';
     font-size: 1.5rem;
     max-width: 1400px;
     text-align: left;
@@ -485,6 +511,7 @@ a .logo {
   }
 
   .landing-description {
+    font-family: 'Avenir Regular';
     margin: 20px auto;
     text-align: justify;
     max-width: 1400px;
@@ -529,6 +556,7 @@ a .logo {
   }
 
   .landing-course-title {
+    font-family: 'Avenir Heavy' !important;
     font-weight: bold;
     font-size: 1em;
     padding-left: 30px;
@@ -540,6 +568,7 @@ a .logo {
   }
 
   .landing-course-description {
+    font-family: 'Avenir Regular' !important;
     text-align: justify;
     padding: 0 30px;
     font-size: 0.7em;
@@ -549,6 +578,7 @@ a .logo {
   }
 
   .landing-course-button {
+    font-family: 'Avenir Heavy' !important;
     color: white !important;
     background-color: #eb947e;
     border-radius: 0;
@@ -559,6 +589,7 @@ a .logo {
   }
 
   .landing-course-datetime {
+    font-family: 'Avenir Regular' !important;
     padding: 10px 30px 20px 30px;
     font-size: 0.7em;
     color: #646464;
@@ -573,6 +604,7 @@ a .logo {
 }
 
 .course-description-dashboard {
+  font-family: 'Avenir Regular';
   margin: 20px 30px 20px 0px;
   text-align: justify;
   color: #666;
@@ -580,8 +612,7 @@ a .logo {
 }
 
 .course-header {
-  margin: auto;
-  max-width: 1400px;
+  display: none !important;
 }
 
 .course-profile {
@@ -603,10 +634,12 @@ a .logo {
   box-shadow: inset 0 0 0 0 !important;
   text-shadow: 0 0 !important;
   font-weight: bolder !important;
+  border-color: #646464 !important;
 }
 
 .course-target-link.enter-course {
   float: none !important;
+  font-family: 'Avenir Heavy' !important;
   color: white !important;
   background-color: #eb947e !important;
   font-weight: bolder !important;
@@ -630,6 +663,7 @@ a .logo {
 }
 
 .course-target-link {
+  font-family: 'Avenir Heavy' !important;
   color: #40b4ba !important;
   font-weight: bolder !important;
 }
@@ -639,6 +673,7 @@ a .logo {
 }
 
 .sign-in-button-outside {
+  font-family: 'Avenir Heavy' !important;
   color: white !important;
   background-color: #40b4ba !important;
   padding: 10px 40px;
@@ -648,6 +683,7 @@ a .logo {
 }
 
 .sign-in-description-outside {
+  font-family: 'Avenir Regular' !important;
   max-width: 1400px;
   margin: auto;
   color: #646464;
@@ -655,11 +691,20 @@ a .logo {
   line-height: 1.2;
 }
 
+#register_error {
+  background:#40b4ba !important;
+  border:1px #40b4ba !important;
+  font-weight: bold !important;
+  font-family: 'Avenir Regular' !important;
+}
+
 .register-button-outside {
+  font-family: 'Avenir Regular' !important;
   max-width: 1400px !important;
   text-align: center;
   margin: 20px auto;
   display: block !important;
+  color: #40b4ba !important;
 }
 
 .register-button-outside:hover {
@@ -675,10 +720,20 @@ a .logo {
 }
 
 .back-to-landing-button {
+  font-family: 'Avenir Regular' !important;
   font-size: 0.65rem !important;
+  display: block !important;
+  color: #40b4ba !important;
 }
 
 @media screen and (min-width: 992px) {
+
+  #capsulas-main {
+    max-width: 1400px;
+    margin: auto;
+    padding: 20px;
+  }
+
   #twc-main {
     max-width: 1400px;
     margin: auto;
@@ -695,7 +750,7 @@ a .logo {
   }
   
   .twc-summary {
-    width: 30%;
+    width: 35%;
     max-height: 800px;
     overflow: auto;
     padding: 10px;
@@ -727,14 +782,17 @@ a .logo {
   }
   
   .twc-content-title {
+    font-family: 'Avenir Heavy';
     max-width: 1400px;
     text-align: justify;
     font-weight: bolder !important;
     color: #40b4ba;
     font-size: 1.6rem !important;
+    margin-bottom: 0 !important;
   }
   
   .twc-content-description {
+    font-family: 'Avenir Regular';
     margin: 20px auto;
     text-align: justify;
     max-width: 1400px;
@@ -743,16 +801,26 @@ a .logo {
   }
   
   .twc-content-subtitle-container {
-    display: flex;
-    overflow: auto;
-    align-items: center;
+    text-align: right;
+  }
+
+  .twc-summary-element-right {
+    width: 70% !important;
+    padding: 0 20px !important;
+  }
+  
+  .twc-summary-element-left {
+    width: 30% !important;
   }
   
   .twc-content-tag {
-    margin-right: 20px;
+    font-family: 'Avenir Regular';
     margin-top: 10px;
     padding: 10px 20px;
     border-radius: 3px;
+    display: inline-block;
+    color: white;
+    white-space: nowrap;
   }
   
   .twc-content-tag::first-letter {
@@ -760,19 +828,16 @@ a .logo {
   }
   
   .twc-content-date {
-    margin-top: 10px;
-    margin-left: auto;
-    padding-left: 5px;
-    padding-right: 5px;
+    font-family: 'Avenir Regular';
+    margin: 10px 0;
     font-weight: bold;
     border-radius: 3px;
     color: #646464;
+    text-align: right;
   }
   
   .twc-summary-subtitle-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    text-align: center;
   }
   
   .twc-summary-empty-message {
@@ -781,30 +846,36 @@ a .logo {
   }
 
   .twc-content-exposes {
+    font-family: 'Avenir Regular';
     text-align: center;
     font-weight: bolder;
     color: #646464;
   }
 
   .twc-summary-exposes {
+    font-family: 'Avenir Regular';
     text-align: center;
     font-weight: bolder;
     color: #646464;
+    font-size: 12px;
   }
   
   .twc-summary-title {
+    font-family: 'Avenir Heavy';
     text-align: justify;
     font-weight: bolder !important;
     color: #40b4ba;
-    font-size: 1.0rem !important;
+    font-size: 14px !important;
     margin-bottom: 0 !important;
   }
   
   .twc-summary-tag {
-    margin-right: 20px;
-    margin-top: 10px;
-    padding: 10px 20px;
+    font-family: 'Avenir Regular';
+    padding: 5px 15px;
     border-radius: 3px;
+    font-size: 12px;
+    display: inline-block;
+    color: white;
   }
   
   .twc-summary-tag::first-letter {
@@ -812,13 +883,13 @@ a .logo {
   }
   
   .twc-summary-date {
-    margin-top: 10px;
-    margin-left: auto;
-    padding-left: 5px;
-    padding-right: 5px;
+    font-family: 'Avenir Regular';
     font-weight: bold;
     border-radius: 3px;
     color: #646464;
+    text-align: right;
+    font-size: 12px;
+    margin-top: 8px;
   }
   
   .twc-summary-image-container {
@@ -831,11 +902,12 @@ a .logo {
   }
   
   .twc-summary-description {
-    margin: 10px auto;
+    margin: 10px auto 25px auto;
     text-align: justify;
     max-width: 1400px;
     line-height: 1.5;
     color: #646464;
+    font-size: 12px;
   }
   
   .twc-summary-button-container {
@@ -844,6 +916,7 @@ a .logo {
   }
   
   .twc-summary-button {
+    font-family: 'Avenir Heavy';
     color: white !important;
     background-color: #eb947e !important;
     padding: 8px 20px !important;
@@ -857,6 +930,13 @@ a .logo {
 }
 
 @media screen and (max-width: 991.98px) {
+
+  #capsulas-main {
+    max-width: 1400px;
+    margin: auto;
+    padding: 20px;
+  }
+
   #twc-main {
     max-width: 1400px;
     margin: auto;
@@ -874,9 +954,8 @@ a .logo {
   }
   
   .twc-summary {
-    width: 80%;
+    width: 100%;
     margin: auto;
-    padding: 10px;
   }
   
   .twc-error-container {
@@ -897,6 +976,7 @@ a .logo {
   }
 
   .twc-content-exposes {
+    font-family: 'Avenir Regular';
     text-align: center;
     font-weight: bolder;
     color: #646464;
@@ -909,16 +989,28 @@ a .logo {
     width: 100%;
     height: 100%;
   }
+
+  .twc-summary-element-right {
+    width: 75% !important;
+    padding: 0 20px !important;
+  }
+  
+  .twc-summary-element-left {
+    width: 25% !important;
+  }
   
   .twc-content-title {
+    font-family: 'Avenir Heavy';
     max-width: 1400px;
     text-align: justify;
     font-weight: bolder !important;
     color: #40b4ba;
     font-size: 1.6rem !important;
+    margin-bottom: 0 !important;
   }
   
   .twc-content-description {
+    font-family: 'Avenir Regular';
     margin: 20px auto;
     text-align: justify;
     max-width: 1400px;
@@ -927,16 +1019,17 @@ a .logo {
   }
   
   .twc-content-subtitle-container {
-    display: flex;
-    overflow: auto;
-    align-items: center;
+    text-align: right;
   }
   
   .twc-content-tag {
-    margin-right: 20px;
+    font-family: 'Avenir Regular';
     margin-top: 10px;
     padding: 10px 20px;
     border-radius: 3px;
+    display: inline-block;
+    color: white;
+    white-space: nowrap;
   }
   
   .twc-content-tag::first-letter {
@@ -944,19 +1037,16 @@ a .logo {
   }
   
   .twc-content-date {
-    margin-top: 10px;
-    margin-left: auto;
-    padding-left: 5px;
-    padding-right: 5px;
+    font-family: 'Avenir Regular';
+    margin: 20px 0;
     font-weight: bold;
     border-radius: 3px;
     color: #646464;
+    text-align: right;
   }
   
   .twc-summary-subtitle-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    text-align: center;
   }
   
   .twc-summary-empty-message {
@@ -965,18 +1055,22 @@ a .logo {
   }
   
   .twc-summary-title {
+    font-family: 'Avenir Heavy';
     text-align: justify;
     font-weight: bolder !important;
     color: #40b4ba;
-    font-size: 1.0rem !important;
+    font-size: 16px !important;
     margin-bottom: 0 !important;
+    text-decoration: none !important;
   }
   
   .twc-summary-tag {
-    margin-right: 20px;
-    margin-top: 10px;
+    font-family: 'Avenir Regular';
     padding: 10px 20px;
     border-radius: 3px;
+    font-size: 12px;
+    display: inline-block;
+    color: white;
   }
   
   .twc-summary-tag::first-letter {
@@ -984,19 +1078,21 @@ a .logo {
   }
 
   .twc-summary-exposes {
+    font-family: 'Avenir Regular';
     text-align: center;
     font-weight: bolder;
     color: #646464;
+    font-size: 12px;
   }
   
   .twc-summary-date {
-    margin-top: 10px;
-    margin-left: auto;
-    padding-left: 5px;
-    padding-right: 5px;
+    font-family: 'Avenir Regular';
     font-weight: bold;
     border-radius: 3px;
     color: #646464;
+    text-align: right;
+    font-size: 12px;
+    margin-top: 10px;
   }
   
   .twc-summary-image-container {
@@ -1009,11 +1105,12 @@ a .logo {
   }
   
   .twc-summary-description {
-    margin: 10px auto;
+    margin: 10px auto 25px auto;
     text-align: justify;
     max-width: 1400px;
     line-height: 1.5;
     color: #646464;
+    font-size: 14px;
   }
   
   .twc-summary-button-container {
@@ -1022,6 +1119,7 @@ a .logo {
   }
   
   .twc-summary-button {
+    font-family: 'Avenir Heavy';
     color: white !important;
     background-color: #eb947e !important;
     padding: 8px 20px !important;
@@ -1032,4 +1130,388 @@ a .logo {
   .twc-mobile-separator {
     display: block;
   }
+}
+
+.footer-text {
+  color: #646464;
+  font-size: 0.9em !important;
+  margin: 8px auto !important;
+  width: 80% !important;
+  text-align: center !important;
+}
+
+a.footer-text {
+  color: #40b4ba !important;
+  text-decoration: none !important;
+}
+
+footer div.my-auto {
+  padding-bottom: 0 !important;
+}
+
+.global-header {
+  font-family: 'Avenir Regular' !important;
+}
+
+.redfid-header-desktop .secondary div span {
+  color: #646464 !important;
+}
+
+#user-menu {
+  border: 1px solid #646464 !important;
+}
+
+#user-menu div a {
+  font-family: 'Avenir Regular' !important;
+}
+
+.empty-dashboard-message {
+  font-family: 'Avenir Regular' !important;
+}
+
+.info-date-block-container span {
+  font-family: 'Avenir Regular' !important;
+}
+
+.actions-dropdown ul li a {
+  font-family: 'Avenir Regular' !important;
+}
+
+.important-dates li:nth-child(1),
+.important-dates li:nth-child(4) {
+  display: none !important;
+}
+
+.important-dates-item-text {
+  color: #646464 !important;
+}
+
+.course-profile .heading-group span {
+  display: none !important;
+}
+
+.course-profile .heading-group h1 {
+  font-family: 'Avenir Heavy' !important;
+  color: #646464 !important;
+}
+
+.redfid-enroll-button {
+  font-family: 'Avenir Heavy' !important;
+  border: none !important;
+}
+
+#dashboard-main .main-container {
+  padding: 10px 20px !important;
+}
+
+.global-header {
+  box-shadow: 0px 6px 4px -4px #cccccc !important;
+  padding-bottom: 0 !important;
+}
+
+.twc-title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.create-capsula-button {
+  padding: 20px 30px;
+  background-color: #eb947e;
+  color: white !important;
+  font-weight: bold !important;
+  font-family: 'Avenir Heavy' !important;
+  border-radius: 3px;
+  font-size: 1.3em !important;
+  text-decoration: none !important;
+}
+
+#capsulas-title {
+  margin: 0 !important;
+}
+
+.twc-create-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+  font-family: 'Avenir Regular' !important;
+}
+
+.twc-create-container select {
+  font-family: 'Avenir Regular' !important;
+}
+
+.twc-create-capsula-input-container p {
+  margin-bottom: 10px !important;
+}
+
+#twc-download-template {
+  padding: 20px 30px;
+  background-color: #eb947e;
+  color: white !important;
+  font-weight: bold !important;
+  font-family: 'Avenir Heavy' !important;
+  border-radius: 3px;
+  font-size: 1.3em !important;
+  text-decoration: none !important;
+}
+
+
+.twc-download-template-container {
+  text-align: center;
+  margin: 50px 0 !important;
+}
+
+.twc-download-instructions-container {
+  text-align: center !important;
+}
+
+.download-capsula-instructions {
+  color: #40b4ba !important;
+}
+
+.twc-mailto {
+  color: #40b4ba !important;
+}
+
+.ipd-video-iframe {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+  padding-bottom: 56.25%;
+}
+
+.ipd-video-iframe iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%;
+}
+
+.ipd-video-register-link-container {
+  text-align: center;
+  margin: 50px;
+}
+
+.ipd-video-register-link-container a {
+  color: #40b4ba !important;
+  font-size: 1.5em !important;
+  font-family: 'Avenir Regular' !important;
+}
+
+.multiple-institutions-warning-container {
+  margin: 25px 0;
+  background-color: #e57373;
+  padding: 20px;
+  border-radius: 3px;
+  display: none;
+}
+
+.multiple-institutions-warning-container p {
+  font-family: 'Avenir Regular' !important;
+  color: white !important;
+  text-align: center !important;
+}
+
+.download-link-warning-container {
+  margin: 25px 0;
+  background-color: #e57373;
+  padding: 20px;
+  border-radius: 3px;
+  display: none;
+}
+
+.download-link-warning-container p {
+  font-family: 'Avenir Regular' !important;
+  color: white !important;
+  text-align: center !important;
+}
+
+.course-profile {
+  border-bottom: none !important;
+}
+
+.course-profile .intro-inner-wrapper {
+  border: none !important;
+}
+
+.course-info .container .details {
+  font-family: 'Avenir Regular' !important;
+  text-align: justify !important;
+}
+
+
+
+
+
+
+
+header#header {
+  height: 89px;
+  box-shadow: 0px 6px 4px -4px #cccccc;
+}
+
+.header-bar {
+  height: 17px;
+  background-color: #40b4ba !important;
+}
+
+.header-container {
+  max-width: 1400px;
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.header-navigation-container {
+  display: flex;
+  align-items: center;
+}
+
+.header-navigation-link {
+  text-decoration: none !important;
+  font-weight: bold !important;
+  background-color: white !important;
+  color: #40b4ba !important;
+  padding: 0 30px;
+}
+
+.header-navigation-link:hover {
+  text-decoration: none !important;
+  color: white !important;
+  background-color: #40b4ba !important;
+}
+
+.header-navigation-link-active {
+  text-decoration: none !important;
+  font-weight: bold !important;
+  background-color: #40b4ba !important;
+  color: white !important;
+  padding: 0 30px;
+}
+
+.header-logo {
+  height: 60px;
+  width: auto;
+  margin: 6px;
+}
+
+.header-login-container {
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+}
+
+.login-button {
+  background-color: #40b4ba !important;
+  color: white !important;
+  border: none !important;
+  padding: 8px 15px !important;
+  font-weight: bold !important;
+  font-size: 1em !important;
+  margin: 0 20px !important;
+  text-decoration: none !important;
+  border-radius: 5px !important;
+}
+
+.register-button {
+  color: #40b4ba !important;
+  font-weight: bold !important;
+  text-decoration: none !important;
+}
+
+.header-trigger {
+  display: none;
+  cursor: pointer;
+  font-size: 28px;
+  padding: 5px;
+  margin: 10px;
+}
+
+.header-navigation-container-mobile {
+  display: none;
+  position: absolute;
+  width: 100%;
+  top: 89px; /* Height of your header */
+  left: 0;
+  background-color: #fff; /* Or any color you prefer */
+  box-shadow: 0px 6px 4px -4px #cccccc;
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+@media screen and (min-width: 941px) {
+  .header-navigation-container-mobile {
+      display: none !important;
+  }
+}
+
+@media screen and (max-width: 940px) {
+  
+  .header-navigation-link,
+  .header-navigation-link-active,
+  .header-login-container {
+      display: none;
+  }
+
+  .header-navigation-container-mobile {
+      display: none;
+  }
+
+  .header-trigger {
+    display: grid;
+    place-items: center;
+  }
+  
+
+  .header-navigation-link-mobile {
+      width: 100% !important;
+      display: inline-block !important;
+      font-weight: bold !important;
+      text-decoration: none !important;
+      background-color: white;
+      color: #40b4ba !important;
+      padding: 8px 15px;
+  }
+
+  .header-navigation-link-mobile:hover {
+      background-color: #40b4ba !important;
+      color: white !important;
+  }
+
+  .header-navigation-link-mobile-active {
+      width: 100% !important;
+      display: inline-block !important;
+      text-decoration: none !important;
+      font-weight: bold !important;
+      background-color: #40b4ba !important;
+      color: white !important;
+      padding: 8px 15px !important;
+  }
+}
+
+.btn.btn-primary.action-resume-course {
+  background-color: #eb947e !important;
+  border: none !important;
+  font-family: 'Avenir Heavy' !important;
+}
+
+.preview-menu {
+  max-width: 1400px;
+  margin: auto;
+}
+
+.header-trigger {
+  color: #40b4ba !important;
+}
+
+.twc-summary-element {
+  display: flex;
+  align-items: center;
+}
+
+.twc-summary-element-right a {
+  text-decoration: none !important;
 }

@@ -25,11 +25,14 @@ from openedx.core.djangolib.markup import HTML, Text
       </div>
     </div>
   </section>
+  <div id="twc-main">
+  </div>
 </main>
 
 
 
 <%block name="js_extra">
+   <script src="${static.url('js/public.js')}"></script>
    <script type="text/javascript">
       $(window).load(function() {
          if(getParameterByName('next')) {
