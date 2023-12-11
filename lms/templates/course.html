@@ -24,7 +24,12 @@ from six import text_type
     % else:
       <div class="landing-course-datetime localized_datetime" aria-hidden="true" data-format="shortDate" data-datetime="${course_date_string}" data-language="${LANGUAGE_CODE}" data-string="${_("Starts: {date}")}"></div>
     % endif
-    <a href="${reverse('about_course', args=[text_type(course.id)])}" class="landing-course-button">Ver curso</a>
+    % if user.is_authenticated:
+      <a style="text-align: center; color: #40b4ba !important; text-decoration: none !important;" href="/dashboard?display=100&displayId=${str(course.id).split(':')[1]}">Ver vídeo promocional</a>
+    % else:
+      <a style="text-align: center; color: #40b4ba !important;" href="/?display=100&displayId=${str(course.id).split(':')[1]}">Ver vídeo promocional</a>
+    % endif
+    <a style="padding: 15px 0 !important; width: 50% !important; margin: 8px auto !important; border-radius: 5px !important; font-size: 1.1em !important; font-family: Avenir Heavy !important; text-decoration: none !important;" href="${reverse('about_course', args=[text_type(course.id)])}" class="landing-course-button">Ver detalles del curso</a>
   </div>
   <div class="sr">
     <ul>

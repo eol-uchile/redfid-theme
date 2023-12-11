@@ -73,6 +73,10 @@ function showVideoCurso(displayId) {
                 <i class="fa fa-arrow-left" aria-hidden="true"></i>
                 Volver a Aprendizaje Profesional
             </a>
+            <a class="back-to-landing-button" href="/courses">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                Volver a Cursos Disponibles
+            </a>
             <h1 class="landing-title">Este curso no posee vídeo promocional.</h1>
             <div class="ipd-video-register-link-container">
                 <a class="ipd-video-register" href="/courses/course-v1:${displayId}/about" target="_self">¡Quiero inscribirme!</a>
@@ -260,7 +264,7 @@ function fillTalleres(items){
         Volver a Aprendizaje Profesional
     </a>
     <h1 class="landing-title">Talleres y webinars</h1>
-    <p class="landing-description">Aquí podrás volver a revisar los talleres y webinars impartidos hacia la comunidad de formadores de RedFID.</p>
+    <p class="landing-description">Aquí podrás volver a revisar los talleres de aprendizaje profesional y webinars impartidos en la comunidad RedFID.</p>
     <hr>
     <div class="twc-container">
         <div class="twc-content">
@@ -346,7 +350,7 @@ function fillCapsulas(items){
         <h1 id="capsulas-title" class="landing-title">Cápsulas</h1>
         <a class="create-capsula-button" href="/dashboard?display=3" target="_self">Crear cápsula</a>
     </div>
-    <p class="landing-description">Aquí podrás acceder a cápsulas con contenido pedagógico que puede resultar útil para tu formación docente.</p>
+    <p class="landing-description">Aquí podrás acceder a distintas cápsulas en donde formadores de la red comparten sus cocimientos referidos a la investigación y/o innovación en la enseñanza de las matemáticas.</p>
     <hr>
     <div class="twc-container">
         <div class="twc-content">
