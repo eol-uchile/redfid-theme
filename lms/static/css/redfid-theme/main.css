@@ -852,6 +852,13 @@ a .logo {
     color: #646464;
   }
 
+  .twc-content-exposes-subtitle {
+    font-family: 'Avenir Regular';
+    text-align: center;
+    font-weight: bolder;
+    color: #646464;
+  }
+
   .twc-summary-exposes {
     font-family: 'Avenir Regular';
     text-align: center;
@@ -976,6 +983,13 @@ a .logo {
   }
 
   .twc-content-exposes {
+    font-family: 'Avenir Regular';
+    text-align: center;
+    font-weight: bolder;
+    color: #646464;
+  }
+
+  .twc-content-exposes-subtitle {
     font-family: 'Avenir Regular';
     text-align: center;
     font-weight: bolder;

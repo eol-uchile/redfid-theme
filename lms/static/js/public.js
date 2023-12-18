@@ -32,7 +32,7 @@ function showVideoCurso(displayId) {
             <div class="ipd-video-iframe">
                 <iframe src="https://www.youtube.com/embed/0LftVNmm5us" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
             </div>
-            <div>
+            <div class="ipd-video-register-link-container">
                 <a class="ipd-video-register" href="https://www.redfid.cl/formulario-de-registro" target="_self">¡Quiero inscribirme!</a>
             </div>
         `);
