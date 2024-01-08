@@ -41,6 +41,19 @@ CAPSULAS = {
     }
 }
 
+function registerTWCGA4Event(title, kind) {
+    var buttonText = document.querySelector('.login-button').innerText.split(" ")[1];
+    var username = null;
+    if (buttonText !== " Iniciar sesión") {
+        username = buttonText;
+    }
+    gtag('event', 'watch_twc', {
+        'title': title,
+        'kind': kind,
+        'username': username
+    }); 
+}
+
 function showVideoCurso(displayId) {
     $("#dashboard-main").hide();
     const ipd = [
@@ -89,7 +102,7 @@ function showTalleresWebinarsCapsulas(display, displayId) {
     $("#dashboard-main").hide();
     if (display === "1"){
         $.getJSON('https://static.redfid.cl/talleres/talleres.json', function(data){
-            let filter = getUrlParameter("displayId");    
+            let filter = getUrlParameter("filter");    
             items = getAndClassifyItems(data, displayId, filter);
             if (displayId === 0 && items["defaultItem"] != null) {
                 setUrlParameter('displayId', items["defaultItem"]["id"]);
@@ -100,7 +113,7 @@ function showTalleresWebinarsCapsulas(display, displayId) {
         });
     } else if (display === "2") {
         $.getJSON('https://static.redfid.cl/capsulas/capsulas.json', function(data){
-            let filter = getUrlParameter("displayId");    
+            let filter = getUrlParameter("filter");    
             items = getAndClassifyItems(data, displayId, filter);
             if (displayId === 0 && items["defaultItem"] != null) {
                 setUrlParameter('displayId', items["defaultItem"]["id"]);
@@ -239,7 +252,7 @@ function fillCreateCapsula() {
         if (categoryValue !== 'waiting' && institutionValue !== 'waiting') {
             downloadLink.disabled = false;
             const institutionPart = institutionValue === 'other' ? 'any' : institutionValue;
-            downloadLink.href = `https://static.redfid.cl/capsulas/templates/${categoryValue.toUpperCase()}_${institutionPart.toUpperCase()}.ptox`;
+            downloadLink.href = `https://static.redfid.cl/capsulas/templates/${categoryValue.toUpperCase()}_${institutionPart.toUpperCase()}.potx`;
             downloadLink.setAttribute('download', '');
         } else {
             downloadLink.disabled = true;
@@ -248,7 +261,7 @@ function fillCreateCapsula() {
 
     downloadLink.addEventListener('click', function(event) {
         if (!downloadLink.getAttribute('href')) {
-            event.preventDefault(); // Prevent default action if href is not valid
+            event.preventDefault();
             downloadLinkWarningContainer.style.display = 'block';
         }
     });
@@ -302,6 +315,7 @@ function fillTalleres(items){
             `);
             $(".twc-content-description").text(items.active.description);
             $(".twc-content-exposes").text(items.active.exposes);
+            registerTWCGA4Event(items.active.title, items.active.kind)
         }
         if (items.summarizedItems.length !== 0) {
             var first = true;
@@ -362,6 +376,8 @@ function fillCapsulas(items){
             <div class="twc-content-video-container"></div>
             <div class="twc-content-subtitle-container"></div>
             <p class="twc-content-description"></p>
+            <p class="twc-content-exposes"></p>
+            <p class="twc-content-exposes-subtitle"></p>
         </div>
         <hr class="twc-mobile-separator">
         <div class="twc-summary">
@@ -387,6 +403,8 @@ function fillCapsulas(items){
             `);
             $(".twc-content-description").text(items.active.description);
             $(".twc-content-exposes").text(items.active.exposes);
+            $(".twc-content-exposes-subtitle").text(items.active.exposes_subtitle);
+            registerTWCGA4Event(items.active.title, items.active.kind)
         }
         if (items.summarizedItems.length !== 0) {
             var first = true;
