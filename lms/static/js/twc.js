@@ -48,9 +48,9 @@ function registerTWCGA4Event(title, kind) {
         username = buttonText;
     }
     gtag('event', 'watch_twc', {
-        'title': title,
-        'kind': kind,
-        'username': username
+        'content_id': title,
+        'content_group': kind,
+        'character': username
     }); 
 }
 

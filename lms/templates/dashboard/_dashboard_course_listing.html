@@ -95,7 +95,7 @@ from lms.djangoapps.experiments.utils import UPSELL_TRACKING_FLAG
         </span>
       % endif
     </div>
-      <div class="wrapper-course-details" style="justify-content: space-between !important; flex-direction: column !important;">
+      <div class="wrapper-course-details" style="justify-content: space-between !important; align-items: center;">
         <h3 class="course-title" id="course-title-${enrollment.course_id}">
           % if show_courseware_link and not is_unfulfilled_entitlement:
             % if not is_course_expired:
@@ -182,8 +182,8 @@ from lms.djangoapps.experiments.utils import UPSELL_TRACKING_FLAG
                 </div>
             % endif
         </div>
-        <a style="text-align: center; color: #40b4ba !important; margin-top: 35px;" href="/dashboard?display=100&displayId=${str(course_overview.id).split(':')[1]}">Ver vídeo promocional</a>
-        <a style="text-align: center; color: white !important; margin: 30px auto; background-color: #eb947e !important; padding: 20px 0; width: 50%; border-radius: 5px; font-family: 'Avenir Heavy' !important; font-size: 1.2em;" href="/courses/${str(course_overview.id)}/course/">Ver curso</a>
+        <a style="text-align: center; color: #40b4ba !important;" href="/dashboard?display=100&displayId=${str(course_overview.id).split(':')[1]}">Ver vídeo promocional</a>
+        <a style="text-align: center; color: white !important; margin: 30px auto; background-color: #eb947e !important; padding: 15px 0; width: 50%; border-radius: 5px; font-family: 'Avenir Heavy' !important; font-size: 1.2em;" href="/courses/${str(course_overview.id)}/course/">Ver curso</a>
 
       </div>
   </section>
