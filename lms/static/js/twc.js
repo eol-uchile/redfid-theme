@@ -101,9 +101,9 @@ function showVideoCurso(displayId) {
 function showTalleresWebinarsCapsulas(display, displayId) {
     $("#dashboard-main").hide();
     if (display === "1"){
-        $.getJSON('https://static.redfid.cl/talleres/talleres.json', function(data){
+        $.getJSON('http://localhost:8780/get_talleresywebinars', function(data){
             let filter = getUrlParameter("filter");    
-            items = getAndClassifyItems(data, displayId, filter);
+            items = getAndClassifyItems(data.talleresywebinars, displayId, filter);
             if (displayId === 0 && items["defaultItem"] != null) {
                 setUrlParameter('displayId', items["defaultItem"]["id"]);
             }
@@ -112,9 +112,9 @@ function showTalleresWebinarsCapsulas(display, displayId) {
             fillTalleres({"active": null, "default": null, "summarizedItems": []});
         });
     } else if (display === "2") {
-        $.getJSON('https://static.redfid.cl/capsulas/capsulas.json', function(data){
+        $.getJSON('http://localhost:8780/get_capsulas_data', function(data){
             let filter = getUrlParameter("filter");    
-            items = getAndClassifyItems(data, displayId, filter);
+            items = getAndClassifyItems(data.capsulas.capsulas, displayId, filter);
             if (displayId === 0 && items["defaultItem"] != null) {
                 setUrlParameter('displayId', items["defaultItem"]["id"]);
             }
