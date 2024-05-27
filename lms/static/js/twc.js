@@ -155,7 +155,7 @@ function fillCreateCapsula() {
         <i class="fa fa-arrow-left" aria-hidden="true"></i>
         Volver a Cápsulas
     </a>
-    <h1 class="landing-title">Crear cápsula</h1>
+    <h1 class="landing-title" style="text-align: left;">Crear cápsula</h1>
     <p class="landing-description">
     Si deseas aportar con una cápsula a la comunidad RedFID, por favor seleccione una categoría y la institución asociada. Se le proporcionará una plantilla de 
     PowerPoint, sobre la cual podrá armar su cápsula, y un documento con instrucciones para realizar la grabación.
@@ -276,7 +276,7 @@ function fillTalleres(items){
         <i class="fa fa-arrow-left" aria-hidden="true"></i>
         Volver a Aprendizaje Profesional
     </a>
-    <h1 class="landing-title">Talleres y webinars</h1>
+    <h1 class="landing-title" style="text-align: left;">Talleres y webinars</h1>
     <p class="landing-description">Aquí podrás volver a revisar los talleres de aprendizaje profesional y webinars impartidos en la comunidad RedFID.</p>
     <hr>
     <div class="twc-container">
@@ -285,7 +285,10 @@ function fillTalleres(items){
                 <p>El taller o webinar seleccionado no existe.</p>
             </div>
             <h1 class="twc-content-title"></h1>
-            <div class="twc-content-date"></div>
+            <div class="twc-content-datetag-container">
+                <div class="twc-content-tag"></div>
+                <div class="twc-content-date"></div>
+            </div>
             <div class="twc-content-video-container"></div>
             <div class="twc-content-subtitle-container"></div>
             <p class="twc-content-description"></p>
@@ -309,10 +312,9 @@ function fillTalleres(items){
             $(".twc-content-title").text(items.active.title);
             $(".twc-content-date").text(items.active.date);
             var videoEmbed = `<iframe src="${convertToEmbedUrl(items.active.video_url)}" frameborder="0" allowfullscreen></iframe>`;
+            $(".twc-content-tag").css("background-color", items.active.kind === "taller" ? "#40b4ba" : "#eb947e");
+            $(".twc-content-tag").text(items.active.kind);
             $(".twc-content-video-container").append(videoEmbed);
-            $(".twc-content-subtitle-container").append(`
-                <div class="twc-content-tag" style="background-color: ${items.active.kind === "taller" ? "#40b4ba" : "#eb947e"};">${items.active.kind}</div>
-            `);
             $(".twc-content-description").text(items.active.description);
             $(".twc-content-exposes").text(items.active.exposes);
             registerTWCGA4Event(items.active.title, items.active.kind)
@@ -327,18 +329,13 @@ function fillTalleres(items){
                 first = false;
                 $(".twc-summary").append(`
                     <div class="twc-summary-element">
-                        <div class="twc-summary-element-left">
-                            <div class="twc-summary-image-container">
-                                <a href="/dashboard?display=1&displayId=${item.id}" target="_self"><img src="${convertToThumbnailUrl(item.video_url)}" alt="${item.title}"></a>
-                            </div>
-                            <div class="twc-summary-subtitle-container">
-                                <div class="twc-summary-tag" style="background-color: ${item.kind === "taller" ? "#40b4ba" : "#eb947e"};">${item.kind}</div>
-                            </div>
-                        </div>
                         <div class="twc-summary-element-right">
                             <a href="/dashboard?display=1&displayId=${item.id}" target="_self"><h1 class="twc-summary-title">${item.title}</h1></a>
                             <div class="twc-summary-date">${item.date}</div>
                             <p class="twc-summary-description">${item.description}</p>
+                            <div style="text-align: center; margin: 10px 0 20px 0;">
+                                <a href="/dashboard?display=1&amp;displayId=${item.id}" style=" color: white !important;  background-color: ${item.kind === "webinar" ? "#eb947e" : "#40b4ba"} !important; padding: 5px 15px; border-radius: 5px; font-family: 'Avenir Heavy' !important; font-size: 0.85em;">Ver ${item.kind}</a>
+                            </div>
                             <p class="twc-summary-exposes">${item.exposes}</p>
                         </div>
                     </div>

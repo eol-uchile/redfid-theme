@@ -146,10 +146,12 @@ from common.djangoapps.student.models import CourseEnrollment
 <main id="main" aria-label="Content" tabindex="-1">
     <div class="dashboard" id="dashboard-main">
       <div class="main-container">
-        <h1 class="landing-title">Aprendizaje Profesional</h1>
+        <div class="titles-container" style="display: flex;">
+          <p class="landing-title-1">RedFID |</p>
+          <p class="landing-title-2">Aprendizaje Profesional</p>
+        </div>
         <p class="landing-description">En este espacio tendrás la posibilidad de fortalecer tu aprendizaje profesional realizando cursos online y accediendo a distintos recursos, como talleres, webinars y cápsulas.</p>
-        <div class="my-courses" id="my-courses" style="max-width: 1400px; margin: auto;">
-          <hr>
+        <div class="my-courses" id="my-courses" style="max-width: 940px; margin: auto;">
           % if display_dashboard_courses:
           <%include file="learner_dashboard/_dashboard_navigation_courses.html"/>
           % endif

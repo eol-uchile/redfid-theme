@@ -40,7 +40,7 @@
   .home .courses-container .courses .courses-listing .courses-listing-item {
     min-width: 23.23176% !important;
     width: 100% !important;
-    max-width: 1400px !important;
+    max-width: 940px !important;
     margin-right: 0 !important;
     max-height: none !important;
   }
@@ -59,7 +59,7 @@
     min-width: 23.23176% !important;
     margin-right: 0 !important;
     width: 100% !important;
-    max-width: 1400px !important;
+    max-width: 940px !important;
     margin-right: 0 !important;
     max-height: none !important;
   }
@@ -92,7 +92,7 @@
   }
 
   .main-header {
-    max-width: 1400px;
+    max-width: 940px;
     margin: auto;
     padding: 0 2%;
   }
@@ -100,7 +100,7 @@
 
 @media (max-width: 991.98px) {
   .main-header {
-    max-width: 1400px;
+    max-width: 940px;
     margin: auto;
     height: 55px !important;
     padding: 0 2%;
@@ -319,10 +319,43 @@ a .logo {
   border-color: #40b4ba !important;
 }
 
+.titles-container {
+  max-width: 940px;
+  display: flex;
+  margin: auto;
+  margin-bottom: 40px;
+}
+
+.landing-title {
+  font-family: 'Avenir Heavy';
+  font-size: 1.6em;
+  color: #646464;
+  font-weight: bolder;
+  font-size: 1.6em;
+  margin-top: 0;
+}
+
+.landing-title-1 {
+  font-family: 'Avenir Regular';
+  font-size: 1.6em;
+  color: #646464;
+  margin-right: 10px;
+  font-size: 1.6em;
+}
+
+.landing-title-2 {
+  font-family: 'Avenir Heavy';
+  font-size: 1.6em;
+  color: #646464;
+  font-weight: bolder;
+  font-size: 1.6em;
+  margin-top: 0;
+}
+
 @media screen and (min-width: 992px) {
 
   .courses-container {
-    max-width: 1400px !important;
+    max-width: 940px !important;
     margin: 0px auto 10px auto !important;
     padding-top: 0 !important;
   }
@@ -331,31 +364,22 @@ a .logo {
     height: 60px !important;
   }
 
-  .landing-title {
-    font-family: 'Avenir Heavy';
-    font-size: 2rem;
-    max-width: 1400px;
-    text-align: left;
-    font-weight: bolder;
-    color: #646464;
-    margin: auto;
-  }
-
   .landing-subtitle {
-    font-family: 'Avenir Heavy';
-    font-size: 2rem;
-    max-width: 1400px;
-    text-align: left;
-    font-weight: bolder;
-    margin: 36px auto;
-    color: #40b4ba;
+    font-size: 1.4rem !important;
+    max-width: 940px !important;
+    text-align: left !important;
+    font-weight: bolder !important;
+    margin: 20px auto !important;
+    color: #40b4ba !important;
+    font-family: 'Avenir Heavy' !important;
   }
 
   .landing-description {
     font-family: 'Avenir Regular';
     margin: 20px auto;
     text-align: justify;
-    max-width: 1400px;
+    font-size: 0.85em;
+    max-width: 940px;
     line-height: 1.5;
     color: #646464;
   }
@@ -364,7 +388,7 @@ a .logo {
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
-    max-width: 1400px;
+    max-width: 940px;
     margin: 36px auto;
   }
 
@@ -380,6 +404,8 @@ a .logo {
 
   .landing-course-image-container {
     width: 50%;
+    display: flex;
+    align-items: center;
   }
 
   .landing-course-image-container img {
@@ -413,6 +439,7 @@ a .logo {
     flex: 1;
     color: #646464;
     line-height: 1.4;
+    margin-top: 10px;
   }
 
   .landing-course-button {
@@ -421,29 +448,31 @@ a .logo {
     background-color: #eb947e;
     border-radius: 0;
     padding: 10px 30px;
-    margin: 3% 10%;
     text-align: center;
     font-weight: bolder !important;
   }
 
   .landing-course-datetime {
     font-family: 'Avenir Regular' !important;
-    padding: 10px 30px 20px 30px;
-    font-size: 0.9em;
+    font-size: 0.8em;
     color: #646464;
+    width: fit-content;
+    text-align: right;
+    padding: 0 30px;
   }
 
   .header-courses {
-    font-size: 2rem !important;
-    max-width: 1400px !important;
+    font-size: 1.4rem !important;
+    max-width: 940px !important;
     text-align: left !important;
     font-weight: bolder !important;
-    margin: 36px auto !important;
+    margin: 20px auto !important;
     color: #40b4ba !important;
+    font-family: 'Avenir Heavy' !important;
   }
 
   .find-courses {
-    max-width: 1400px !important;
+    max-width: 940px !important;
     margin: auto !important;
   }
 
@@ -461,7 +490,7 @@ a .logo {
   }
 
   .course-info .container {
-    max-width: 1400px;
+    max-width: 940px;
   }
 
 }
@@ -482,28 +511,17 @@ a .logo {
 
   .header-courses {
     font-size: 1.5rem !important;
-    max-width: 1400px !important;
+    max-width: 940px !important;
     text-align: left !important;
     font-weight: bolder !important;
     margin: 36px auto !important;
     color: #40b4ba !important;
   }
 
-
-  .landing-title {
-    font-family: 'Avenir Heavy';
-    font-size: 1.7rem;
-    max-width: 1400px;
-    text-align: left;
-    font-weight: bolder;
-    color: #646464;
-    margin: auto;
-  }
-
   .landing-subtitle {
     font-family: 'Avenir Heavy';
     font-size: 1.5rem;
-    max-width: 1400px;
+    max-width: 940px;
     text-align: left;
     font-weight: bolder;
     margin: 20px auto;
@@ -514,7 +532,7 @@ a .logo {
     font-family: 'Avenir Regular';
     margin: 20px auto;
     text-align: justify;
-    max-width: 1400px;
+    max-width: 940px;
     line-height: 1.5;
     font-size: 0.8em;
     color: #646464;
@@ -603,12 +621,17 @@ a .logo {
 
 }
 
+.course-target-link {
+  font-size: 1em !important;
+}
+
 .course-description-dashboard {
   font-family: 'Avenir Regular';
-  margin: 20px 30px 20px 0px;
   text-align: justify;
   color: #666;
   line-height: 1.2;
+  font-size: 0.85em;
+  margin: 0 20px 0 0;
 }
 
 .course-header {
@@ -617,7 +640,7 @@ a .logo {
 
 .course-profile {
   margin: auto;
-  max-width: 1400px;
+  max-width: 940px;
 }
 
 .redfid-enroll-button {
@@ -684,7 +707,7 @@ a .logo {
 
 .sign-in-description-outside {
   font-family: 'Avenir Regular' !important;
-  max-width: 1400px;
+  max-width: 940px;
   margin: auto;
   color: #646464;
   text-align: center;
@@ -700,7 +723,7 @@ a .logo {
 
 .register-button-outside {
   font-family: 'Avenir Regular' !important;
-  max-width: 1400px !important;
+  max-width: 940px !important;
   text-align: center;
   margin: 20px auto;
   display: block !important;
@@ -724,18 +747,19 @@ a .logo {
   font-size: 0.65rem !important;
   display: block !important;
   color: #40b4ba !important;
+  width: fit-content;
 }
 
 @media screen and (min-width: 992px) {
 
   #capsulas-main {
-    max-width: 1400px;
+    max-width: 940px;
     margin: auto;
     padding: 20px;
   }
 
   #twc-main {
-    max-width: 1400px;
+    max-width: 940px;
     margin: auto;
     padding: 20px;
   }
@@ -745,6 +769,14 @@ a .logo {
     justify-content: space-between;
   }
   
+
+  .twc-content-datetag-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    align-items: end;
+  }
+
   .twc-content {
     width: 60%;
   }
@@ -783,11 +815,11 @@ a .logo {
   
   .twc-content-title {
     font-family: 'Avenir Heavy';
-    max-width: 1400px;
+    max-width: 940px;
     text-align: justify;
     font-weight: bolder !important;
     color: #40b4ba;
-    font-size: 1.6rem !important;
+    font-size: 1.2rem !important;
     margin-bottom: 0 !important;
   }
   
@@ -795,8 +827,9 @@ a .logo {
     font-family: 'Avenir Regular';
     margin: 20px auto;
     text-align: justify;
-    max-width: 1400px;
+    max-width: 940px;
     line-height: 1.5;
+    font-size: 0.9em !important;
     color: #646464;
   }
   
@@ -805,7 +838,6 @@ a .logo {
   }
 
   .twc-summary-element-right {
-    width: 70% !important;
     padding: 0 20px !important;
   }
   
@@ -833,6 +865,7 @@ a .logo {
     font-weight: bold;
     border-radius: 3px;
     color: #646464;
+    font-size: 0.9em !important;
     text-align: right;
   }
   
@@ -895,7 +928,7 @@ a .logo {
     border-radius: 3px;
     color: #646464;
     text-align: right;
-    font-size: 12px;
+    font-size: 0.8em;
     margin-top: 8px;
   }
   
@@ -911,10 +944,10 @@ a .logo {
   .twc-summary-description {
     margin: 10px auto 25px auto;
     text-align: justify;
-    max-width: 1400px;
+    max-width: 940px;
     line-height: 1.5;
     color: #646464;
-    font-size: 12px;
+    font-size: 0.8em;
   }
   
   .twc-summary-button-container {
@@ -939,13 +972,13 @@ a .logo {
 @media screen and (max-width: 991.98px) {
 
   #capsulas-main {
-    max-width: 1400px;
+    max-width: 940px;
     margin: auto;
     padding: 20px;
   }
 
   #twc-main {
-    max-width: 1400px;
+    max-width: 940px;
     margin: auto;
     padding: 20px;
   }
@@ -1005,7 +1038,6 @@ a .logo {
   }
 
   .twc-summary-element-right {
-    width: 75% !important;
     padding: 0 20px !important;
   }
   
@@ -1015,7 +1047,7 @@ a .logo {
   
   .twc-content-title {
     font-family: 'Avenir Heavy';
-    max-width: 1400px;
+    max-width: 940px;
     text-align: justify;
     font-weight: bolder !important;
     color: #40b4ba;
@@ -1027,7 +1059,7 @@ a .logo {
     font-family: 'Avenir Regular';
     margin: 20px auto;
     text-align: justify;
-    max-width: 1400px;
+    max-width: 940px;
     line-height: 1.5;
     color: #646464;
   }
@@ -1121,7 +1153,7 @@ a .logo {
   .twc-summary-description {
     margin: 10px auto 25px auto;
     text-align: justify;
-    max-width: 1400px;
+    max-width: 940px;
     line-height: 1.5;
     color: #646464;
     font-size: 14px;
@@ -1146,17 +1178,35 @@ a .logo {
   }
 }
 
-.footer-text {
+.footer-text-1 {
   color: #646464;
-  font-size: 0.9em !important;
-  margin: 8px auto !important;
-  width: 80% !important;
+  font-size: 0.85em !important;
+  padding: 0 20px;
+  max-width: 940px !important;
   text-align: center !important;
+  margin: 0px auto;
+  line-height: 20px;
 }
 
-a.footer-text {
+.footer-text-2 {
   color: #40b4ba !important;
   text-decoration: none !important;
+  font-size: 0.85em !important;
+  padding: 0 10px;
+  max-width: 940px !important;
+  text-align: center !important;
+  margin: 8px auto;
+  display: block;
+  width: fit-content;
+}
+
+.footer-text-3 {
+  color: #646464;
+  font-size: 0.85em !important;
+  padding: 0 20px;
+  max-width: 940px !important;
+  text-align: center !important;
+  margin: 0px auto 10px auto;
 }
 
 footer div.my-auto {
@@ -1216,6 +1266,7 @@ footer div.my-auto {
 
 #dashboard-main .main-container {
   padding: 10px 20px !important;
+  margin-top: 20px;
 }
 
 .global-header {
@@ -1357,11 +1408,6 @@ footer div.my-auto {
 }
 
 
-
-
-
-
-
 header#header {
   height: 89px;
   box-shadow: 0px 6px 4px -4px #cccccc;
@@ -1373,11 +1419,12 @@ header#header {
 }
 
 .header-container {
-  max-width: 1400px;
+  max-width: 940px;
   display: flex;
   margin: auto;
   justify-content: space-between;
-  padding: 0 10px;
+  padding: 0 20px;
+  height: 72px;
 }
 
 .header-navigation-container {
@@ -1388,9 +1435,15 @@ header#header {
 .header-navigation-link {
   text-decoration: none !important;
   font-weight: bold !important;
+  font-family: 'Avenir Regular' !important;
+  font-size: 15.2px;
   background-color: white !important;
   color: #40b4ba !important;
   padding: 0 30px;
+}
+
+.header-navigation-link p {
+  padding: 5px 0;
 }
 
 .header-navigation-link:hover {
@@ -1402,15 +1455,20 @@ header#header {
 .header-navigation-link-active {
   text-decoration: none !important;
   font-weight: bold !important;
+  font-family: 'Avenir Regular' !important;
+  font-size: 15.2px;
   background-color: #40b4ba !important;
   color: white !important;
   padding: 0 30px;
 }
 
+.header-navigation-link-active p {
+  padding: 5px 0;
+}
+
 .header-logo {
   height: 60px;
   width: auto;
-  margin: 6px;
 }
 
 .header-login-container {
@@ -1462,7 +1520,7 @@ header#header {
   }
 }
 
-@media screen and (max-width: 940px) {
+@media screen and (max-width: 920px) {
   
   .header-navigation-link,
   .header-navigation-link-active,
@@ -1513,7 +1571,7 @@ header#header {
 }
 
 .preview-menu {
-  max-width: 1400px;
+  max-width: 940px;
   margin: auto;
 }
 
