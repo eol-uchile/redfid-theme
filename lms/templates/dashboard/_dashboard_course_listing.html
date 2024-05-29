@@ -182,6 +182,9 @@ from lms.djangoapps.experiments.utils import UPSELL_TRACKING_FLAG
                 </div>
             % endif
         </div>
+        <a href="${course_target}" data-course-key="${enrollment.course_id}" class="mobile-course-image" tabindex="-1">
+          <img src="${course_overview.image_urls['small']}" class="course-image" alt="${_('{course_number} {course_name} Home Page').format(course_number=course_overview.number, course_name=course_overview.display_name_with_default)}" />
+        </a>
         <a class="landing-course-button" href="/courses/${str(course_overview.id)}/course/">Ver curso</a>
       </div>
   </section>

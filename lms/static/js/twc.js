@@ -147,9 +147,8 @@ function hideTalleresWebinarsCapsulas() {
 
 function fillCreateCapsula() {
     $.getJSON('http://localhost:8780/get_capsulas', function(data){
-        let templates = data.templates;
+        let templates = data.capsulas.templates;
         let institutionOptions = '';
-        console.log(templates);
         for (let key in templates) {
             if (templates.hasOwnProperty(key)) {
                 institutionOptions += `<option value="${key}">${templates[key]}</option>`;
@@ -410,18 +409,13 @@ function fillCapsulas(items){
                 first = false;
                 $(".twc-summary").append(`
                     <div class="twc-summary-element">
-                        <div class="twc-summary-element-left">
-                            <div class="twc-summary-image-container">
-                                <a href="/dashboard?display=2&displayId=${item.id}" target="_self"><img src="${convertToThumbnailUrl(item.video_url)}" alt="${item.title}"></a>
-                            </div>
-                            <div class="twc-summary-subtitle-container">
-                                <div class="twc-summary-tag" style="background-color: ${CAPSULAS[item.kind]["color"]};">${CAPSULAS[item.kind]["name"]}</div>
-                            </div>
-                        </div>
                         <div class="twc-summary-element-right">
                             <a href="/dashboard?display=2&displayId=${item.id}" target="_self"><h1 class="twc-summary-title">${item.title}</h1></a>
                             <div class="twc-summary-date">${item.date}</div>
                             <p class="twc-summary-description">${item.description}</p>
+                            <div class="twc-summary-subtitle-container">
+                                <div class="twc-summary-tag" style="background-color: ${CAPSULAS[item.kind]["color"]};">${CAPSULAS[item.kind]["name"]}</div>
+                            </div>
                             <p class="twc-summary-exposes">${item.exposes}</p>
                         </div>
                     </div>

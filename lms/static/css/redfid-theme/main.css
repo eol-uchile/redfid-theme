@@ -222,6 +222,21 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .audiovisual-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+    flex-direction: column;
+  }
+
+  .audiovisual-image {
+    width: 100%;
+    margin: 2% 0;
+    cursor: pointer;
+  }
+}
+
 @media screen and (max-width: 1199px) and (min-width: 993px) {
   .redfid-header-desktop {
     display: flex;
@@ -442,8 +457,29 @@ a .logo {
     margin-top: 10px;
   }
 
-  .landing-course-button {
-    font-family: 'Avenir Heavy' !important;
+  div#dashboard-main .landing-course-button {
+    font-family: 'Avenir Regular' !important;
+    color: white !important;
+    background-color: #eb947e;
+    border-radius: 0;
+    padding: 10px 30px;
+    text-align: center;
+    font-weight: bolder !important;
+    width: 100%;
+  }
+
+  section.home .landing-course-button {
+    font-family: 'Avenir Regular' !important;
+    color: white !important;
+    background-color: #eb947e;
+    border-radius: 0;
+    padding: 10px 30px;
+    text-align: center;
+    font-weight: bolder !important;
+  }
+
+  section.find-courses .landing-course-button {
+    font-family: 'Avenir Regular' !important;
     color: white !important;
     background-color: #eb947e;
     border-radius: 0;
@@ -462,7 +498,7 @@ a .logo {
   }
 
   .header-courses {
-    font-size: 1.4rem !important;
+    font-size: 1.5rem !important;
     max-width: 940px !important;
     text-align: left !important;
     font-weight: bolder !important;
@@ -514,8 +550,9 @@ a .logo {
     max-width: 940px !important;
     text-align: left !important;
     font-weight: bolder !important;
-    margin: 36px auto !important;
+    margin: 20px auto !important;
     color: #40b4ba !important;
+    font-family: 'Avenir Heavy' !important;
   }
 
   .landing-subtitle {
@@ -536,19 +573,6 @@ a .logo {
     line-height: 1.5;
     font-size: 0.8em;
     color: #646464;
-  }
-
-  .audiovisual-container {
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 30px;
-    flex-direction: column;
-  }
-
-  .audiovisual-image {
-    width: 100%;
-    margin: 2% 0;
-    cursor: pointer;
   }
 
   .landing-course-container {
@@ -595,8 +619,32 @@ a .logo {
     color: #646464;
   }
 
-  .landing-course-button {
-    font-family: 'Avenir Heavy' !important;
+  div#dashboard-main .landing-course-button {
+    font-family: 'Avenir Regular' !important;
+    color: white !important;
+    background-color: #eb947e;
+    border-radius: 0;
+    padding: 10px 30px;
+    margin: 3% 10%;
+    font-weight: bolder !important;
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  section.home .landing-course-button {
+    font-family: 'Avenir Regular' !important;
+    color: white !important;
+    background-color: #eb947e;
+    border-radius: 0;
+    padding: 10px 30px;
+    margin: 3% 10%;
+    font-weight: bolder !important;
+    text-align: center;
+  }
+
+  section.find-courses .landing-course-button {
+    font-family: 'Avenir Regular' !important;
     color: white !important;
     background-color: #eb947e;
     border-radius: 0;
@@ -608,7 +656,7 @@ a .logo {
 
   .landing-course-datetime {
     font-family: 'Avenir Regular' !important;
-    padding: 10px 30px 20px 30px;
+    padding: 0 30px 0 0;
     font-size: 0.7em;
     color: #646464;
   }
@@ -627,11 +675,12 @@ a .logo {
 
 .course-description-dashboard {
   font-family: 'Avenir Regular';
+  margin: 0 auto 20px auto;
   text-align: justify;
-  color: #666;
-  line-height: 1.2;
-  font-size: 0.85em;
-  margin: 0 20px 0 0;
+  max-width: 940px;
+  line-height: 1.5;
+  font-size: 0.8em;
+  color: #646464;
 }
 
 .course-header {
@@ -945,6 +994,8 @@ a .logo {
     font-size: 12px;
     display: inline-block;
     color: white;
+    width: fit-content;
+    margin-bottom: 10px;
   }
 
   .twc-summary-tag::first-letter {
@@ -985,7 +1036,7 @@ a .logo {
   }
 
   .twc-summary-button {
-    font-family: 'Avenir Heavy';
+    font-family: 'Avenir Regular';
     color: white !important;
     background-color: #eb947e !important;
     padding: 8px 20px !important;
@@ -1049,12 +1100,14 @@ a .logo {
     text-align: center;
     font-weight: bolder;
     color: #646464;
+    font-size: 0.8em;
   }
 
   .twc-content-exposes-subtitle {
     font-family: 'Avenir Regular';
     text-align: center;
     font-weight: bolder;
+    font-size: 0.8em;
     color: #646464;
   }
 
@@ -1106,6 +1159,7 @@ a .logo {
     display: inline-block;
     color: white;
     white-space: nowrap;
+    font-size: 0.8em;
   }
 
   .twc-content-tag::first-letter {
@@ -1148,6 +1202,9 @@ a .logo {
     font-size: 12px;
     display: inline-block;
     color: white;
+    width: fit-content;
+    margin-bottom: 10px;
+    font-size: 0.8em;
   }
 
   .twc-summary-tag::first-letter {
@@ -1196,7 +1253,7 @@ a .logo {
   }
 
   .twc-summary-button {
-    font-family: 'Avenir Heavy';
+    font-family: 'Avenir Regular';
     color: white !important;
     background-color: #eb947e !important;
     padding: 8px 20px !important;
@@ -1280,8 +1337,7 @@ a .logo {
   padding: 10px 20px;
   background-color: #eb947e;
   color: white !important;
-  font-weight: bold !important;
-  font-family: 'Avenir Heavy' !important;
+  font-family: 'Avenir Regular' !important;
   border-radius: 3px;
   font-size: 1em !important;
   text-decoration: none !important;
@@ -1298,6 +1354,7 @@ a .logo {
   align-items: center;
   margin: auto;
   font-family: 'Avenir Regular' !important;
+  flex-wrap: wrap;
 }
 
 .twc-create-container select {
@@ -1307,7 +1364,10 @@ a .logo {
 }
 
 .twc-create-capsula-input-container {
-  margin-bottom: 20px;
+  flex-wrap: wrap;
+  display: flex;
+  flex: 1 1 300px;
+  margin: 0 5px 20px 5px;
 }
 
 .twc-create-capsula-input-container p {
@@ -1577,7 +1637,7 @@ header#header {
 .btn.btn-primary.action-resume-course {
   background-color: #eb947e !important;
   border: none !important;
-  font-family: 'Avenir Heavy' !important;
+  font-family: 'Avenir Regular' !important;
 }
 
 .preview-menu {
@@ -1619,7 +1679,8 @@ header#header {
 }
 
 .footer-container {
-  max-width: 1200px;
+  max-width: 940px;
+  padding: 0 20px;
   margin: auto;
 }
 
@@ -1767,4 +1828,38 @@ header#header {
 
 .course-info .container {
   padding: 10px 20px;
+}
+
+@media screen and (min-width: 769px) {
+
+  .mobile-course-image {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 991px) {
+
+  .mobile-course-image {
+    display: block;
+  }
+
+  .mobile-course-image img {
+    width: 100%;
+  }
+
+}
+
+.dashboard .main-container .my-courses .course .details {
+  padding-left: 0px !important;
+}
+
+@media (max-width: 767.98px) {
+  .dashboard .main-container .my-courses .course .details .wrapper-course-details {
+    flex-direction: row !important;
+  }
+}
+
+.find-courses .courses-container {
+  padding: 0 !important;
 }
