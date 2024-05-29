@@ -95,7 +95,7 @@ from lms.djangoapps.experiments.utils import UPSELL_TRACKING_FLAG
         </span>
       % endif
     </div>
-      <div class="wrapper-course-details" style="justify-content: space-between !important; flex-direction: column !important;">
+      <div class="wrapper-course-details" style="justify-content: space-between !important; align-items: center;">
         <h3 class="course-title" id="course-title-${enrollment.course_id}">
           % if show_courseware_link and not is_unfulfilled_entitlement:
             % if not is_course_expired:
@@ -183,7 +183,6 @@ from lms.djangoapps.experiments.utils import UPSELL_TRACKING_FLAG
             % endif
         </div>
         <a class="landing-course-button" href="/courses/${str(course_overview.id)}/course/">Ver curso</a>
-
       </div>
   </section>
   <footer class="wrapper-messages-primary">

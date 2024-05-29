@@ -48,9 +48,9 @@ function registerTWCGA4Event(title, kind) {
         username = buttonText;
     }
     gtag('event', 'watch_twc', {
-        'title': title,
-        'kind': kind,
-        'username': username
+        'content_id': title,
+        'content_group': kind,
+        'character': username
     }); 
 }
 
@@ -112,7 +112,7 @@ function showTalleresWebinarsCapsulas(display, displayId) {
             fillTalleres({"active": null, "default": null, "summarizedItems": []});
         });
     } else if (display === "2") {
-        $.getJSON('http://localhost:8780/get_capsulas_data', function(data){
+        $.getJSON('http://localhost:8780/get_capsulas', function(data){
             let filter = getUrlParameter("filter");    
             items = getAndClassifyItems(data.capsulas.capsulas, displayId, filter);
             if (displayId === 0 && items["defaultItem"] != null) {
@@ -146,128 +146,123 @@ function hideTalleresWebinarsCapsulas() {
 }
 
 function fillCreateCapsula() {
-    $("#twc-main").html(`
-    <a class="back-to-landing-button" href="/dashboard">
-        <i class="fa fa-arrow-left" aria-hidden="true"></i>
-        Volver a Aprendizaje Profesional
-    </a>
-    <a class="back-to-landing-button" href="/dashboard?display=2">
-        <i class="fa fa-arrow-left" aria-hidden="true"></i>
-        Volver a Cápsulas
-    </a>
-    <h1 class="landing-title" style="text-align: left;">Crear cápsula</h1>
-    <p class="landing-description">
-    Si deseas aportar con una cápsula a la comunidad RedFID, por favor seleccione una categoría y la institución asociada. Se le proporcionará una plantilla de 
-    PowerPoint, sobre la cual podrá armar su cápsula, y un documento con instrucciones para realizar la grabación.
-    </p>
-    <hr>
-    <div class="twc-create-container">
-        <div class="twc-create-capsula-input-container">
-            <p>Categoría de cápsula:</p>
-            <select id="twc-select-category">
-                <option value="waiting" disabled selected>Por favor seleccione una opción...</option>
-                <option value="rep">Estudio propio</option>
-                <option value="reo">Estudio realizado por otro</option>
-                <option value="rhii">Habilidades para la innovación e investigación</option>
-                <option value="reac">Elementos a considerar para enseñar algo</option>
-                <option value="rap">Actividad pedagógica</option>
-            </select>
-        </div>
-        <div class="twc-create-capsula-input-container">
-            <p>Institución asociada</p>
-            <select id="twc-select-institution">
-                <option value="waiting" disabled selected>Por favor seleccione una opción...</option>
-                <option value="other">Otra/Mútliples</option>
-                <option value="puc">Pontificia Universidad Católica de Chile</option>
-                <option value="pucv">Pontificia Universidad Católica de Valparaíso</option>
-                <option value="unach">Universidad Adventista de Chile</option>
-                <option value="uah">Universidad Alberto Hurtado</option>
-                <option value="unap">Universidad Arturo Prat</option>
-                <option value="uab">Universidad Autónoma de Barcelona</option>
-                <option value="ubo">Universidad Bernardo O'Higgins</option>
-                <option value="ucen">Universidad Central</option>
-                <option value="ucn">Universidad Católica del Norte</option>
-                <option value="ucsc">Universidad Católica de la Santísima Concepción</option>
-                <option value="uct">Universidad Católica de Temuco</option>
-                <option value="uda">Universidad de Atacama</option>
-                <option value="uch">Universidad de Chile</option>
-                <option value="udec">Universidad de Concepción</option>
-                <option value="umag">Universidad de Magallanes</option>
-                <option value="uoh">Universidad de O'Higgins</option>
-                <option value="usach">Universidad de Santiago de Chile</option>
-                <option value="utalca">Universidad de Talca</option>
-                <option value="uta">Universidad de Tarapacá</option>
-                <option value="ubb">Universidad del Biobío</option>
-                <option value="udd">Universidad del Desarrollo</option>
-                <option value="ufro">Universidad de La Frontera</option>
-                <option value="userena">Universidad de La Serena</option>
-                <option value="udla">Universidad de Las Américas</option>
-                <option value="ula">Universidad de Los Lagos</option>
-                <option value="uft">Universidad Finnis Terrae</option>
-                <option value="umayor">Universidad Mayor</option>
-                <option value="umce">Universidad Metropolitana de Ciencias de la Educación</option>
-                <option value="uss">Universidad San Sebastián</option>
-                <option value="ust">Universidad Santo Tomas</option>
-            </select>
-        </div>
-    </div>
-    <div class="twc-download-template-container">
-        <a id="twc-download-template" target="_self">
-            Descargar plantilla
+    $.getJSON('http://localhost:8780/get_capsulas', function(data){
+        let templates = data.templates;
+        let institutionOptions = '';
+        console.log(templates);
+        for (let key in templates) {
+            if (templates.hasOwnProperty(key)) {
+                institutionOptions += `<option value="${key}">${templates[key]}</option>`;
+            }
+        }
+        $("#twc-main").html(`
+        <a class="back-to-landing-button" href="/dashboard">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            Volver a Aprendizaje Profesional
         </a>
-    </div>
-    <div class="twc-download-instructions-container">
-        <a class="download-capsula-instructions" href="https://static.redfid.cl/capsulas/CapsulasRedFID.pdf" download="">
-            <i class="fa fa-arrow-down" aria-hidden="true"></i>
-            Instrucciones para grabación
+        <a class="back-to-landing-button" href="/dashboard?display=2">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            Volver a Cápsulas
         </a>
-    </div>
-    <div class="multiple-institutions-warning-container">
-        <p>Ha seleccionado como institución asociada 'Otra/Múltiples'. Deberá incluir manualmente los logotipos de las instituciones en la diapositiva de portada de la cápsula.</p>
-    </div>
-    <div class="download-link-warning-container">
-        <p>Por favor, seleccione una categoría y una institución antes de descargar la plantilla.</p>
-    </div>
-    <hr>
-    <p class="landing-description">
-        Una vez que la cápsula se encuentre lista, por favor envíela adjunta a <a class="twc-mailto" href="mailto:capsulas@redfid.cl">capsulas@redfid.cl</a> para que sea revisada. 
-        Tras ser aceptada por la administración, se le notificará por correo y se publicará la cápsula.
-    </p>
-    `);
-    const categorySelect = document.querySelector('#twc-select-category');
-    const institutionSelect = document.querySelector('#twc-select-institution');
-    const downloadLink = document.querySelector('#twc-download-template');
-    const downloadLinkWarningContainer = document.querySelector('.download-link-warning-container');
-
-    function updateDownloadLink() {
-        const categoryValue = categorySelect.value;
-        const institutionValue = institutionSelect.value;
-        const warningContainer = document.querySelector('.multiple-institutions-warning-container');
-        downloadLinkWarningContainer.style.display = 'none';
-        if (institutionValue === 'other') {
-            warningContainer.style.display = 'block';
-        } else {
-            warningContainer.style.display = 'none';
+        <h1 class="landing-title" style="text-align: left;">Crear cápsula</h1>
+        <p class="landing-description">
+        Si deseas aportar con una cápsula a la comunidad RedFID, por favor seleccione una categoría y la institución asociada. Se le proporcionará una plantilla de 
+        PowerPoint, sobre la cual podrá armar su cápsula, y un documento con instrucciones para realizar la grabación.
+        </p>
+        <hr>
+        <div class="twc-create-container">
+            <div class="twc-create-capsula-input-container">
+                <p>Categoría de cápsula:</p>
+                <select id="twc-select-category">
+                    <option value="waiting" disabled selected>Por favor seleccione una opción...</option>
+                    <option value="rep">Estudio propio</option>
+                    <option value="reo">Estudio realizado por otro</option>
+                    <option value="rhii">Habilidades para la innovación e investigación</option>
+                    <option value="reac">Elementos a considerar para enseñar algo</option>
+                    <option value="rap">Actividad pedagógica</option>
+                </select>
+            </div>
+            <div class="twc-create-capsula-input-container">
+                <p>Institución asociada</p>
+                <select id="twc-select-institution">
+                    <option value="waiting" disabled selected>Por favor seleccione una opción...</option>
+                    ${institutionOptions}
+                </select>
+            </div>
+        </div>
+        <div class="twc-download-template-container">
+            <a id="twc-download-template" target="_self">
+                Descargar plantilla
+            </a>
+        </div>
+        <div class="twc-download-instructions-container">
+            <a class="download-capsula-instructions" href="https://static.redfid.cl/capsulas/CapsulasRedFID.pdf" download="">
+                <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                Instrucciones para grabación
+            </a>
+        </div>
+        <div class="multiple-institutions-warning-container">
+            <p>Ha seleccionado como institución asociada 'Otra/Múltiples'. Deberá incluir manualmente los logotipos de las instituciones en la diapositiva de portada de la cápsula.</p>
+        </div>
+        <div class="download-link-warning-container">
+            <p>Por favor, seleccione una categoría y una institución antes de descargar la plantilla.</p>
+        </div>
+        <hr>
+        <p class="landing-description">
+            Una vez que la cápsula se encuentre lista, por favor envíela adjunta a <a class="twc-mailto" href="mailto:capsulas@redfid.cl">capsulas@redfid.cl</a> para que sea revisada. 
+            Tras ser aceptada por la administración, se le notificará por correo y se publicará la cápsula.
+        </p>
+        `);
+        const categorySelect = document.querySelector('#twc-select-category');
+        const institutionSelect = document.querySelector('#twc-select-institution');
+        const downloadLink = document.querySelector('#twc-download-template');
+        const downloadLinkWarningContainer = document.querySelector('.download-link-warning-container');
+    
+        function updateDownloadLink() {
+            const categoryValue = categorySelect.value;
+            const institutionValue = institutionSelect.value;
+            const warningContainer = document.querySelector('.multiple-institutions-warning-container');
+            downloadLinkWarningContainer.style.display = 'none';
+            if (institutionValue === 'other') {
+                warningContainer.style.display = 'block';
+            } else {
+                warningContainer.style.display = 'none';
+            }
+            if (categoryValue !== 'waiting' && institutionValue !== 'waiting') {
+                downloadLink.disabled = false;
+                downloadLink.href = `http://localhost:8780/get_capsula_template/${categoryValue.toUpperCase()}/${institutionValue}`;
+                downloadLink.setAttribute('download', '');
+            } else {
+                downloadLink.disabled = true;
+            }
         }
-        if (categoryValue !== 'waiting' && institutionValue !== 'waiting') {
-            downloadLink.disabled = false;
-            const institutionPart = institutionValue === 'other' ? 'any' : institutionValue;
-            downloadLink.href = `https://static.redfid.cl/capsulas/templates/${categoryValue.toUpperCase()}_${institutionPart.toUpperCase()}.potx`;
-            downloadLink.setAttribute('download', '');
-        } else {
-            downloadLink.disabled = true;
-        }
-    }
-
-    downloadLink.addEventListener('click', function(event) {
-        if (!downloadLink.getAttribute('href')) {
-            event.preventDefault();
-            downloadLinkWarningContainer.style.display = 'block';
-        }
+    
+        downloadLink.addEventListener('click', function(event) {
+            if (!downloadLink.getAttribute('href')) {
+                event.preventDefault();
+                downloadLinkWarningContainer.style.display = 'block';
+            }
+        });
+    
+        categorySelect.addEventListener('change', updateDownloadLink);
+        institutionSelect.addEventListener('change', updateDownloadLink);
+    }).fail(function(jqXHR, textStatus, errorThrown) {
+        $("#twc-main").html(`
+        <a class="back-to-landing-button" href="/dashboard">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            Volver a Aprendizaje Profesional
+        </a>
+        <a class="back-to-landing-button" href="/dashboard?display=2">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            Volver a Cápsulas
+        </a>
+        <h1 class="landing-title" style="text-align: left;">Crear cápsula</h1>
+        <p class="landing-description">
+        La API de Cápsulas no está disponible.
+        </p>
+        <hr>
+        `);
     });
-
-    categorySelect.addEventListener('change', updateDownloadLink);
-    institutionSelect.addEventListener('change', updateDownloadLink);
 }
 
 function fillTalleres(items){
@@ -325,6 +320,8 @@ function fillTalleres(items){
             for(let item of items.summarizedItems) {
                 if (!first) {
                     $(".twc-summary").append("<hr>")
+                } else {
+                    $(".twc-summary").append('<h1 class="landing-subtitle" style="text-align: center !important;margin-top: 0 !important;">Anteriores</h1>')
                 }
                 first = false;
                 $(".twc-summary").append(`

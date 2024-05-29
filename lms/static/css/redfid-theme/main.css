@@ -744,8 +744,8 @@ a .logo {
 }
 
 #register_error {
-  background:#40b4ba !important;
-  border:1px #40b4ba !important;
+  background: #40b4ba !important;
+  border: 1px #40b4ba !important;
   font-weight: bold !important;
   font-family: 'Avenir Regular' !important;
 }
@@ -779,6 +779,13 @@ a .logo {
   width: fit-content;
 }
 
+.twc-content-datetag-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  align-items: end;
+}
+
 @media screen and (min-width: 992px) {
 
   #capsulas-main {
@@ -792,48 +799,41 @@ a .logo {
     margin: auto;
     padding: 20px;
   }
-  
+
   .twc-container {
     display: flex;
     justify-content: space-between;
   }
-  
-
-  .twc-content-datetag-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 5px;
-    align-items: end;
-  }
 
   .twc-content {
-    width: 60%;
+    width: 65%;
+    padding: 10px;
   }
-  
+
   .twc-summary {
     width: 35%;
     max-height: 800px;
     overflow: auto;
     padding: 10px;
   }
-  
+
   .twc-error-container {
     text-align: center;
     color: #646464;
   }
-  
+
   .twc-content-error-container {
     text-align: center;
     color: #646464;
   }
-  
+
   .twc-content-video-container {
     position: relative;
     padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
   }
-  
+
   .twc-content-video-container iframe {
     position: absolute;
     top: 0;
@@ -841,7 +841,7 @@ a .logo {
     width: 100%;
     height: 100%;
   }
-  
+
   .twc-content-title {
     font-family: 'Avenir Heavy';
     max-width: 940px;
@@ -851,7 +851,7 @@ a .logo {
     font-size: 1.2rem !important;
     margin-bottom: 0 !important;
   }
-  
+
   .twc-content-description {
     font-family: 'Avenir Regular';
     margin: 20px auto;
@@ -861,7 +861,7 @@ a .logo {
     font-size: 0.9em !important;
     color: #646464;
   }
-  
+
   .twc-content-subtitle-container {
     text-align: right;
   }
@@ -869,11 +869,11 @@ a .logo {
   .twc-summary-element-right {
     padding: 0 20px !important;
   }
-  
+
   .twc-summary-element-left {
     width: 30% !important;
   }
-  
+
   .twc-content-tag {
     font-family: 'Avenir Regular';
     margin-top: 10px;
@@ -883,11 +883,11 @@ a .logo {
     color: white;
     white-space: nowrap;
   }
-  
+
   .twc-content-tag::first-letter {
     text-transform: capitalize;
   }
-  
+
   .twc-content-date {
     font-family: 'Avenir Regular';
     margin: 10px 0;
@@ -897,11 +897,11 @@ a .logo {
     font-size: 0.9em !important;
     text-align: right;
   }
-  
+
   .twc-summary-subtitle-container {
     text-align: center;
   }
-  
+
   .twc-summary-empty-message {
     color: #646464;
     text-align: center;
@@ -928,7 +928,7 @@ a .logo {
     color: #646464;
     font-size: 12px;
   }
-  
+
   .twc-summary-title {
     font-family: 'Avenir Heavy';
     text-align: justify;
@@ -937,7 +937,7 @@ a .logo {
     font-size: 14px !important;
     margin-bottom: 0 !important;
   }
-  
+
   .twc-summary-tag {
     font-family: 'Avenir Regular';
     padding: 5px 15px;
@@ -946,11 +946,11 @@ a .logo {
     display: inline-block;
     color: white;
   }
-  
+
   .twc-summary-tag::first-letter {
     text-transform: capitalize;
   }
-  
+
   .twc-summary-date {
     font-family: 'Avenir Regular';
     font-weight: bold;
@@ -960,16 +960,16 @@ a .logo {
     font-size: 0.8em;
     margin-top: 8px;
   }
-  
+
   .twc-summary-image-container {
     text-align: center;
     margin: 10px 0;
   }
-  
+
   .twc-summary-image-container img {
     width: 100%;
   }
-  
+
   .twc-summary-description {
     margin: 10px auto 25px auto;
     text-align: justify;
@@ -978,12 +978,12 @@ a .logo {
     color: #646464;
     font-size: 0.8em;
   }
-  
+
   .twc-summary-button-container {
     text-align: center;
     margin: 30px auto;
   }
-  
+
   .twc-summary-button {
     font-family: 'Avenir Heavy';
     color: white !important;
@@ -1011,32 +1011,32 @@ a .logo {
     margin: auto;
     padding: 20px;
   }
-  
+
   .twc-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
-  
+
   .twc-content {
     width: 100%;
   }
-  
+
   .twc-summary {
     width: 100%;
     margin: auto;
   }
-  
+
   .twc-error-container {
     text-align: center;
     color: #646464;
   }
-  
+
   .twc-content-error-container {
     text-align: center;
     color: #646464;
   }
-  
+
   .twc-content-video-container {
     position: relative;
     padding-bottom: 56.25%;
@@ -1057,7 +1057,7 @@ a .logo {
     font-weight: bolder;
     color: #646464;
   }
-  
+
   .twc-content-video-container iframe {
     position: absolute;
     top: 0;
@@ -1067,36 +1067,37 @@ a .logo {
   }
 
   .twc-summary-element-right {
-    padding: 0 20px !important;
+    width: 100%;
   }
-  
+
   .twc-summary-element-left {
     width: 25% !important;
   }
-  
+
   .twc-content-title {
     font-family: 'Avenir Heavy';
     max-width: 940px;
     text-align: justify;
     font-weight: bolder !important;
     color: #40b4ba;
-    font-size: 1.6rem !important;
+    font-size: 1.1rem !important;
     margin-bottom: 0 !important;
   }
-  
+
   .twc-content-description {
     font-family: 'Avenir Regular';
     margin: 20px auto;
     text-align: justify;
     max-width: 940px;
     line-height: 1.5;
+    font-size: 0.9em !important;
     color: #646464;
   }
-  
+
   .twc-content-subtitle-container {
     text-align: right;
   }
-  
+
   .twc-content-tag {
     font-family: 'Avenir Regular';
     margin-top: 10px;
@@ -1106,29 +1107,30 @@ a .logo {
     color: white;
     white-space: nowrap;
   }
-  
+
   .twc-content-tag::first-letter {
     text-transform: capitalize;
   }
-  
+
   .twc-content-date {
     font-family: 'Avenir Regular';
-    margin: 20px 0;
+    margin: 10px 0;
     font-weight: bold;
     border-radius: 3px;
     color: #646464;
+    font-size: 0.9em !important;
     text-align: right;
   }
-  
+
   .twc-summary-subtitle-container {
     text-align: center;
   }
-  
+
   .twc-summary-empty-message {
     color: #646464;
     text-align: center;
   }
-  
+
   .twc-summary-title {
     font-family: 'Avenir Heavy';
     text-align: justify;
@@ -1138,7 +1140,7 @@ a .logo {
     margin-bottom: 0 !important;
     text-decoration: none !important;
   }
-  
+
   .twc-summary-tag {
     font-family: 'Avenir Regular';
     padding: 10px 20px;
@@ -1147,7 +1149,7 @@ a .logo {
     display: inline-block;
     color: white;
   }
-  
+
   .twc-summary-tag::first-letter {
     text-transform: capitalize;
   }
@@ -1159,7 +1161,7 @@ a .logo {
     color: #646464;
     font-size: 12px;
   }
-  
+
   .twc-summary-date {
     font-family: 'Avenir Regular';
     font-weight: bold;
@@ -1169,16 +1171,16 @@ a .logo {
     font-size: 12px;
     margin-top: 10px;
   }
-  
+
   .twc-summary-image-container {
     text-align: center;
     margin: 10px 0;
   }
-  
+
   .twc-summary-image-container img {
     width: 100%;
   }
-  
+
   .twc-summary-description {
     margin: 10px auto 25px auto;
     text-align: justify;
@@ -1187,12 +1189,12 @@ a .logo {
     color: #646464;
     font-size: 14px;
   }
-  
+
   .twc-summary-button-container {
     text-align: center;
     margin: 30px auto;
   }
-  
+
   .twc-summary-button {
     font-family: 'Avenir Heavy';
     color: white !important;
@@ -1205,41 +1207,6 @@ a .logo {
   .twc-mobile-separator {
     display: block;
   }
-}
-
-.footer-text-1 {
-  color: #646464;
-  font-size: 0.85em !important;
-  padding: 0 20px;
-  max-width: 940px !important;
-  text-align: center !important;
-  margin: 0px auto;
-  line-height: 20px;
-}
-
-.footer-text-2 {
-  color: #40b4ba !important;
-  text-decoration: none !important;
-  font-size: 0.85em !important;
-  padding: 0 10px;
-  max-width: 940px !important;
-  text-align: center !important;
-  margin: 8px auto;
-  display: block;
-  width: fit-content;
-}
-
-.footer-text-3 {
-  color: #646464;
-  font-size: 0.85em !important;
-  padding: 0 20px;
-  max-width: 940px !important;
-  text-align: center !important;
-  margin: 0px auto 10px auto;
-}
-
-footer div.my-auto {
-  padding-bottom: 0 !important;
 }
 
 .global-header {
@@ -1310,13 +1277,13 @@ footer div.my-auto {
 }
 
 .create-capsula-button {
-  padding: 20px 30px;
+  padding: 10px 20px;
   background-color: #eb947e;
   color: white !important;
   font-weight: bold !important;
   font-family: 'Avenir Heavy' !important;
   border-radius: 3px;
-  font-size: 1.3em !important;
+  font-size: 1em !important;
   text-decoration: none !important;
 }
 
@@ -1325,6 +1292,7 @@ footer div.my-auto {
 }
 
 .twc-create-container {
+  color: #646464;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -1334,6 +1302,12 @@ footer div.my-auto {
 
 .twc-create-container select {
   font-family: 'Avenir Regular' !important;
+  font-size: 0.9em;
+  width: 100%;
+}
+
+.twc-create-capsula-input-container {
+  margin-bottom: 20px;
 }
 
 .twc-create-capsula-input-container p {
@@ -1341,20 +1315,22 @@ footer div.my-auto {
 }
 
 #twc-download-template {
-  padding: 20px 30px;
+  padding: 10px 20px;
   background-color: #eb947e;
   color: white !important;
   font-weight: bold !important;
-  font-family: 'Avenir Heavy' !important;
+  font-family: 'Avenir Regular' !important;
   border-radius: 3px;
-  font-size: 1.3em !important;
+  font-size: 1em;
   text-decoration: none !important;
 }
 
 
 .twc-download-template-container {
   text-align: center;
-  margin: 50px 0 !important;
+  margin: 20px 0 20px 0;
+  display: flex;
+  justify-content: center;
 }
 
 .twc-download-instructions-container {
@@ -1363,6 +1339,8 @@ footer div.my-auto {
 
 .download-capsula-instructions {
   color: #40b4ba !important;
+  font-size: 0.9em !important;
+  font-family: 'Avenir Regular' !important;
 }
 
 .twc-mailto {
@@ -1380,7 +1358,7 @@ footer div.my-auto {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%; 
+  width: 100%;
   height: 100%;
 }
 
@@ -1536,60 +1514,63 @@ header#header {
   display: none;
   position: absolute;
   width: 100%;
-  top: 89px; /* Height of your header */
+  top: 89px;
+  /* Height of your header */
   left: 0;
-  background-color: #fff; /* Or any color you prefer */
+  background-color: #fff;
+  /* Or any color you prefer */
   box-shadow: 0px 6px 4px -4px #cccccc;
-  transition: all 0.3s ease; /* Smooth transition */
+  transition: all 0.3s ease;
+  /* Smooth transition */
 }
 
 @media screen and (min-width: 941px) {
   .header-navigation-container-mobile {
-      display: none !important;
+    display: none !important;
   }
 }
 
 @media screen and (max-width: 920px) {
-  
+
   .header-navigation-link,
   .header-navigation-link-active,
   .header-login-container {
-      display: none;
+    display: none;
   }
 
   .header-navigation-container-mobile {
-      display: none;
+    display: none;
   }
 
   .header-trigger {
     display: grid;
     place-items: center;
   }
-  
+
 
   .header-navigation-link-mobile {
-      width: 100% !important;
-      display: inline-block !important;
-      font-weight: bold !important;
-      text-decoration: none !important;
-      background-color: white;
-      color: #40b4ba !important;
-      padding: 8px 15px;
+    width: 100% !important;
+    display: inline-block !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+    background-color: white;
+    color: #40b4ba !important;
+    padding: 8px 15px;
   }
 
   .header-navigation-link-mobile:hover {
-      background-color: #40b4ba !important;
-      color: white !important;
+    background-color: #40b4ba !important;
+    color: white !important;
   }
 
   .header-navigation-link-mobile-active {
-      width: 100% !important;
-      display: inline-block !important;
-      text-decoration: none !important;
-      font-weight: bold !important;
-      background-color: #40b4ba !important;
-      color: white !important;
-      padding: 8px 15px !important;
+    width: 100% !important;
+    display: inline-block !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+    background-color: #40b4ba !important;
+    color: white !important;
+    padding: 8px 15px !important;
   }
 }
 
@@ -1615,6 +1596,160 @@ header#header {
 
 .twc-summary-element-right a {
   text-decoration: none !important;
+}
+
+.action-certificate a {
+  color: white !important;
+  font-family: Avenir Regular !important;
+  font-weight: bold !important;
+  background-color: #eb947e !important;
+  border: none !important;
+}
+
+.wrapper-messages-primary p {
+  font-family: 'Avenir Regular' !important;
+  color: #666 !important;
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.8em;
+  margin-bottom: 10px;
+  font-family: Avenir Regular;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-container-mobile {
+  display: none;
+}
+
+.footer-line {
+  height: 1px;
+  margin-top: 10px !important;
+  margin-bottom: 20px !important;
+  border-top: 1px solid #dddddd;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.footer-bar {
+  height: 40px;
+  background-color: #eb947e;
+  margin-bottom: 20px;
+}
+
+
+.footer-copyright {
+  margin: 5px 10px;
+  font-size: 1.1em !important;
+  color: #646464;
+  text-align: center;
+}
+
+.footer-logos-container {
+  width: 100%;
+  max-width: 940px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px auto;
+}
+
+.footer-logos-container img {
+  max-width: 13%;
+  max-height: 70px;
+  max-height: 60px;
+}
+
+
+@media screen and (max-width: 920px) {
+
+  .footer-container {
+    display: none;
+  }
+
+  .footer-container-mobile {
+    display: block;
+  }
+
+  footer {
+    font-size: 0.7em;
+  }
+
+  .footer-bar {
+    height: 20px;
+  }
+
+  .footer-logos-container-1 {
+    max-width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    gap: 20px;
+  }
+
+  .footer-logos-container-2 {
+    max-width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 50px auto;
+    gap: 15px;
+  }
+
+  .footer-logos-container-1 img {
+    flex: 1;
+    max-width: 25%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-logos-container-2 img {
+    flex: 1;
+    max-width: 20%;
+    margin: 0;
+    padding: 0;
+  }
+
+}
+
+.footer-text-1 {
+  color: #646464;
+  font-size: 0.85em !important;
+  padding: 0 20px;
+  max-width: 940px !important;
+  text-align: center !important;
+  margin: 0px auto;
+  line-height: 20px;
+}
+
+.footer-text-2 {
+  color: #40b4ba !important;
+  text-decoration: none !important;
+  font-size: 0.85em !important;
+  padding: 0 10px;
+  max-width: 940px !important;
+  text-align: center !important;
+  margin: 8px auto;
+  display: block;
+  width: fit-content;
+}
+
+.footer-text-3 {
+  color: #646464;
+  font-size: 0.85em !important;
+  padding: 0 20px;
+  max-width: 940px !important;
+  text-align: center !important;
+  margin: 0px auto 10px auto;
 }
 
 .course-info div.details p {
