@@ -1,0 +1,7 @@
+PENDIENTE
+
+[ ] Header en Studio
+[ ] Footer en Studio
+[ ] Header en LMS
+[ ] Footer en LMS
+[ ] Descarga de plantillas en LMS.
