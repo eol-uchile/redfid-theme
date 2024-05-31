@@ -110,7 +110,7 @@ from lms.djangoapps.experiments.utils import UPSELL_TRACKING_FLAG
         <div class="course-description-dashboard">
           ${course_overview.short_description if course_overview.short_description is not None else "Este curso online no cuenta con una descripción."}
         </div>
-        <div class="course-info" style="flex-basis: 100% !important; margin-top: auto !important; margin-bottom: 10px !important; margin-right: 15% !important;">
+        <div class="course-info" style="flex-basis: 100% !important; margin-top: auto !important; margin-bottom: 10px !important;">
           <%
             enrollment_date = course_overview.self_paced and enrollment and enrollment.created
             if course_overview.start_date_is_still_default:

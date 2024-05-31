@@ -101,7 +101,7 @@ function showVideoCurso(displayId) {
 function showTalleresWebinarsCapsulas(display, displayId) {
     $("#dashboard-main").hide();
     if (display === "1"){
-        $.getJSON('http://localhost:8780/get_talleresywebinars', function(data){
+        $.getJSON('https://api.redfid.cl/get_talleresywebinars', function(data){
             let filter = getUrlParameter("filter");    
             items = getAndClassifyItems(data.talleresywebinars, displayId, filter);
             if (displayId === 0 && items["defaultItem"] != null) {
@@ -112,7 +112,7 @@ function showTalleresWebinarsCapsulas(display, displayId) {
             fillTalleres({"active": null, "default": null, "summarizedItems": []});
         });
     } else if (display === "2") {
-        $.getJSON('http://localhost:8780/get_capsulas', function(data){
+        $.getJSON('https://api.redfid.cl/get_capsulas', function(data){
             let filter = getUrlParameter("filter");    
             items = getAndClassifyItems(data.capsulas.capsulas, displayId, filter);
             if (displayId === 0 && items["defaultItem"] != null) {
@@ -146,7 +146,7 @@ function hideTalleresWebinarsCapsulas() {
 }
 
 function fillCreateCapsula() {
-    $.getJSON('http://localhost:8780/get_capsulas', function(data){
+    $.getJSON('https://api.redfid.cl/get_capsulas', function(data){
         let templates = data.capsulas.templates;
         let institutionOptions = '';
         for (let key in templates) {
@@ -229,7 +229,7 @@ function fillCreateCapsula() {
             }
             if (categoryValue !== 'waiting' && institutionValue !== 'waiting') {
                 downloadLink.disabled = false;
-                downloadLink.href = `http://localhost:8780/get_capsula_template/${categoryValue.toUpperCase()}/${institutionValue}`;
+                downloadLink.href = `https://api.redfid.cl/get_capsula_template/${categoryValue.toUpperCase()}/${institutionValue}`;
                 downloadLink.setAttribute('download', '');
             } else {
                 downloadLink.disabled = true;
