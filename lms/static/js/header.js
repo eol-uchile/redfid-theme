@@ -13,7 +13,7 @@ function toggleLinksMenu() {
     }
 }
 
-function toogleUserMenu() {
+function toggleUserMenu() {
     var userContainer = document.querySelector('.header-user-container-mobile');
     var navContainer = document.querySelector('.header-navigation-container-mobile');
     var content = document.querySelector('#content');

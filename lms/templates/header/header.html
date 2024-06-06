@@ -52,7 +52,7 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
                 <img class="header-logo" src="https://static.redfid.cl/logo.png">
             </a>
             <a class="header-navigation-link-active" href="/" target="_self">
-                <p class="header-navigation-link-label" style="margin: revert;">Aprendizaje Profesional</p>
+                <p class="header-navigation-link-label" style="margin: revert;">Aprendizaje Profesionasl</p>
             </a>
             <a class="header-navigation-link" href="https://comunidades.redfid.cl" target="_self">
                 <p class="header-navigation-link-label" style="margin: revert;">Comunidades</p>
@@ -61,16 +61,32 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
                 <p class="header-navigation-link-label" style="margin: revert;">Recursos</p>
             </a>
         </div>
+        <div>
+            <a class="header-navigation-logo-mobile" href="/" target="_self">
+                <img class="header-logo" src="https://static.redfid.cl/logo.png">
+            </a>
+        </div>
+        % if user.is_authenticated:
+            <div>
+                <a class="header-navigation-logo-mobile" onclick="toggleUserMenu()" target="_self">
+                    <img class="header-usericon" src="">
+                </a>
+            </div>
+        % else:
+            <div>
+                <a class="header-navigation-logo-mobile" onclick="toggleUserMenu()" target="_self">
+                    <img class="header-usericon" src="">
+                </a>
+            </div>
+        % endif
         <div class="header-login-container">
             % if user.is_authenticated:
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" style="z-index: 100; color: black;" viewBox="0 0 24 24">
-                    <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/>
-                </svg>
-            </div>
             <a class="register-button" href="${reverse('redfid_logout:logout_get')}" target="_self">Cerrar sesión</a>
-            <a class="login-button" href="https://auth.redfid.cl/realms/REDFID/account/" target="_self"><i class="fa fa-user"></i> ${user.username}</a>
+            <a class="time-to-get-ill" style="background-color: #40b4ba; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%;" onclick="toggleUserMenu()" target="_self">
+                <img class="header-usericon" src="">
+            </a>
             % else:
+            <a class="register-button" href="https://www.redfid.cl/formulario-de-registro" target="_self">Registrarse</a>
             <div class="time-to-get-ill" style="background-color: #40b4ba; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">
                 <svg xmlns="http://www.w3.org/2000/svg" style="padding-left: 1px;" width="16px" height="16px" aria-hidden="true" focusable="false" viewBox="0 0 512 512">
                   <path
@@ -79,7 +95,7 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
                     />
                 </svg>
               </div>
-        % endif
+            % endif
         </div>
     </div>
     <div class="header-user-container-mobile">
@@ -113,6 +129,29 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
             Recursos
         </a>
     </div>
+    ${user.username}
+    <script>
+        window.onload = function() {
+            function updateUserIcon(username) {
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', 'http://localhost:8780/get_user_image_url/' + username, true);
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        var response = JSON.parse(xhr.responseText);
+                        if (response.status === 100) {
+                            document.querySelector('.header-usericon').src = response.url;
+                        } else {
+                            console.error("Failed to fetch user image: " + response.message);
+                        }
+                    } else if (xhr.readyState === 4) {
+                        console.error("Failed to fetch user image");
+                    }
+                };
+                xhr.send();
+            }
+            updateUserIcon("${user.username}");
+        };
+    </script>
 </header>
 
 % if course:

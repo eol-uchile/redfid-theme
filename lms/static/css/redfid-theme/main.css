@@ -1492,6 +1492,7 @@ header#header {
   justify-content: space-between;
   padding: 0 20px;
   height: 72px;
+  align-items: center;
 }
 
 .header-navigation-container {
@@ -1560,14 +1561,17 @@ header#header {
   color: #40b4ba !important;
   font-weight: bold !important;
   text-decoration: none !important;
+  margin-right: 15px;
+  font-family: "Avenir Regular" !important;
 }
 
 .header-trigger {
   display: none;
   cursor: pointer;
-  font-size: 28px;
+  font-size: 20px;
   padding: 5px;
   margin: 10px;
+  color: #646464
 }
 
 .header-navigation-container-mobile {
@@ -1592,13 +1596,18 @@ header#header {
   transition: all 0.3s ease;
 }
 
-@media screen and (min-width: 941px) {
+@media screen and (min-width: 921px) {
   .header-navigation-container-mobile {
     display: none !important;
   }
 
   .header-user-container-mobile {
     display: none !important;
+  }
+
+  .header-navigation-logo-mobile {
+    display: none !important;
+  
   }
 }
 
@@ -1607,6 +1616,14 @@ header#header {
   .header-navigation-link,
   .header-navigation-link-active,
   .header-login-container {
+    display: none;
+  }
+
+  .header-navigation-container {
+    display: none;
+  }
+
+  .header-navigation-logo {
     display: none;
   }
 
@@ -1631,7 +1648,8 @@ header#header {
     text-decoration: none !important;
     background-color: white;
     color: #40b4ba !important;
-    padding: 8px 15px;
+    padding: 21px 30px;
+    font-family: 'Avenir Regular' !important;
   }
 
   .header-navigation-link-mobile:hover {
@@ -1646,7 +1664,8 @@ header#header {
     font-weight: bold !important;
     background-color: #40b4ba !important;
     color: white !important;
-    padding: 8px 15px !important;
+    padding: 21px 30px !important;
+    font-family: 'Avenir Regular' !important;
   }
 }
 
@@ -1659,10 +1678,6 @@ header#header {
 .preview-menu {
   max-width: 940px;
   margin: auto;
-}
-
-.header-trigger {
-  color: #40b4ba !important;
 }
 
 .twc-summary-element {
@@ -1878,4 +1893,9 @@ header#header {
 
 .find-courses .courses-container {
   padding: 0 !important;
+}
+
+.header-usericon {
+  width: 40px;
+  border-radius: 50%;
 }

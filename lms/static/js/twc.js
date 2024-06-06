@@ -146,13 +146,10 @@ function hideTalleresWebinarsCapsulas() {
 }
 
 function fillCreateCapsula() {
-    $.getJSON('https://api.redfid.cl/get_capsulas', function(data){
-        let templates = data.capsulas.templates;
+    $.getJSON('http://localhost:8780/get_attributes', function(data){
         let institutionOptions = '';
-        for (let key in templates) {
-            if (templates.hasOwnProperty(key)) {
-                institutionOptions += `<option value="${key}">${templates[key]}</option>`;
-            }
+        for (let key of Object.keys(data.attributes.university.options)) {
+            institutionOptions += `<option value="${key}">${data.attributes.university.options[key]}</option>`;
         }
         $("#twc-main").html(`
         <a class="back-to-landing-button" href="/dashboard">

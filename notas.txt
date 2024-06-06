@@ -5,3 +5,5 @@ PENDIENTE
 [ ] Header en LMS
 [ ] Footer en LMS
 [ ] Descarga de plantillas en LMS.
+[ ] Títulos responsivos
+[ ] Tamaño imágenes TW
