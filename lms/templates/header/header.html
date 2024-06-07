@@ -50,7 +50,7 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
             <div class="header-trigger">&#9776;</div>
             <div class="header-navigation-container">
                 <a class="header-navigation-logo" href="https://www.redfid.cl" target="_self">
-                    <img class="header-logo" src="https://static.redfid.cl/logo.png">
+                    <img class="header-logo" src="${static.url('images/logo.png')}">
                 </a>
                 <a class="header-navigation-link-active" href="/" target="_self">
                     <p class="header-navigation-link-label" style="margin: revert;">Aprendizaje Profesional</p>
@@ -64,7 +64,7 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
             </div>
             <div>
                 <a class="header-navigation-logo-mobile" href="/" target="_self">
-                    <img class="header-logo" src="https://static.redfid.cl/logo.png">
+                    <img class="header-logo" src="${static.url('images/logo.png')}">
                 </a>
             </div>
             % if user.is_authenticated:
@@ -74,7 +74,7 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
                     </a>
                 </div>
             % else:
-            <div class="toggle-user-menu time-to-get-ill" style="background-color: #40b4ba; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">
+            <div class="hide-on-desktop toggle-user-menu time-to-get-ill" style="background-color: #40b4ba; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">
                 <svg class="toggle-user-menu" xmlns="http://www.w3.org/2000/svg" style="padding-left: 1px;" width="16px" height="16px" aria-hidden="true" focusable="false" viewBox="0 0 512 512">
                   <path
                     fill="white"

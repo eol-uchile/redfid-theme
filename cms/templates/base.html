@@ -28,7 +28,7 @@ from openedx.core.release import RELEASE_LINE
     <meta name="openedx-release-line" content="${RELEASE_LINE}" />
     <meta name="robots" content="noindex" />
     <title>RedFID | Studio</title>
-    <link rel="stylesheet" href="${static.url('redfid-theme/css/redfid-theme/studio.css')}">
+    <link rel="stylesheet" href="${static.url('css/studio.css')}">
 
 
     <%
@@ -59,7 +59,7 @@ from openedx.core.release import RELEASE_LINE
     <link rel="apple-touch-icon" href="${static.url('images/apple-touch-icon.png')}">
     <link rel="icon" href="${static.url('images/android-chrome-192x192.png')}" sizes="192x192" type="image/png">
     <link rel="icon" href="${static.url('images/android-chrome-512x512.png')}" sizes="512x512" type="image/png">
-    <script type="text/javascript" src="${static.url('js/header/header.js')}"></script>
+    <script type="text/javascript" src="${static.url('js/header.js')}"></script>
     <%static:css group='style-vendor'/>
     <%static:css group='style-vendor-tinymce-content'/>
     <%static:css group='style-vendor-tinymce-skin'/>
@@ -126,9 +126,6 @@ from openedx.core.release import RELEASE_LINE
         </div>
       </main>
 
-      % if user.is_authenticated:
-        <%include file="widgets/sock.html" args="online_help_token=online_help_token" />
-      % endif
       <%include file="widgets/footer.html" />
 
       <div id="page-notification"></div>

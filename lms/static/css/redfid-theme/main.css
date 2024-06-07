@@ -1,13 +1,13 @@
 @font-face {
   font-family: 'Avenir Heavy';
-  src: url('https://static.redfid.cl/fonts/Avenir-Heavy.ttf') format('truetype');
+  src: url('../../fonts/Avenir-Heavy.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Avenir Regular';
-  src: url('https://static.redfid.cl/fonts/Avenir-Regular.ttf') format('truetype');
+  src: url('../../fonts/Avenir-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -1647,6 +1647,7 @@ header#header {
 }
 
 @media screen and (min-width: 921px) {
+  
   .header-navigation-container-mobile {
     display: none !important;
   }
@@ -1655,6 +1656,11 @@ header#header {
     display: none !important;
   
   }
+
+  .hide-on-desktop {
+    display: none !important;
+  }
+
 }
 
 @media screen and (max-width: 920px) {
