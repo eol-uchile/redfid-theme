@@ -180,7 +180,7 @@ function fillCreateCapsula() {
             </a>
         </div>
         <div class="twc-download-instructions-container">
-            <a class="download-capsula-instructions" href="http://localhost:8780/get_capsulas_doc" download="">
+            <a class="download-capsula-instructions" href="https://api.redfid.cl/get_capsulas_doc" download="">
                 <i class="fa fa-arrow-down" aria-hidden="true"></i>
                 Instrucciones para grabación
             </a>

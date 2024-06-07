@@ -78,7 +78,7 @@
       <a class="header-navigation-link-mobile" href="https://auth.redfid.cl/realms/REDFID/account/" target="_self">
           Cuenta (${user.username})
       </a>
-      <a class="header-navigation-link-mobile" href="" target="_self">
+      <a class="header-navigation-link-mobile" href="https://cursos.redfid.cl/redfid_edx_api/logout_get/" target="_self">
           Cerrar sesión
       </a>
       % else:
@@ -108,7 +108,7 @@
       window.onload = function() {
           function updateUserIcon(username) {
               var xhr = new XMLHttpRequest();
-              xhr.open('GET', 'http://localhost:8780/get_user_image_url/' + username, true);
+              xhr.open('GET', 'https://api.redfid.cl/get_user_image_url/' + username, true);
               xhr.onreadystatechange = function() {
                   if (xhr.readyState === 4 && xhr.status === 200) {
                       var response = JSON.parse(xhr.responseText);
