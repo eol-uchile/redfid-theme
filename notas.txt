@@ -2,8 +2,8 @@ PENDIENTE
 
 [ ] Header en Studio
 [ ] Footer en Studio
-[ ] Header en LMS
+[x] Header en LMS
 [ ] Footer en LMS
-[ ] Descarga de plantillas en LMS.
-[ ] Títulos responsivos
-[ ] Tamaño imágenes TW
+[x] Descarga de plantillas en LMS.
+[x] Títulos responsivos
+[x] Tamaño imágenes TW

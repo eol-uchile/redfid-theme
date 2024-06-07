@@ -41,18 +41,6 @@ CAPSULAS = {
     }
 }
 
-function registerTWCGA4Event(title, kind) {
-    var buttonText = document.querySelector('.login-button').innerText.split(" ")[1];
-    var username = null;
-    if (buttonText !== " Iniciar sesión") {
-        username = buttonText;
-    }
-    gtag('event', 'watch_twc', {
-        'content_id': title,
-        'content_group': kind,
-        'character': username
-    }); 
-}
 
 function showVideoCurso(displayId) {
     $("#dashboard-main").hide();
@@ -146,7 +134,7 @@ function hideTalleresWebinarsCapsulas() {
 }
 
 function fillCreateCapsula() {
-    $.getJSON('http://localhost:8780/get_attributes', function(data){
+    $.getJSON('https://api.redfid.cl/get_attributes', function(data){
         let institutionOptions = '';
         for (let key of Object.keys(data.attributes.university.options)) {
             institutionOptions += `<option value="${key}">${data.attributes.university.options[key]}</option>`;
@@ -192,7 +180,7 @@ function fillCreateCapsula() {
             </a>
         </div>
         <div class="twc-download-instructions-container">
-            <a class="download-capsula-instructions" href="https://static.redfid.cl/capsulas/CapsulasRedFID.pdf" download="">
+            <a class="download-capsula-instructions" href="http://localhost:8780/get_capsulas_doc" download="">
                 <i class="fa fa-arrow-down" aria-hidden="true"></i>
                 Instrucciones para grabación
             </a>
@@ -308,7 +296,6 @@ function fillTalleres(items){
             $(".twc-content-video-container").append(videoEmbed);
             $(".twc-content-description").text(items.active.description);
             $(".twc-content-exposes").text(items.active.exposes);
-            registerTWCGA4Event(items.active.title, items.active.kind)
         }
         if (items.summarizedItems.length !== 0) {
             var first = true;
@@ -394,7 +381,6 @@ function fillCapsulas(items){
             $(".twc-content-description").text(items.active.description);
             $(".twc-content-exposes").text(items.active.exposes);
             $(".twc-content-exposes-subtitle").text(items.active.exposes_subtitle);
-            registerTWCGA4Event(items.active.title, items.active.kind)
         }
         if (items.summarizedItems.length !== 0) {
             var first = true;
