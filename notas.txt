@@ -3,3 +3,5 @@ PENDIENTE
 [ ] Portada de Studio
 [ ] Footer en Studio
 [ ] Footer en LMS
+[ ] Certificados en LMS
+[ ] Vídeo promocional en LMS

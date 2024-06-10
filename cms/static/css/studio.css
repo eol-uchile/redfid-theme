@@ -226,3 +226,8 @@ header#header {
 .toggle-user-menu {
     cursor: pointer;
 }
+
+.header-navigation-logo {
+    align-items: center;
+    display: flex;
+}
