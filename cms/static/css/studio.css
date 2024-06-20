@@ -231,3 +231,90 @@ header#header {
     align-items: center;
     display: flex;
 }
+
+.new-course-button {
+    background-color: #eb947e !important;
+    border: #eb947e !important;
+    padding: 10px !important;
+}
+
+.button-new {
+    background-color: #eb947e !important;
+    border: #eb947e !important;
+    color: white !important;
+}
+
+.button-reindex {
+    background-color: #40b4ba !important;
+    border: #40b4ba !important;
+    color: white !important;
+}
+
+.button-toggle-expand-collapse {
+    background-color: #40b4ba !important;
+    border: #40b4ba !important;
+    color: white !important;
+}
+
+.view-live-button {
+    background-color: #40b4ba !important;
+    border: #40b4ba !important;
+    color: white !important;
+}
+
+.button-view {
+    background-color: #40b4ba !important;
+    border: #40b4ba !important;
+    color: white !important;
+}
+
+.button-preview {
+    background-color: #40b4ba !important;
+    border: #40b4ba !important;
+    color: white !important;
+}
+
+.outline-complex .outline-subsection.is-live {
+    border-left-color: #40b4ba !important;
+}
+
+.page-header {
+    font-family: 'Avenir Regular' !important;
+    color: #646464 !important;
+    font-size: 2em !important;
+}
+
+.studio-home {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.studio-home-title {
+    font-size: 1.6em;
+    margin-bottom: 20px;
+    font-family: "Avenir Heavy" !important;
+    color: #646464;
+    font-weight: bold;
+}
+
+.studio-home-subtitle {
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: "Avenir Regular" !important;
+    margin-bottom: 20px;
+    color: #646464;
+}
+
+.studio-home-goback {
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.studio-home-goback a {
+    color: #40b4ba;
+    text-decoration: none;
+}
+
+.studio-home-goback a:hover {
+    text-decoration: none !important;
+}
