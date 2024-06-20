@@ -1,6 +1,0 @@
-PENDIENTE
-
-[ ] Ícono del header
-[ ] Footer en Studio
-[ ] Footer en LMS
-[ ] Vídeo promocional en LMS

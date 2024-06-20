@@ -8,4 +8,4 @@ Para instalar este tema en la instancia local de Open edX proporcionada por el e
 
 ## Despliegue en entorno de producción
 
-Se debe hacer un pull request a `https://github.com/eol-uchile/redfid-theme`, y luego notificar al equipo de Eol, para que se revise, y en caso de aprobarse, se actualice la imagen de Open edX en `https://cursos.redfid.cl`.
+Se debe hacer un pull request a `https://github.com/eol-uchile/redfid-theme`, y luego notificar al equipo de Eol, para que se revise, y en caso de aprobarse, se actualice la imagen de Open edX en `https://cursos.redfid.cl` y `https://studio.cursos.redfid.cl`.

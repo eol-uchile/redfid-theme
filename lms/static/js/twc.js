@@ -388,6 +388,8 @@ function fillCapsulas(items){
             for(let item of items.summarizedItems) {
                 if (!first) {
                     $(".twc-summary").append("<hr>")
+                } else {
+                    $(".twc-summary").append('<h1 class="landing-subtitle" style="text-align: center !important;margin-top: 0 !important;">Otras cápsulas</h1>')
                 }
                 first = false;
                 $(".twc-summary").append(`
@@ -468,10 +470,6 @@ function getAndClassifyItems(data, displayId, filter){
             return item.id !== activeItem.id;
         });
     }
-    let tallereswebinars_filters = ["taller", "webinar"];
-    let capsulas_filters = ["rep", "reo"]; 
-    //if(displayId === 1 && )
-    // SEGUIR AQUI
     return {"active": activeItem, "summarizedItems": summarizedItems, "defaultItem": defaultItem}
 }
 

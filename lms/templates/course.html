@@ -20,13 +20,11 @@ from six import text_type
         course_date_string = ''
     %>
     % if course.advertised_start is not None:
-    <div style="display: flex; justify-content: space-between; margin: 10px 0;">
-      <a href="${course.course_video_url}" target="_blank" style="padding: 0px 30px; color: #40b4ba !important; text-decoration: none !important; font-size: 0.85em !important; max-width: 940px !important; text-align: center !important; display: block; width: fit-content; font-family: 'Avenir Regular';">Vídeo promocional</a>
+    <div style="display: flex; justify-content: end; margin: 10px 0;">
       <p class="landing-course-datetime" aria-hidden="true">${_("Starts")}: ${course.advertised_start}</p>
     </div>
     % else:
-      <div style="display: flex; justify-content: space-between; margin: 10px 0;">
-        <a href="${course.course_video_url}" target="_blank" style="padding: 0px 30px; color: #40b4ba !important; text-decoration: none !important; font-size: 0.85em !important; max-width: 940px !important; text-align: center !important; display: block; width: fit-content; font-family: 'Avenir Regular';">Vídeo promocional</a>
+      <div style="display: flex; justify-content: end; margin: 10px 0;">
         <div class="landing-course-datetime localized_datetime" aria-hidden="true" data-format="shortDate" data-datetime="${course_date_string}" data-language="${LANGUAGE_CODE}" data-string="${_("Starts: {date}")}"></div>
       </div>
     % endif

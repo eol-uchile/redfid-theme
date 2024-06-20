@@ -86,7 +86,7 @@ from six import string_types
           <span>${course.display_org_with_default}</span>
         </div>
 
-        <div class="main-cta" style="display: flex; justify-content: center;">
+        <div class="main-cta" style="display: flex; justify-content: center; flex-wrap: wrap;">
         % if get_course_about_section(request, course, "video"):
         <a class="redfid-video-button" href="#video-modal" rel="leanModal">
           <strong>Vídeo promocional</strong>
@@ -109,11 +109,6 @@ from six import string_types
       </section>
       % if get_course_about_section(request, course, "video"):
       <script>
-        $(function() {
-          $(".redfid-video-button").on("click", function() {
-            $(".media").click();
-          });
-        });
       </script>
       <a href="#video-modal" class="media" style="display: none;" rel="leanModal">
         <div class="hero">

@@ -149,10 +149,16 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
                                 icon.src = response.url;
                             });
                         } else {
-                            console.error("Failed to fetch user image: " + response.message);
+                            var icons = document.querySelectorAll('.header-usericon')
+                            icons.forEach(function(icon) {
+                                icon.src = "/static/redfid-theme/images/nouser.png"
+                            });
                         }
                     } else if (xhr.readyState === 4) {
-                        console.error("Failed to fetch user image");
+                        var icons = document.querySelectorAll('.header-usericon')
+                        icons.forEach(function(icon) {
+                            icon.src = "/static/redfid-theme/images/nouser.png"
+                        });
                     }
                 };
                 xhr.send();
