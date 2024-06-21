@@ -1996,3 +1996,8 @@ header#header {
 .eolcompletion-content {
   padding: 0 40px;
 }
+
+.header-navigation-link-label {
+  font-family: Avenir Regular;
+  font-size: 15.2px;
+}
