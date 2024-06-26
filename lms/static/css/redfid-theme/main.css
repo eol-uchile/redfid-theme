@@ -570,12 +570,6 @@ a .logo {
     width: 60% !important;
   }
 
-  .footer-bar {
-    height: 40px;
-    background-color: #eb947e;
-    margin-bottom: 20px;
-  }
-
   .course-info .container {
     max-width: 940px;
   }
@@ -710,12 +704,6 @@ a .logo {
     padding: 0 30px 0 0;
     font-size: 0.7em;
     color: #646464;
-  }
-
-  .footer-bar {
-    height: 20px;
-    background-color: #eb947e;
-    margin-bottom: 20px;
   }
 
 }

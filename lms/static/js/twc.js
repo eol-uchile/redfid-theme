@@ -41,7 +41,6 @@ CAPSULAS = {
     }
 }
 
-
 function showVideoCurso(displayId) {
     $("#dashboard-main").hide();
     const ipd = [
