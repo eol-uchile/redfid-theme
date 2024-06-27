@@ -45,47 +45,71 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
 <header id="header">
     <script src="${static.url('js/header.js')}"></script>
     <div class="header-bar"></div>
-    <div class="header-container">
-        <div class="header-navigation-container">
-            <a class="header-navigation-logo" href="https://www.redfid.cl" target="_self">
-                <img class="header-logo" src="https://static.redfid.cl/logo.png">
-            </a>
-            <a class="header-navigation-link-active" href="https://cursos.redfid.cl" target="_self">
-                <p class="header-navigation-link-label" style="margin: revert;">Aprendizaje Profesional</p>
-            </a>
-            <a class="header-navigation-link" href="https://comunidades.redfid.cl" target="_self">
-                <p class="header-navigation-link-label" style="margin: revert;">Comunidades</p>
-            </a>
-            <a class="header-navigation-link" href="https://recursos.redfid.cl" target="_self">
-                <p class="header-navigation-link-label" style="margin: revert;">Recursos</p>
-            </a>
-        </div>
-        <div class="header-login-container">
+    <div style="box-shadow: 0px 6px 4px -4px #cccccc; position: relative; z-index: 100;">
+        <div class="header-container">
+            <div class="header-trigger">&#9776;</div>
+            <div class="header-navigation-container">
+                <a class="header-navigation-logo" href="https://www.redfid.cl" target="_self">
+                    <img class="header-logo" src="${static.url('images/logo.png')}">
+                </a>
+                <a class="header-navigation-link-active" href="/" target="_self">
+                    <p class="header-navigation-link-label" style="margin: revert;">Aprendizaje Profesional</p>
+                </a>
+                <a class="header-navigation-link" href="https://comunidades.redfid.cl" target="_self">
+                    <p class="header-navigation-link-label" style="margin: revert;">Comunidades</p>
+                </a>
+                <a class="header-navigation-link" href="https://recursos.redfid.cl" target="_self">
+                    <p class="header-navigation-link-label" style="margin: revert;">Recursos</p>
+                </a>
+            </div>
+            <div>
+                <a class="header-navigation-logo-mobile" href="/" target="_self">
+                    <img class="header-logo" src="${static.url('images/logo.png')}">
+                </a>
+            </div>
             % if user.is_authenticated:
-            <a class="register-button" href="${reverse('redfid_logout:logout_get')}" target="_self">Cerrar sesión</a>
-            <a class="login-button" href="https://auth.redfid.cl/realms/REDFID/account/" target="_self"><i class="fa fa-user"></i> ${user.username}</a>
+                <div class="toggle-user-menu">
+                    <a class="toggle-user-menu header-navigation-logo-mobile" target="_self">
+                        <img class="toggle-user-menu header-usericon" src="">
+                    </a>
+                </div>
             % else:
-            <a class="register-button" href="https://www.redfid.cl/formulario-de-registro" target="_self">Regístrate</a>
-            <a class="login-button" href="/auth/login/tpa-saml/?auth_entry=login&next=%2F&idp=default" target="_self"><i class="fa fa-user"></i> Iniciar sesión</a>
+            <div class="hide-on-desktop toggle-user-menu time-to-get-ill" style="background-color: #40b4ba; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">
+                <svg class="toggle-user-menu" xmlns="http://www.w3.org/2000/svg" style="padding-left: 1px;" width="16px" height="16px" aria-hidden="true" focusable="false" viewBox="0 0 512 512">
+                  <path
+                    fill="white"
+                    d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"
+                    />
+                </svg>
+              </div>
             % endif
+            <div class="header-login-container">
+                % if user.is_authenticated:
+                <div class="toggle-user-menu">
+                    <a class="toggle-user-menu time-to-get-ill" style="background-color: #40b4ba; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%;" target="_self">
+                        <img class="toggle-user-menu header-usericon" src="">
+                    </a>
+                </div>
+                % else:
+                <a class="register-button" href="https://www.redfid.cl/formulario-de-registro" target="_self">Registrarse</a>
+                <div class="toggle-user-menu time-to-get-ill" style="background-color: #40b4ba; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">
+                    <svg class="toggle-user-menu" xmlns="http://www.w3.org/2000/svg" style="padding-left: 1px;" width="16px" height="16px" aria-hidden="true" focusable="false" viewBox="0 0 512 512">
+                      <path
+                        fill="white"
+                        d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"
+                        />
+                    </svg>
+                  </div>
+                % endif
+            </div>
         </div>
-        <div class="header-trigger" onclick="toggleMenu()">&#9776;</div>
     </div>
-    <div class="header-navigation-container-mobile">
-        <a class="header-navigation-link-mobile-active" href="https://cursos.redfid.cl" target="_self">
-            Aprendizaje Profesional
-        </a>
-        <a class="header-navigation-link-mobile" href="https://comunidades.redfid.cl" target="_self">
-            Comunidades
-        </a>
-        <a class="header-navigation-link-mobile" href="https://recursos.redfid.cl" target="_self">
-            Recursos
-        </a>
+    <div class="header-user-container-mobile" style="display: none;">
         % if user.is_authenticated:
         <a class="header-navigation-link-mobile" href="https://auth.redfid.cl/realms/REDFID/account/" target="_self">
             Cuenta (${user.username})
         </a>
-        <a class="header-navigation-link-mobile" href="${reverse('redfid_logout:logout_get')}" target="_self">
+        <a class="header-navigation-link-mobile" href="${reverse('redfid_edx_api:logout_get')}" target="_self">
             Cerrar sesión
         </a>
         % else:
@@ -97,6 +121,54 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
         </a>
         % endif
     </div>
+    <div class="header-navigation-container-mobile" style="display: none;">
+        <a class="header-navigation-link-mobile" href="https://www.redfid.cl" target="_self">
+            Inicio
+        </a>
+        <a class="header-navigation-link-mobile-active" href="/" target="_self">
+            Aprendizaje Profesional
+        </a>
+        <a class="header-navigation-link-mobile" href="https://comunidades.redfid.cl" target="_self">
+            Comunidades
+        </a>
+        <a class="header-navigation-link-mobile" href="https://recursos.redfid.cl" target="_self">
+            Recursos
+        </a>
+    </div>
+    <script>
+        window.onload = function() {
+            function updateUserIcon(username) {
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', 'https://api.redfid.cl/get_user_image_url/' + username, true);
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        var response = JSON.parse(xhr.responseText);
+                        if (response.status === 100) {
+                            var icons = document.querySelectorAll('.header-usericon')
+                            icons.forEach(function(icon) {
+                                icon.src = response.url;
+                            });
+                        } else {
+                            var icons = document.querySelectorAll('.header-usericon')
+                            icons.forEach(function(icon) {
+                                icon.src = "/static/redfid-theme/images/nouser.png"
+                            });
+                        }
+                    } else if (xhr.readyState === 4) {
+                        var icons = document.querySelectorAll('.header-usericon')
+                        icons.forEach(function(icon) {
+                            icon.src = "/static/redfid-theme/images/nouser.png"
+                        });
+                    }
+                };
+                xhr.send();
+            }
+            let username = "${user.username}";
+            if (username) {
+                updateUserIcon(username);
+            }
+        };
+    </script>
 </header>
 
 % if course:
