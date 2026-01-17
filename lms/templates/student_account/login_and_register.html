@@ -2,7 +2,6 @@
 <%!
     import json
     from django.utils.translation import ugettext as _
-    from django.utils.http import urlquote
     from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
     from openedx.core.djangolib.js_utils import dump_js_escaped_json
 %>
@@ -38,8 +37,7 @@
     % endfor
 </%block>
 <div class="section-bkg-wrapper">
-    <main id="main" aria-label="Content" tabindex="-1" style="margin-top: 40px !important">
-        <p class="sign-in-description-outside">Para acceder a este contenido, es necesario iniciar sesión con una cuenta RedFID.</p>
+    <main id="main" aria-label="Content" tabindex="-1">
         <div id="content-container" class="login-register-content">
             % if enable_enterprise_sidebar:
                 <%include file="enterprise_sidebar.html" />
@@ -51,12 +49,7 @@
                     border_class = ''
                 %>
             % endif
-            <%
-                current_path = request.path if request else '/'
-                redfid_login_url = f"/auth/login/redfid/?auth_entry=login&next={urlquote(current_path)}"
-            %>
-            <a class="sign-in-button-outside" href="${redfid_login_url}">Iniciar sesión</a>
+            <div id="login-and-registration-container" class="login-register ${border_class}"></div>
         </div>
-        <a class="register-button-outside" href="https://www.redfid.cl/formulario-de-registro/">Registrarse</a>
     </main>
 </div>
