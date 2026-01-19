@@ -9,8 +9,10 @@ from django.urls import reverse
 from django.utils.translation import ugettext as _
 from django.utils.http import urlquote
 import waffle
+import json
 
 from lms.djangoapps.ccx.overrides import get_current_ccx
+from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 from openedx.core.djangolib.markup import HTML, Text
 from openedx.core.djangolib.js_utils import js_escaped_string
 
@@ -45,6 +47,13 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
 % endif
 
 <header id="header">
+    <%
+        api_url = configuration_helpers.get_value('redfid_api_url', '')
+    %>
+    <script>
+        var api_url = "${api_url | n, js_escaped_string}";
+        window.api_url = api_url;
+    </script>
     <script src="${static.url('js/header.js')}"></script>
     % if user.is_authenticated:
     <%
@@ -65,7 +74,7 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
                 }
             
                 // Fetch user image from API
-                fetch('https://api.redfid.cl/user-image/' + username)
+                fetch(api_url + '/user-image/' + username)
                 .then(function(response) {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');

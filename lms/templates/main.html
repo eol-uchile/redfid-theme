@@ -51,11 +51,17 @@ from common.djangoapps.pipeline_mako import render_require_js_path_overrides
     <noscript><p><img referrerpolicy="no-referrer-when-downgrade" src="//analytics.cmmedu.uchile.cl/matomo.php?idsite=3&amp;rec=1" style="border:0;" alt="" /></p></noscript>
     <!-- End Matomo Code -->
 
-    <%
-      is_user_authenticated = user.is_authenticated if user else False
-      current_path_for_js = urlquote(request.path if request else '/')
-    %>
-    <script>
+  <%
+    is_user_authenticated = user.is_authenticated if user else False
+    current_path_for_js = urlquote(request.path if request else '/')
+    api_url = configuration_helpers.get_value('redfid_api_url', '')
+    cookie_domain = configuration_helpers.get_value('redfid_cookie_domain', '.redfid.cl')
+  %>
+  <script>
+    var api_url = "${api_url | n, js_escaped_string}";
+    window.api_url = api_url;
+    var cookie_domain = "${cookie_domain | n, js_escaped_string}";
+    window.cookie_domain = cookie_domain;
       (function() {
         // Helper function to get cookie by name
         function getCookie(name) {
@@ -118,23 +124,23 @@ from common.djangoapps.pipeline_mako import render_require_js_path_overrides
                 headers['Authorization'] = 'Bearer ' + token;
               }
               
-              // Call the logout API endpoint at https://api.redfid.cl/logout
+              // Call the logout API endpoint
               // The cookie will be sent automatically if accessible
-              fetch('https://api.redfid.cl/logout', {
+              fetch(api_url + '/logout', {
                 method: 'POST',
                 credentials: 'include', // Include cookies in the request
                 headers: headers
               })
               .then(response => {
                 // If API call succeeds, also try to delete the cookie locally as fallback
-                deleteCookie('access_token', '.redfid.cl');
+                deleteCookie('access_token', cookie_domain);
                 // Navigate to logout after API call completes
                 window.location.href = '/logout';
               })
               .catch(error => {
                 console.error('Error calling logout API:', error);
                 // On error, still try to delete the cookie locally as fallback
-                deleteCookie('access_token', '.redfid.cl');
+                deleteCookie('access_token', cookie_domain);
                 // Navigate to logout even if API call fails
                 window.location.href = '/logout';
               });
