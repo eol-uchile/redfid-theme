@@ -1,0 +1,1 @@
+../../../common/static/js/redfid_oauth2.js
