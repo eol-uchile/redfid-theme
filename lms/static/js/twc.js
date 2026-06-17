@@ -123,9 +123,9 @@ function showTalleresWebinarsCapsulas(display, displayId) {
                     setUrlParameter('displayId', items["defaultItem"]["id"]);
                 }
             }
-            fillTalleres(items, data);
+            fillEvents(items, data);
         }).fail(function(jqXHR, textStatus, errorThrown) {
-            fillTalleres({"active": null, "default": null, "summarizedItems": []}, []);
+            fillEvents({"active": null, "default": null, "summarizedItems": []}, []);
         });
     } else if (display === "2") {
         $.getJSON(window.api_url + '/capsulas', function(data){
@@ -282,7 +282,7 @@ function fillCreateCapsula() {
     });
 }
 
-function fillTalleres(items, allTalleres){
+function fillEvents(items, allEvents){
     // Determine active category based on active item (from displayId), defaultItem, or explicit category
     let activeCategory = null;
     
@@ -296,10 +296,10 @@ function fillTalleres(items, allTalleres){
     }
 
     // If still no category found and we have events, try to find first available category
-    if (activeCategory == null && allTalleres && allTalleres.length > 0) {
+    if (activeCategory == null && allEvents && allEvents.length > 0) {
         const categoryOrder = ['matematica', 'lenguaje', 'parvularia'];
         for (let cat of categoryOrder) {
-            if (allTalleres.find(t => t.ap_area === cat)) {
+            if (allEvents.find(t => t.ap_area === cat)) {
                 activeCategory = cat;
                 break;
             }
@@ -401,21 +401,21 @@ function fillTalleres(items, allTalleres){
         $(".twc-error-container").hide();
     }
     
-    // Store allTalleres for tab handlers
-    if (allTalleres) {
-        window.allTalleresData = allTalleres;
+    // Store allEvents for tab handlers
+    if (allEvents) {
+        window.allEventsData = allEvents;
     }
     
     // Add tab click handlers
     $(".twc-tab").on("click", function() {
         const category = $(this).data("category");
-        filterTalleresByCategory(category, allTalleres || window.allTalleresData || []);
+        filterEventsByCategory(category, allEvents || window.allEventsData || []);
     });
 }
 
-function filterTalleresByCategory(category, allTalleres) {
+function filterEventsByCategory(category, allEvents) {
     // Filter events by category flag
-    const categoryTalleres = allTalleres.filter(taller => taller.ap_area === category);
+    const categoryEvents = allEvents.filter(eventItem => eventItem.ap_area === category);
     
     // Get category display name
     const categoryNames = {
@@ -425,7 +425,7 @@ function filterTalleresByCategory(category, allTalleres) {
     };
     const categoryName = categoryNames[category] || category;
     
-    if (categoryTalleres.length === 0) {
+    if (categoryEvents.length === 0) {
         // No talleres in this category - show empty state with category message
         const items = {
             "active": null,
@@ -434,26 +434,26 @@ function filterTalleresByCategory(category, allTalleres) {
             "emptyCategory": categoryName,
             "activeCategory": category  // Set active category so correct tab is highlighted
         };
-        fillTalleres(items, allTalleres);
+        fillEvents(items, allEvents);
         return;
     }
     
     // Sort by priority to get the first one
-    categoryTalleres.sort((a, b) => (b.priority || 0) - (a.priority || 0));
-    const firstTaller = categoryTalleres[0];
-    const restTalleres = categoryTalleres.slice(1);
+    categoryEvents.sort((a, b) => (b.priority || 0) - (a.priority || 0));
+    const firstEvent = categoryEvents[0];
+    const restEvents = categoryEvents.slice(1);
     
-    // Update URL with first taller's ID
-    setUrlParameter('displayId', firstTaller.id);
+    // Update URL with first event's ID
+    setUrlParameter('displayId', firstEvent.id);
     
     // Reload with filtered data
     const items = {
-        "active": firstTaller,
-        "defaultItem": firstTaller,
-        "summarizedItems": restTalleres,
+        "active": firstEvent,
+        "defaultItem": firstEvent,
+        "summarizedItems": restEvents,
         "activeCategory": category  // Set active category so correct tab is highlighted
     };
-    fillTalleres(items, allTalleres);
+    fillEvents(items, allEvents);
 }
 
 function fillCapsulas(items){

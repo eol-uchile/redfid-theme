@@ -1,7 +1,4 @@
-function toggleLinksMenu() {
-    var navContainer = document.querySelector('.header-navigation-container-mobile');
-    var userContainer = document.querySelector('.header-user-container-mobile');
-    if (!navContainer || !userContainer) return;
+function toggleLinksMenu(navContainer, userContainer) {
     if (navContainer.style.display === 'none' || navContainer.style.display === '') {
         userContainer.style.display = 'none';
         navContainer.style.display = 'block';
@@ -10,10 +7,7 @@ function toggleLinksMenu() {
     }
 }
 
-function toggleUserMenu() {
-    var userContainer = document.querySelector('.header-user-container-mobile');
-    var navContainer = document.querySelector('.header-navigation-container-mobile');
-    if (!navContainer || !userContainer) return;
+function toggleUserMenu(navContainer, userContainer) {
     if (userContainer.style.display === 'none' || userContainer.style.display === '') {
         navContainer.style.display = 'none';
         userContainer.style.display = 'block';
@@ -32,7 +26,7 @@ window.onclick = function(event) {
         }
     } else {
         if (event.target.matches('.header-trigger')) {
-            toggleLinksMenu();
+            toggleLinksMenu(navContainer, userContainer);
         }
     }
     if (userContainer.style.display !== "none") {
@@ -41,7 +35,7 @@ window.onclick = function(event) {
         }
     } else {
         if (event.target.matches('.toggle-user-menu')) {
-            toggleUserMenu();
+            toggleUserMenu(navContainer, userContainer);
         }
     }
 };
